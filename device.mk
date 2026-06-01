@@ -1,0 +1,1 @@
+LOCAL_PATH := device/kyocera/902KC
