@@ -1,3 +1,6 @@
+# This is just a bunch of files I think is needed for full functionality for 90XKC devices.
+# Might be bloated.
+
 # WLAN/Wi-Fi
 etc/firmware/wlan/prima/WCNSS_cfg.dat
 vendor/lib/libwifi-hal-qcom.so
@@ -8,8 +11,18 @@ vendor/lib/libcld80211.so
 vendor/lib/vendor.qti.hardware.wifi.supplicant@1.0_vendor.so
 vendor/lib/vendor.qti.hardware.wifi.supplicant@1.1_vendor.so
 vendor/lib/vendor.qti.hardware.wipower@1.0_vendor.so
+vendor/lib/libkeystore-engine-wifi-hidl.so
+vendor/lib/libkeystore-wifi-hidl.so
+vendor/etc/wifi
+vendor/etc/wifi/WCNSS_qcom_cfg.ini
+vendor/etc/wifi/WCNSS_qcom_wlan_nv.bin
+vendor/etc/wifi/fstman.ini
+vendor/etc/wifi/p2p_supplicant_overlay.conf
+vendor/etc/wifi/wpa_supplicant.conf
+vendor/etc/wifi/wpa_supplicant_overlay.conf
 
 # Camera
+vendor/bin/mm-qcamera-daemon
 vendor/lib/camera.device@1.0-impl.so
 vendor/lib/camera.device@3.2-impl.so
 vendor/lib/camera.device@3.3-impl.so
@@ -147,6 +160,8 @@ vendor/lib/libqomx_core.so
 vendor/lib/libqomx_jpegdec.so
 vendor/lib/libqomx_jpegenc.so
 vendor/lib/libmm-qcamera.so
+vendor/lib/liboemcamera.so
+vendor/lib/vendor.qti.hardware.camera.device@1.0_vendor.so
 
 # Camera firmware
 etc/firmware/cpp_firmware_v1_1_1.fw
@@ -155,6 +170,7 @@ etc/firmware/cpp_firmware_v1_2_0.fw
 etc/firmware/cpp_firmware_v1_4_0.fw
 
 # DRM
+vendor/bin/qseecomd
 vendor/lib/libdrm.so
 vendor/lib/libdrmfs.so
 vendor/lib/libdrmtime.so
@@ -163,6 +179,7 @@ vendor/lib/libQSEEComAPI.so
 vendor/lib/librpmb.so
 vendor/lib/libssd.so
 vendor/lib/mediadrm/libdrmclearkeyplugin.so
+vendor/lib/libflp.so
 
 # GPS
 vendor/lib/libgeofence.so
@@ -182,6 +199,11 @@ vendor/lib/hw/vendor.qti.gnss@1.0-impl.so
 vendor/lib/libgnss.so
 vendor/lib/libgnsspps.so
 vendor/lib/libgps.utils.so
+vendor/lib/vendor.qti.gnss@1.0_vendor.so
+vendor/etc/flp.conf
+vendor/etc/izat.conf
+vendor/etc/sap.conf
+vendor/etc/gps.conf
 
 # OMX 
 vendor/lib/libmmosal_proprietary.so
@@ -213,8 +235,12 @@ vendor/lib/libqti-perfd-client.so
 vendor/lib/libqti-perfd.so
 vendor/lib/libqti-util.so
 vendor/lib/libqtigef.so
+vendor/lib/vendor.qti.hardware.perf@1.0_vendor.so
+vendor/etc/perf/perfboostsconfig.xml 
 
 # Qualcomm framework 
+vendor/bin/irsc_util
+vendor/bin/pm-service
 vendor/lib/libdiag.so
 vendor/lib/libdiagjni.so
 vendor/lib/libdsi_netctrl.so
@@ -233,8 +259,14 @@ vendor/lib/libqmi_encdec.so
 vendor/lib/libqmiservices.so
 vendor/lib/libsmemlog.so
 vendor/lib/libsubsystem_control.so
+vendor/etc/data/dsi_config.xml
+vendor/etc/data/netmgr_config.xml
+vendor/etc/data/qmi_config.xml
 
-# RIL
+# RIL/Radio
+vendor/bin/netmgrd
+vendor/bin/qmuxd
+vendor/rmt_storage
 vendor/lib/libconfigdb.so
 vendor/lib/libcneapiclient.so
 vendor/lib/libmdmdetect.so
@@ -250,6 +282,18 @@ vendor/lib/librilutils.so
 vendor/lib/libperipheral_client.so
 vendor/lib/libsystem_health_mon.so
 vendor/lib/libxml.so
+vendor/lib/vendor.qti.hardware.radio.am@1.0_vendor.so
+vendor/lib/vendor.qti.hardware.radio.atcmdfwd@1.0_vendor.so
+vendor/lib/vendor.qti.hardware.radio.ims@1.0_vendor.so
+vendor/lib/vendor.qti.hardware.radio.lpa@1.0_vendor.so
+vendor/lib/vendor.qti.hardware.radio.qcrilhook@1.0_vendor.so
+vendor/lib/vendor.qti.hardware.radio.qtiradio@1.0_vendor.so
+vendor/lib/vendor.qti.hardware.radio.uim@1.0_vendor.so
+vendor/lib/vendor.qti.hardware.radio.uim@1.1_vendor.so
+vendor/lib/vendor.qti.hardware.radio.uim_remote_client@1.0_vendor.so
+vendor/lib/vendor.qti.hardware.radio.uim_remote_server@1.0_vendor.so
+vendor/lib/libreference-ril.so
+vendor/lib/libqcrilFramework.so
 
 # Sensors
 vendor/lib/hw/vendor.kyocera.hardware.sensors@1.0-impl.so
@@ -258,11 +302,14 @@ vendor/lib/sensors.kc.so
 vendor/lib/vendor.kyocera.hardware.sensors@1.0_vendor.so
 
 # Thermal
+vendor/bin/thermal-engine
 vendor/lib/hw/vendor.kyocera.hardware.thermalmonitor@1.0-impl.so
 vendor/lib/libthermalclient.so
 vendor/lib/libthermalioctl.so
 
 # Time services
+vendor/app/TimeService/TimeService.apk
+vendor/bin/time_daemon
 vendor/lib/libtime_genoff.so
 
 # ANT+
@@ -271,9 +318,15 @@ vendor/lib/hw/com.qualcomm.qti.ant@1.0-impl.so
 
 # Bluetooth
 vendor/lib/com.qualcomm.qti.bluetooth_audio@1.0_vendor.so
+etc/bluetooth/bt_did.conf
+etc/bluetooth/bt_profile.conf
+etc/bluetooth/bt_stack.conf
+etc/bluetooth/interop_database.conf
 
-# DPM (Unknown?)
+# DPM
 vendor/lib/com.qualcomm.qti.dpm.api@1.0_vendor.so
+etc/dpm/dpm.conf
+etc/dpm/nsrm/NsrmConfiguration.xml
 
 # Wi-Fi Display?
 vendor/lib/com.qualcomm.qti.wifidisplayhal@1.0-impl.so
@@ -288,6 +341,35 @@ vendor/lib/com.quicinc.cne.server@2.0.so
 vendor/lib/libcne.so
 vendor/lib/libcneoplookup.so
 vendor/lib/libcneqmiutils.so
+etc/cne/SwimConfig.xml
+etc/cne/andsfCne.xml
+vendor/etc/cne/wqeclient/ATT/ATT_profile1.xml
+vendor/etc/cne/wqeclient/ATT/ATT_profile2.xml
+vendor/etc/cne/wqeclient/ATT/ATT_profile3.xml
+vendor/etc/cne/wqeclient/ATT/ATT_profile4.xml
+vendor/etc/cne/wqeclient/ATT/ATT_profile5.xml
+vendor/etc/cne/wqeclient/ATT/ATT_profile6.xml
+vendor/etc/cne/wqeclient/ROW/ROW_profile1.xml
+vendor/etc/cne/wqeclient/ROW/ROW_profile15.xml
+vendor/etc/cne/wqeclient/ROW/ROW_profile16.xml
+vendor/etc/cne/wqeclient/ROW/ROW_profile17.xml
+vendor/etc/cne/wqeclient/ROW/ROW_profile18.xml
+vendor/etc/cne/wqeclient/ROW/ROW_profile19.xml
+vendor/etc/cne/wqeclient/ROW/ROW_profile2.xml
+vendor/etc/cne/wqeclient/ROW/ROW_profile20.xml
+vendor/etc/cne/wqeclient/ROW/ROW_profile21.xml
+vendor/etc/cne/wqeclient/ROW/ROW_profile3.xml
+vendor/etc/cne/wqeclient/ROW/ROW_profile32.xml
+vendor/etc/cne/wqeclient/ROW/ROW_profile4.xml
+vendor/etc/cne/wqeclient/ROW/ROW_profile5.xml
+vendor/etc/cne/wqeclient/ROW/ROW_profile6.xml
+vendor/etc/cne/wqeclient/ROW/ROW_profile7.xml
+vendor/etc/cne/wqeclient/VZW/VZW_profile1.xml
+vendor/etc/cne/wqeclient/VZW/VZW_profile2.xml
+vendor/etc/cne/wqeclient/VZW/VZW_profile3.xml
+vendor/etc/cne/wqeclient/VZW/VZW_profile4.xml
+vendor/etc/cne/wqeclient/VZW/VZW_profile5.xml
+vendor/etc/cne/wqeclient/VZW/VZW_profile6.xml
 
 # Audio
 vendor/lib/hw/audio.primary.default.so
@@ -313,6 +395,30 @@ vendor/lib/soundfx/libreverbwrapper.so
 vendor/lib/soundfx/libvisualizer.so
 vendor/lib/libalsautils.so
 vendor/lib/libaudcal.so
+vendor/lib/libacdb-fts.so
+vendor/lib/libacdbloader.so
+vendor/lib/libacdbmapper.so
+vendor/lib/libacdbrtac.so
+vendor/lib/libadiertac.so
+vendor/etc/acdbdata/MTP/MTP_Bluetooth_cal.acdb
+vendor/etc/acdbdata/MTP/MTP_General_cal.acdb
+vendor/etc/acdbdata/MTP/MTP_Global_cal.acdb
+vendor/etc/acdbdata/MTP/MTP_Handset_cal.acdb
+vendor/etc/acdbdata/MTP/MTP_Hdmi_cal.acdb
+vendor/etc/acdbdata/MTP/MTP_Headset_cal.acdb
+vendor/etc/acdbdata/MTP/MTP_Speaker_cal.acdb
+vendor/etc/acdbdata/MTP/MTP_workspaceFile.qwsp
+vendor/etc/acdbdata/QRD/QRD_Bluetooth_cal.acdb
+vendor/etc/acdbdata/QRD/QRD_General_cal.acdb
+vendor/etc/acdbdata/QRD/QRD_Global_cal.acdb
+vendor/etc/acdbdata/QRD/QRD_Handset_cal.acdb
+vendor/etc/acdbdata/QRD/QRD_Hdmi_cal.acdb
+vendor/etc/acdbdata/QRD/QRD_Headset_cal.acdb
+vendor/etc/acdbdata/QRD/QRD_Speaker_cal.acdb
+vendor/etc/acdbdata/QRD/QRD_workspaceFile.qwsp
+vendor/lib/libdrc.so
+vendor/etc/drc/drc_cfg_5.1.txt
+vendor/etc/drc/drc_cfg_AZ.txt
 
 # MSM8909 (Snapdraon 210)-specific blobs
 vendor/lib/hw/gatekeeper.msm8909.so
@@ -326,10 +432,12 @@ vendor/lib/hw/power.default.so
 vendor/lib/hw/power.qcom.so
 
 # Kyocera-specific blobs
+vendor/bin/irda_diag
 vendor/lib/hw/vendor.kyocera.hardware.irda@1.0-impl.so
 vendor/lib/hw/vendor.kyocera.hardware.kcjprop@1.0-impl.so
 vendor/lib/hw/vendor.kyocera.hardware.kclight@1.0-impl.so
 vendor/lib/hw/vendor.kyocera.hardware.qalog@1.0-impl.so
+vendor/app/IrDATransfer/IrDATransfer.apk
 
 # Power
 vendor/lib/hw/vendor.qti.esepowermanager@1.0-impl.so
@@ -344,7 +452,7 @@ vendor/lib/hw/vendor.qti.hardware.iop@1.0-impl.so
 vendor/lib/hw/vendor.qti.hardware.qteeconnector@1.0-impl.so
 
 # Vibrator
-/vendor/lib/hw/vibrator.default.so
+vendor/lib/hw/vibrator.default.so
 
 # Codecs
 vendor/lib/libAlacSwDec.so
@@ -353,24 +461,190 @@ vendor/lib/libFlacSwDec.so
 vendor/lib/libadpcmdec.so
 vendor/lib/libmediacodecservice.so
 
-# Unknown?
-vendor/lib/libCipo_ae.so
-vendor/lib/libCipo_awb.so
-vendor/lib/libDRPlugin.so
-vendor/lib/libGPTEE_vendor.so
-vendor/lib/libGPreqcancel.so
-vendor/lib/libGPreqcancel_svc.so
-vendor/lib/libSecureUILib.so
-vendor/lib/libStDrvInt.so
-vendor/lib/libSubSystemShutdown.so
-vendor/lib/libUBWC.so
-vendor/lib/lib_drplugin_server.so
-vendor/lib/libacdb-fts.so
-vendor/lib/libacdbloader.so
-vendor/lib/libacdbmapper.so
-vendor/lib/libacdbrtac.so
-vendor/lib/libadiertac.so
-vendor/lib/libadm.so
+# Venus firmware
+firmware/image/venus.b00
+firmware/image/venus.b01
+firmware/image/venus.b02
+firmware/image/venus.b03
+firmware/image/venus.b04
+firmware/image/venus.mdt
+
+# Modem firmware
+firmware/image/modem.b00
+firmware/image/modem.b01
+firmware/image/modem.b02
+firmware/image/modem.b03
+firmware/image/modem.b05
+firmware/image/modem.b06
+firmware/image/modem.b07
+firmware/image/modem.b08
+firmware/image/modem.b09
+firmware/image/modem.b10
+firmware/image/modem.b11
+firmware/image/modem.b12
+firmware/image/modem.b13
+firmware/image/modem.b14
+firmware/image/modem.b15
+firmware/image/modem.b16
+firmware/image/modem.b19
+firmware/image/modem.b20
+firmware/image/modem.b21
+firmware/image/modem.b22
+firmware/image/modem.b23
+firmware/image/modem.b24
+firmware/image/modem.mdt
+
+# Keymaste? firmware
+firmware/image/keymaste.b00
+firmware/image/keymaste.b01
+firmware/image/keymaste.b02
+firmware/image/keymaste.b03
+firmware/image/keymaste.b04
+firmware/image/keymaste.b05
+firmware/image/keymaste.b06
+firmware/image/keymaste.b07
+firmware/image/keymaste.mdt
+
+# Cmnlib? firmware
+firmware/image/cmnlib.b00
+firmware/image/cmnlib.b01
+firmware/image/cmnlib.b02
+firmware/image/cmnlib.b03
+firmware/image/cmnlib.b04
+firmware/image/cmnlib.b05
+firmware/image/cmnlib.mdt
+
+# Modem configs
+firmware/image/modem_pr/mcfg/configs/mcfg_hw/generic/common/msm8909/la/7+1_mode/sr_dsds/mcfg_hw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_hw/generic/common/msm8909/la/7+5_mode/sr_dsds/mcfg_hw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_hw/generic/common/msm8909/la/ss/mcfg_hw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_hw/generic/common/msm8909/cmcc_sub/sr_dsds/mcfg_hw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_hw/mbn_hw.dig
+firmware/image/modem_pr/mcfg/configs/mcfg_hw/mbn_hw.txt
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/af/cellc/commerci/safrica/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/af/moroccot/commerci/ma/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/apac/dcm/commerci/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/apac/kddi/commerci/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/apac/reliance/commerci/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/apac/reliance/rjil_cha/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/apac/sbm/commerci/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/aunz/optus/commerci/au/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/aunz/telstra/commerci/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/aunz/vodafone/commerci/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/china/cmcc/commerci/volte_op/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/china/cmcc/lab/agnss_lo/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/china/cmcc/lab/conf_vol/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/china/cmcc/lab/eps_only/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/china/cmcc/lab/lpp_loct/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/china/cmcc/lab/nsiot_vo/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/china/cmcc/lab/rrlp_loc/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/china/cmcc/lab/tgl_comb/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/china/cmcc/lab/w_irat_c/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/china/ct/commerci/openmkt/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/china/ct/commerci/volte_op/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/china/ct/commerci/hvolte_o/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/china/ct/lab/cta/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/china/ct/lab/test/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/china/ct/lab/test_eps/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/china/ct/lab/test_no_/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/china/ct/lab/volte_co/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/china/cu/commerci/openmkt
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/china/cu/commerci/openmkt/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/china/cu/commerci/volte/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/china/cu/lab/test/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/eu/bouygues/commerci/france/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/eu/dt/commerci/cz/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/eu/dt/commerci/croatia/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/eu/dt/commerci/greece/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/eu/dt/commerci/pl/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/eu/dt/non_volt/commerci/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/eu/dt/volte/commerci/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/eu/ee/commerci/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/eu/elisa/commerci/fi/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/eu/h3g/commerci/denmark/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/eu/h3g/commerci/italy/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/eu/h3g/commerci/se/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/eu/h3g/commerci/uk/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/eu/orange/commerci/france/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/eu/orange/commerci/group_no/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/eu/orange/commerci/poland/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/eu/orange/commerci/romania/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/eu/orange/commerci/spain/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/eu/sfr/commerci/fr/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/eu/swisscom/commerci/swiss/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/eu/tdc/commerci/denmark/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/eu/tim/commerci/italy/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/eu/tele2/commerci/nl/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/eu/tele2/commerci/sweden/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/eu/telefoni/commerci/de/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/eu/telefoni/commerci/uk/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/eu/telefoni/non_volt/spain/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/eu/telenor/commerci/denmark/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/eu/telenor/commerci/norway/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/eu/telia/commerci/norway/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/eu/telia/commerci/sweden/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/eu/vodafone/non_volt/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/eu/vodafone/volte/cz/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/eu/vodafone/volte/germany/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/eu/vodafone/volte/italy/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/eu/vodafone/volte/netherla/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/eu/vodafone/volte/portugal/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/eu/vodafone/volte/safrica/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/eu/vodafone/volte/spain/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/eu/vodafone/volte/turkey/mcfg_sw.mbn/
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/eu/vodafone/volte/uk/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/korea/kt/commerci/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/korea/lgu/commerci/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/korea/skt/commerci/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/korea/tta/commerci/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/latam/amx/commerci/mx/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/latam/amx/non_volt/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/latam/claro/commerci/colombia/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/latam/telefoni/commerci/colombia/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/latam/telefoni/commerci/peru/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/mea/stc/commerci/sa/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/na/att/firstnet/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/na/att/non_volt/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/na/att/volte/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/na/bell/commerci/ca/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/na/rogers/commerci/ca/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/na/sprint/commerci/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/na/sprint/vowifi/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/na/tmo/commerci/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/na/telus/commerci/ca/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/na/uscc/commerci/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/na/verizon/cdmaless/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/na/verizon/imsless/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/na/verizon/hvolte/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/russia/beeline/gen_3gpp/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/russia/megafon/commerci/ru/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/sa/brazil/commerci/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/sea/3hk/commerci/hk/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/sea/ais/commerci/thailand/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/sea/apt/commerci/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/sea/chunghwa/commerci/tw/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/sea/dtac/commerci/th/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/sea/fareasto/commerci/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/sea/globe/commerci/ph/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/sea/hkt/commerci/hk/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/sea/m1/commerci/sg/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/sea/p1/commerci/malaysia/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/sea/singtel/commerci/singapor/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/sea/smartone/commerci/hk/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/sea/smartfre/commerci/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/sea/starhub/commerci/sg/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/sea/tm/commerci/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/sea/tstar/commerci/tw/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/sea/truemove/commerci/thailand/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/sea/umobile/commerci/malaysia/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/sea/ytl/commerci/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/common/row/commerci/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/common/w_one/commerci/mcfg_sw.mbn
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/mbn_sw.dig
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/mbn_sw.txt
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/oem_sw.txt
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/oem_sw_a.txt
+firmware/image/modem_pr/mcfg/configs/mcfg_sw/oem_sw_m.txt
 
 # Graphics (Adreno 305)
 vendor/lib/egl/eglsubAndroid.so
@@ -386,16 +660,32 @@ vendor/lib/libadreno_utils.so
 vendor/lib/librs_adreno.so
 vendor/lib/librs_adreno_sha1.so
 vendor/lib/libgpu_tonemapper.so
+vendor/lib/libllvm-qcom.so
+vendor/lib/libgsl.so
+vendor/lib/libsc-a2xx.so
+vendor/lib/libsc-a3xx.so
 
 # Digital TV
+vendor/bin/dtvtuner_diag
 vendor/lib/libdtvtuner.so
 vendor/lib/vendor.kyocera.hardware.dtvtuner@1.0_vendor.so
 
-# DSP
+# ADSP
 vendor/lib/libadsp_default_listener.so
 vendor/lib/libadsprpc.so
+vendor/lib/rfsa/adsp/libapps_mem_heap.so
+vendor/lib/rfsa/adsp/libdspCV_skel.so
+vendor/lib/rfsa/adsp/libfastcvadsp.so
+vendor/lib/rfsa/adsp/libfastcvadsp_skel.so
+vendor/bin/adsprpcd
+
+# Battery
+vendor/bin/vm_bms
 
 # Bluetooth
+vendor/bin/btnvtool
+vendor/bin/bluetooth_diag
+vendor/bin/hci_qcomm_init
 vendor/lib/libbt-vendor.so
 vendor/lib/libbthost_if.so
 vendor/lib/libbtnv.so
@@ -406,9 +696,8 @@ vendor/lib/libhdcp1prov.so
 vendor/lib/libhdcp2p2prov.so
 vendor/lib/libmm-hdcpmgr.so
 
-# Going to honest, this is going to take a long time to categorize all these proprietary blobs (plus there's not that much info about them), so expect everything below this message being a bit unorganized.
+# Uncategorized/Varied/Unknown
 vendor/lib/libalarmservice_jni.so
-
 vendor/lib/libavservices_minijail_vendor.so
 vendor/lib/libbccQTI.so
 vendor/lib/libc2d30-a3xx.so
@@ -420,7 +709,6 @@ vendor/lib/libchromaflash.so
 vendor/lib/libdataitems.so
 vendor/lib/libdme_main.so
 vendor/lib/libdpmqmihal.so
-vendor/lib/libdrc.so
 vendor/lib/libdrplugin_client.so
 vendor/lib/libdsd2pcm.so
 vendor/lib/libeffects.so
@@ -429,11 +717,8 @@ vendor/lib/libfastcrc.so
 vendor/lib/libfastcvadsp_stub.so
 vendor/lib/libfastcvopt.so
 vendor/lib/libfeedbackhandler.so
-vendor/lib/libflp.so
 vendor/lib/libgdtap.so
 vendor/lib/libgrallocutils.so
-vendor/lib/libgsl.so
-
 vendor/lib/libhdr_tm.so
 vendor/lib/libhwc2on1adapter.so
 vendor/lib/libhwminijail.so
@@ -442,9 +727,6 @@ vendor/lib/libjson.so
 vendor/lib/libkeymasterdeviceutils.so
 vendor/lib/libkeymasterprovision.so
 vendor/lib/libkeymasterutils.so
-vendor/lib/libkeystore-engine-wifi-hidl.so
-vendor/lib/libkeystore-wifi-hidl.so
-vendor/lib/libllvm-qcom.so
 vendor/lib/libloc_api_v02.so
 vendor/lib/libloc_core.so
 vendor/lib/libloc_ds_api.so
@@ -454,11 +736,9 @@ vendor/lib/libloc_stub.so
 vendor/lib/liblqe.so
 vendor/lib/libmdsprpc.so
 vendor/lib/libminijail_vendor.so
-
 vendor/lib/libmmipl.so
 vendor/lib/libnbaio_mono.so
 vendor/lib/liboemaids_vendor.so
-vendor/lib/liboemcamera.so
 vendor/lib/liboptizoom.so
 vendor/lib/libpdmapper.so
 vendor/lib/libpdnotifier.so
@@ -467,17 +747,13 @@ vendor/lib/libpredtm.so
 vendor/lib/libpredtm_hw.so
 vendor/lib/libqalog.so
 vendor/lib/libqcmaputils.so
-vendor/lib/libqcrilFramework.so
 vendor/lib/libqdMetaData.so
 vendor/lib/libqdutils.so
 vendor/lib/libqisl.so
 vendor/lib/libqservice.so
 vendor/lib/libqvrservice_client.so
 vendor/lib/librecovery_updater_msm.so
-vendor/lib/libreference-ril.so
 vendor/lib/librmnetctl.so
-vendor/lib/libsc-a2xx.so
-vendor/lib/libsc-a3xx.so
 vendor/lib/libscalar.so
 vendor/lib/libsdm-color.so
 vendor/lib/libsdm-disp-vndapis.so
@@ -506,35 +782,30 @@ vendor/lib/libwms.so
 vendor/lib/libwqe.so
 vendor/lib/mediacas/libclearkeycasplugin.so
 vendor/lib/modules/pronto/pronto_wlan.ko
-vendor/lib/rfsa/adsp/libapps_mem_heap.so
-vendor/lib/rfsa/adsp/libdspCV_skel.so
-vendor/lib/rfsa/adsp/libfastcvadsp.so
-vendor/lib/rfsa/adsp/libfastcvadsp_skel.so
 vendor/lib/vendor.display.config@1.0_vendor.so
 vendor/lib/vendor.display.config@1.1_vendor.so
 vendor/lib/vendor.qti.esepowermanager@1.0_vendor.so
-vendor/lib/vendor.qti.gnss@1.0_vendor.so
 vendor/lib/vendor.qti.hardware.alarm@1.0.so
-vendor/lib/vendor.qti.hardware.camera.device@1.0_vendor.so
 vendor/lib/vendor.qti.hardware.data.latency@1.0_vendor.so
 vendor/lib/vendor.qti.hardware.fm@1.0_vendor.so
 vendor/lib/vendor.qti.hardware.iop@1.0_vendor.so
 vendor/lib/vendor.qti.hardware.iop@2.0_vendor.so
 vendor/lib/vendor.qti.hardware.limits@1.0_vendor.so
-vendor/lib/vendor.qti.hardware.perf@1.0_vendor.so
 vendor/lib/vendor.qti.hardware.qdutils_disp@1.0_vendor.so
 vendor/lib/vendor.qti.hardware.qteeconnector@1.0_vendor.so
-vendor/lib/vendor.qti.hardware.radio.am@1.0_vendor.so
-vendor/lib/vendor.qti.hardware.radio.atcmdfwd@1.0_vendor.so
-vendor/lib/vendor.qti.hardware.radio.ims@1.0_vendor.so
-vendor/lib/vendor.qti.hardware.radio.lpa@1.0_vendor.so
-vendor/lib/vendor.qti.hardware.radio.qcrilhook@1.0_vendor.so
-vendor/lib/vendor.qti.hardware.radio.qtiradio@1.0_vendor.so
-vendor/lib/vendor.qti.hardware.radio.uim@1.0_vendor.so
-vendor/lib/vendor.qti.hardware.radio.uim@1.1_vendor.so
-vendor/lib/vendor.qti.hardware.radio.uim_remote_client@1.0_vendor.so
-vendor/lib/vendor.qti.hardware.radio.uim_remote_server@1.0_vendor.so
 vendor/lib/vendor.qti.hardware.seccam@1.0_vendor.so
 vendor/lib/vendor.qti.hardware.tui_comm@1.0_vendor.so
 vendor/lib/vendor.qti.hardware.vpp@1.1_vendor.so
 vendor/lib/vendor.qti.voiceprint@1.0.so
+vendor/lib/libCipo_ae.so
+vendor/lib/libCipo_awb.so
+vendor/lib/libDRPlugin.so
+vendor/lib/libGPTEE_vendor.so
+vendor/lib/libGPreqcancel.so
+vendor/lib/libGPreqcancel_svc.so
+vendor/lib/libSecureUILib.so
+vendor/lib/libStDrvInt.so
+vendor/lib/libSubSystemShutdown.so
+vendor/lib/libUBWC.so
+vendor/lib/lib_drplugin_server.so
+vendor/lib/libadm.so
