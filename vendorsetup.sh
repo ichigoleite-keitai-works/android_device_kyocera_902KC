@@ -1,2 +1,1 @@
-add_lunch_combo omni_902KC-userdebug
-add_lunch_combo omni_902KC-eng
+add_lunch_combo lineage_902KC-userdebug
