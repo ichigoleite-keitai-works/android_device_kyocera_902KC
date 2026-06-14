@@ -8,10 +8,15 @@ TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
-TARGET_CPU_VARIANT := generic
+TARGET_CPU_VARIANT := cortex-a7
+
+TARGET_GLOBAL_CFLAGS += -mtune=cortex-a7 -mfpu=neon-vfpv4 -mfloat-abi=softfp
+TARGET_GLOBAL_CPPFLAGS += -mtune=cortex-a7 -mfpu=neon-vfpv4 -mfloat-abi=softfp
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8909
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno304
+TARGET_BOOTLOADER_BOARD_NAME := msm8909
 
 # Kernel
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 androidboot.memcg=true earlyprintk buildvariant=user
@@ -22,8 +27,62 @@ BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 BOARD_MKBOOTIMG_ARGS += --ramdisk_offset $(BOARD_RAMDISK_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
-BOARD_KERNEL_IMAGE_NAME := zImage-dtb
-TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/zImage-dtb
+TARGET_KERNEL_CONFIG := msm8909w-1gb-perf_defconfig
+TARGET_KERNEL_SOURCE := kernel/kyocera/902KC
+
+# ANT+
+BOARD_ANT_WIRELESS_DEVICE := "qualcomm-smd"
+
+# Audio
+AUDIO_FEATURE_ENABLED_FM := true
+AUDIO_FEATURE_ENABLED_KPI_OPTIMIZE := true
+BOARD_USES_ALSA_AUDIO := true
+
+# Bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
+BOARD_HAVE_BLUETOOTH := true
+BOARD_HAVE_BLUETOOTH_QCOM := true
+BLUETOOTH_HCI_USE_MCT := true
+
+# Build
+TARGET_SYSTEMIMAGE_USE_SQUISHER := true
+
+# Camera
+USE_DEVICE_SPECIFIC_CAMERA := true
+
+# Charger
+BOARD_CHARGER_ENABLE_SUSPEND := true
+BOARD_CHARGER_SHOW_PERCENTAGE := true
+
+# Crypto
+TARGET_HW_DISK_ENCRYPTION := true
+
+# FM radio
+TARGET_QCOM_NO_FM_FIRMWARE := true
+
+# Graphics
+MAX_EGL_CACHE_KEY_SIZE := 12*1024
+MAX_EGL_CACHE_SIZE := 2048*1024
+NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
+OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
+TARGET_USES_ION := true
+USE_OPENGL_RENDERER := true
+
+# Init
+TARGET_INIT_VENDOR_LIB := libinit_msm
+TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
+
+# Lights
+TARGET_PROVIDES_LIBLIGHT := true
+
+# Memory
+MALLOC_IMPL := dlmalloc
+
+# Power
+TARGET_POWERHAL_VARIANT := qcom
+
+# QCOM hardware
+BOARD_USES_QCOM_HARDWARE := true
 
 # Partitions / File systems
 BOARD_HAS_LARGE_FILESYSTEM := true
@@ -39,6 +98,42 @@ TARGET_COPY_OUT_VENDOR := vendor
 TARGET_OTA_ASSERT_DEVICE := 902KC
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery.fstab
+
+# SELinux
+include device/qcom/sepolicy/sepolicy.mk
+
+BOARD_SEPOLICY_UNION += \
+    file.te \
+    file_contexts \
+    kernel.te \
+    mediaserver.te \
+    mm-qcamerad.te \
+    property.te \
+    property_contexts \
+    rmt_storage.te \
+    system_server.te \
+    vold.te \
+    wcnss_service.te
+
+# Vold
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun1/file
+
+# Wifi
+BOARD_HAS_QCOM_WLAN := true
+BOARD_HAS_QCOM_WLAN_SDK := true
+BOARD_HOSTAPD_DRIVER := NL80211
+BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_qcwcn
+BOARD_WLAN_DEVICE := qcwcn
+BOARD_WPA_SUPPLICANT_DRIVER := NL80211
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_qcwcn
+TARGET_PROVIDES_WCNSS_QMI := true
+TARGET_USES_QCOM_WCNSS_QMI := true
+WIFI_DRIVER_FW_PATH_AP := "ap"
+WIFI_DRIVER_FW_PATH_STA := "sta"
+WPA_SUPPLICANT_VERSION := VER_0_8_X
+
+# Use build_number tag for ota file
+BUILD_NUMBER := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(shell date -u +%Y%m%d)-$(CM_BUILDTYPE)
 
 # Display
 # Main panel: kc tovis2 fwvga = 480x854, density 240 (the 240x320 panel is the external sub-display).
