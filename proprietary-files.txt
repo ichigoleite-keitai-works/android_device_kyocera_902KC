@@ -469,6 +469,8 @@ firmware/image/venus.b04 rootfs
 firmware/image/venus.mdt rootfs
 
 # Graphics (Adreno 305)
+etc/firmware/a300_pfp.fw
+etc/firmware/a300_pm4.fw
 vendor/lib/egl/eglsubAndroid.so rootfs
 vendor/lib/egl/libEGL_adreno.so rootfs
 vendor/lib/egl/libGLESv1_CM_adreno.so rootfs
