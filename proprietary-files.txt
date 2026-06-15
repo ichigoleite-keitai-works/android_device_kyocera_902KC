@@ -13,7 +13,6 @@ vendor/lib/vendor.qti.hardware.wifi.supplicant@1.1_vendor.so
 vendor/lib/vendor.qti.hardware.wipower@1.0_vendor.so
 vendor/lib/libkeystore-engine-wifi-hidl.so
 vendor/lib/libkeystore-wifi-hidl.so
-vendor/etc/wifi
 vendor/etc/wifi/WCNSS_qcom_cfg.ini
 vendor/etc/wifi/WCNSS_qcom_wlan_nv.bin
 vendor/etc/wifi/fstman.ini
