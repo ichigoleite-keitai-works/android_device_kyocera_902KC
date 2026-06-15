@@ -48,6 +48,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libcnefeatureconfig
 
+# Compatibility
+PRODUCT_PACKAGES += \
+    libboringssl-compat \
+    libril_shim
+
 # Display
 PRODUCT_PACKAGES += \
     copybit.msm8909 \
