@@ -1,0 +1,6 @@
+# This software is contributed or developed by KYOCERA Corporation.
+# (C) 2019 KYOCERA Corporation
+
+key 115     VOLUME_UP
+key 114     VOLUME_DOWN
+key 226     HEADSETHOOK
