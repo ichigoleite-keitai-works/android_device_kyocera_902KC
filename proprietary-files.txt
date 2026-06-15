@@ -2,634 +2,634 @@
 # Might be bloated.
 
 # WLAN/Wi-Fi
-etc/firmware/wlan/prima/WCNSS_cfg.dat rootfs
-vendor/lib/libwifi-hal-qcom.so rootfs
-vendor/lib/libwifi-hal.so rootfs
-vendor/lib/modules/wlan.ko rootfs
-vendor/lib/libwpa_client.so rootfs
-vendor/lib/libcld80211.so rootfs
-vendor/lib/vendor.qti.hardware.wifi.supplicant@1.0_vendor.so rootfs
-vendor/lib/vendor.qti.hardware.wifi.supplicant@1.1_vendor.so rootfs
-vendor/lib/vendor.qti.hardware.wipower@1.0_vendor.so rootfs
-vendor/lib/libkeystore-engine-wifi-hidl.so rootfs
-vendor/lib/libkeystore-wifi-hidl.so rootfs
-vendor/etc/wifi/WCNSS_qcom_cfg.ini rootfs
-vendor/etc/wifi/WCNSS_qcom_wlan_nv.bin rootfs
-vendor/etc/wifi/fstman.ini rootfs
-vendor/etc/wifi/p2p_supplicant_overlay.conf rootfs
-vendor/etc/wifi/wpa_supplicant.conf rootfs
-vendor/etc/wifi/wpa_supplicant_overlay.conf rootfs
+etc/firmware/wlan/prima/WCNSS_cfg.dat;rootfs
+vendor/lib/libwifi-hal-qcom.so;rootfs
+vendor/lib/libwifi-hal.so;rootfs
+vendor/lib/modules/wlan.ko;rootfs
+vendor/lib/libwpa_client.so;rootfs
+vendor/lib/libcld80211.so;rootfs
+vendor/lib/vendor.qti.hardware.wifi.supplicant@1.0_vendor.so;rootfs
+vendor/lib/vendor.qti.hardware.wifi.supplicant@1.1_vendor.so;rootfs
+vendor/lib/vendor.qti.hardware.wipower@1.0_vendor.so;rootfs
+vendor/lib/libkeystore-engine-wifi-hidl.so;rootfs
+vendor/lib/libkeystore-wifi-hidl.so;rootfs
+vendor/etc/wifi/WCNSS_qcom_cfg.ini;rootfs
+vendor/etc/wifi/WCNSS_qcom_wlan_nv.bin;rootfs
+vendor/etc/wifi/fstman.ini;rootfs
+vendor/etc/wifi/p2p_supplicant_overlay.conf;rootfs
+vendor/etc/wifi/wpa_supplicant.conf;rootfs
+vendor/etc/wifi/wpa_supplicant_overlay.conf;rootfs
 
 # Camera
-vendor/bin/mm-qcamera-daemon rootfs
-vendor/lib/camera.device@1.0-impl.so rootfs
-vendor/lib/camera.device@3.2-impl.so rootfs
-vendor/lib/camera.device@3.3-impl.so rootfs
-vendor/lib/hw/android.hardware.camera.provider@2.4-impl.so rootfs
-vendor/lib/hw/camera.msm8909.so rootfs
-vendor/lib/libactuator_rohm_bu64243gwz.so rootfs
-vendor/lib/libactuator_rohm_bu64243gwz_camcorder.so rootfs
-vendor/lib/libactuator_rohm_bu64243gwz_camera.so rootfs
-vendor/lib/libactuator_rohm_bu64243gwzkc.so rootfs
-vendor/lib/libactuator_rohm_bu64243gwzkc_camcorder.so rootfs
-vendor/lib/libactuator_rohm_bu64243gwzkc_camera.so rootfs
-vendor/lib/libchromatix_S5K4E1_13P1BA_common.so rootfs
-vendor/lib/libchromatix_S5K4E1_13P1BA_default_video.so rootfs
-vendor/lib/libchromatix_S5K4E1_13P1BA_hfr_120fps.so rootfs
-vendor/lib/libchromatix_S5K4E1_13P1BA_hfr_60fps.so rootfs
-vendor/lib/libchromatix_S5K4E1_13P1BA_hfr_90fps.so rootfs
-vendor/lib/libchromatix_S5K4E1_13P1BA_liveshot.so rootfs
-vendor/lib/libchromatix_S5K4E1_13P1BA_preview.so rootfs
-vendor/lib/libchromatix_S5K4E1_13P1BA_snapshot.so rootfs
-vendor/lib/libchromatix_S5K4E1_13P1BA_video_hd.so rootfs
-vendor/lib/libchromatix_S5K4E1_13P1BA_zsl.so rootfs
-vendor/lib/libchromatix_SKUAA_ST_gc0339_common.so rootfs
-vendor/lib/libchromatix_SKUAA_ST_gc0339_default_video.so rootfs
-vendor/lib/libchromatix_SKUAA_ST_gc0339_preview.so rootfs
-vendor/lib/libchromatix_SKUAB_ST_s5k4e1_common.so rootfs
-vendor/lib/libchromatix_SKUAB_ST_s5k4e1_default_video.so rootfs
-vendor/lib/libchromatix_SKUAB_ST_s5k4e1_hfr_120fps.so rootfs
-vendor/lib/libchromatix_SKUAB_ST_s5k4e1_hfr_60fps.so rootfs
-vendor/lib/libchromatix_SKUAB_ST_s5k4e1_hfr_90fps.so rootfs
-vendor/lib/libchromatix_SKUAB_ST_s5k4e1_liveshot.so rootfs
-vendor/lib/libchromatix_SKUAB_ST_s5k4e1_preview.so rootfs
-vendor/lib/libchromatix_SKUAB_ST_s5k4e1_snapshot.so rootfs
-vendor/lib/libchromatix_SKUAB_ST_s5k4e1_video_hd.so rootfs
-vendor/lib/libchromatix_SKUAB_ST_s5k4e1_zsl.so rootfs
-vendor/lib/libchromatix_ov8856kc_common.so rootfs
-vendor/lib/libchromatix_ov8856kc_default_video.so rootfs
-vendor/lib/libchromatix_ov8856kc_preview.so rootfs
-vendor/lib/libchromatix_ov8856kc_preview_2m.so rootfs
-vendor/lib/libchromatix_ov8856kc_preview_30fps.so rootfs
-vendor/lib/libchromatix_ov8856kc_preview_30fps_2m.so rootfs
-vendor/lib/libchromatix_ov8858_common.so rootfs
-vendor/lib/libchromatix_ov8858_default_video.so rootfs
-vendor/lib/libchromatix_ov8858_hfr_120fps.so rootfs
-vendor/lib/libchromatix_ov8858_hfr_60fps.so rootfs
-vendor/lib/libchromatix_ov8858_hfr_90fps.so rootfs
-vendor/lib/libchromatix_ov8858_liveshot.so rootfs
-vendor/lib/libchromatix_ov8858_preview.so rootfs
-vendor/lib/libchromatix_ov8858_q8v19w_common.so rootfs
-vendor/lib/libchromatix_ov8858_q8v19w_default_video.so rootfs
-vendor/lib/libchromatix_ov8858_q8v19w_hfr_120fps.so rootfs
-vendor/lib/libchromatix_ov8858_q8v19w_hfr_60fps.so rootfs
-vendor/lib/libchromatix_ov8858_q8v19w_hfr_90fps.so rootfs
-vendor/lib/libchromatix_ov8858_q8v19w_liveshot.so rootfs
-vendor/lib/libchromatix_ov8858_q8v19w_preview.so rootfs
-vendor/lib/libchromatix_ov8858_q8v19w_snapshot.so rootfs
-vendor/lib/libchromatix_ov8858_q8v19w_video_nonHD.so rootfs
-vendor/lib/libchromatix_ov8858_q8v19w_zsl.so rootfs
-vendor/lib/libchromatix_ov8858_q8v19w_zsl_30.so rootfs
-vendor/lib/libchromatix_ov8858_snapshot.so rootfs
-vendor/lib/libchromatix_ov8865_q8v18a_common.so rootfs
-vendor/lib/libchromatix_ov8865_q8v18a_default_video.so rootfs
-vendor/lib/libchromatix_ov8865_q8v18a_hfr_120fps.so rootfs
-vendor/lib/libchromatix_ov8865_q8v18a_hfr_60fps.so rootfs
-vendor/lib/libchromatix_ov8865_q8v18a_hfr_90fps.so rootfs
-vendor/lib/libchromatix_ov8865_q8v18a_liveshot.so rootfs
-vendor/lib/libchromatix_ov8865_q8v18a_preview.so rootfs
-vendor/lib/libchromatix_ov8865_q8v18a_snapshot.so rootfs
-vendor/lib/libchromatix_ov8865_q8v18a_video_hd.so rootfs
-vendor/lib/libchromatix_ov8865_q8v18a_zsl.so rootfs
-vendor/lib/libchromatix_s5k3m2xm_common.so rootfs
-vendor/lib/libchromatix_s5k3m2xm_default_video.so rootfs
-vendor/lib/libchromatix_s5k3m2xm_hfr_120.so rootfs
-vendor/lib/libchromatix_s5k3m2xm_hfr_60.so rootfs
-vendor/lib/libchromatix_s5k3m2xm_hfr_90.so rootfs
-vendor/lib/libchromatix_s5k3m2xm_liveshot.so rootfs
-vendor/lib/libchromatix_s5k3m2xm_preview.so rootfs
-vendor/lib/libchromatix_s5k3m2xm_snapshot.so rootfs
-vendor/lib/libchromatix_skuab_shinetech_gc0339_common.so rootfs
-vendor/lib/libchromatix_skuab_shinetech_gc0339_default_video.so rootfs
-vendor/lib/libchromatix_skuab_shinetech_gc0339_liveshot.so rootfs
-vendor/lib/libchromatix_skuab_shinetech_gc0339_preview.so rootfs
-vendor/lib/libchromatix_skuab_shinetech_gc0339_snapshot.so rootfs
-vendor/lib/libchromatix_skuab_shinetech_gc0339_zsl.so rootfs
-vendor/lib/libchromatix_skuf_ov12830_p12v01c_common.so rootfs
-vendor/lib/libchromatix_skuf_ov12830_p12v01c_default_video.so rootfs
-vendor/lib/libchromatix_skuf_ov12830_p12v01c_hfr_120fps.so rootfs
-vendor/lib/libchromatix_skuf_ov12830_p12v01c_hfr_60fps.so rootfs
-vendor/lib/libchromatix_skuf_ov12830_p12v01c_hfr_90fps.so rootfs
-vendor/lib/libchromatix_skuf_ov12830_p12v01c_preview.so rootfs
-vendor/lib/libchromatix_skuf_ov12830_p12v01c_snapshot.so rootfs
-vendor/lib/libchromatix_skuf_ov12830_p12v01c_video_hd.so rootfs
-vendor/lib/libchromatix_skuf_ov12830_p12v01c_zsl.so rootfs
-vendor/lib/libchromatix_skuf_ov5648_p5v23c_common.so rootfs
-vendor/lib/libchromatix_skuf_ov5648_p5v23c_default_video.so rootfs
-vendor/lib/libchromatix_skuf_ov5648_p5v23c_preview.so rootfs
-vendor/lib/libchromatix_skuf_ov5648_p5v23c_snapshot.so rootfs
-vendor/lib/libmmcamera2_c2d_module.so rootfs
-vendor/lib/libmmcamera2_cpp_module.so rootfs
-vendor/lib/libmmcamera2_frame_algorithm.so rootfs
-vendor/lib/libmmcamera2_iface_modules.so rootfs
-vendor/lib/libmmcamera2_imglib_modules.so rootfs
-vendor/lib/libmmcamera2_is.so rootfs
-vendor/lib/libmmcamera2_isp_modules.so rootfs
-vendor/lib/libmmcamera2_pproc_modules.so rootfs
-vendor/lib/libmmcamera2_q3a_core.so rootfs
-vendor/lib/libmmcamera2_sensor_modules.so rootfs
-vendor/lib/libmmcamera2_stats_algorithm.so rootfs
-vendor/lib/libmmcamera2_stats_modules.so rootfs
-vendor/lib/libmmcamera2_wnr_module.so rootfs
-vendor/lib/libmmcamera_chromaflash_lib.so rootfs
-vendor/lib/libmmcamera_dummyalgo.so rootfs
-vendor/lib/libmmcamera_faceproc.so rootfs
-vendor/lib/libmmcamera_hdr_gb_lib.so rootfs
-vendor/lib/libmmcamera_hdr_lib.so rootfs
-vendor/lib/libmmcamera_hi256.so rootfs
-vendor/lib/libmmcamera_imglib.so rootfs
-vendor/lib/libmmcamera_interface.so rootfs
-vendor/lib/libmmcamera_optizoom_lib.so rootfs
-vendor/lib/libmmcamera_ov8856kc.so rootfs
-vendor/lib/libmmcamera_pdaf.so rootfs
-vendor/lib/libmmcamera_pdafcamif.so rootfs
-vendor/lib/libmmcamera_sunny_ov8856kc_eeprom.so rootfs
-vendor/lib/libmmcamera_tintless_algo.so rootfs
-vendor/lib/libmmcamera_tintless_bg_pca_algo.so rootfs
-vendor/lib/libmmcamera_trueportrait_lib.so rootfs
-vendor/lib/libmmcamera_truly_cm7700_eeprom.so rootfs
-vendor/lib/libmmcamera_ubifocus_lib.so rootfs
-vendor/lib/libmmcamera_wavelet_lib.so rootfs
-vendor/lib/libjpegdhw.so rootfs
-vendor/lib/libjpegehw.so rootfs
-vendor/lib/libmmjpeg.so rootfs
-vendor/lib/libmmjpeg_interface.so rootfs
-vendor/lib/libmmqjpeg_codec.so rootfs
-vendor/lib/libqomx_core.so rootfs
-vendor/lib/libqomx_jpegdec.so rootfs
-vendor/lib/libqomx_jpegenc.so rootfs
-vendor/lib/libmm-qcamera.so rootfs
-vendor/lib/liboemcamera.so rootfs
-vendor/lib/vendor.qti.hardware.camera.device@1.0_vendor.so rootfs
+vendor/bin/mm-qcamera-daemon;rootfs
+vendor/lib/camera.device@1.0-impl.so;rootfs
+vendor/lib/camera.device@3.2-impl.so;rootfs
+vendor/lib/camera.device@3.3-impl.so;rootfs
+vendor/lib/hw/android.hardware.camera.provider@2.4-impl.so;rootfs
+vendor/lib/hw/camera.msm8909.so;rootfs
+vendor/lib/libactuator_rohm_bu64243gwz.so;rootfs
+vendor/lib/libactuator_rohm_bu64243gwz_camcorder.so;rootfs
+vendor/lib/libactuator_rohm_bu64243gwz_camera.so;rootfs
+vendor/lib/libactuator_rohm_bu64243gwzkc.so;rootfs
+vendor/lib/libactuator_rohm_bu64243gwzkc_camcorder.so;rootfs
+vendor/lib/libactuator_rohm_bu64243gwzkc_camera.so;rootfs
+vendor/lib/libchromatix_S5K4E1_13P1BA_common.so;rootfs
+vendor/lib/libchromatix_S5K4E1_13P1BA_default_video.so;rootfs
+vendor/lib/libchromatix_S5K4E1_13P1BA_hfr_120fps.so;rootfs
+vendor/lib/libchromatix_S5K4E1_13P1BA_hfr_60fps.so;rootfs
+vendor/lib/libchromatix_S5K4E1_13P1BA_hfr_90fps.so;rootfs
+vendor/lib/libchromatix_S5K4E1_13P1BA_liveshot.so;rootfs
+vendor/lib/libchromatix_S5K4E1_13P1BA_preview.so;rootfs
+vendor/lib/libchromatix_S5K4E1_13P1BA_snapshot.so;rootfs
+vendor/lib/libchromatix_S5K4E1_13P1BA_video_hd.so;rootfs
+vendor/lib/libchromatix_S5K4E1_13P1BA_zsl.so;rootfs
+vendor/lib/libchromatix_SKUAA_ST_gc0339_common.so;rootfs
+vendor/lib/libchromatix_SKUAA_ST_gc0339_default_video.so;rootfs
+vendor/lib/libchromatix_SKUAA_ST_gc0339_preview.so;rootfs
+vendor/lib/libchromatix_SKUAB_ST_s5k4e1_common.so;rootfs
+vendor/lib/libchromatix_SKUAB_ST_s5k4e1_default_video.so;rootfs
+vendor/lib/libchromatix_SKUAB_ST_s5k4e1_hfr_120fps.so;rootfs
+vendor/lib/libchromatix_SKUAB_ST_s5k4e1_hfr_60fps.so;rootfs
+vendor/lib/libchromatix_SKUAB_ST_s5k4e1_hfr_90fps.so;rootfs
+vendor/lib/libchromatix_SKUAB_ST_s5k4e1_liveshot.so;rootfs
+vendor/lib/libchromatix_SKUAB_ST_s5k4e1_preview.so;rootfs
+vendor/lib/libchromatix_SKUAB_ST_s5k4e1_snapshot.so;rootfs
+vendor/lib/libchromatix_SKUAB_ST_s5k4e1_video_hd.so;rootfs
+vendor/lib/libchromatix_SKUAB_ST_s5k4e1_zsl.so;rootfs
+vendor/lib/libchromatix_ov8856kc_common.so;rootfs
+vendor/lib/libchromatix_ov8856kc_default_video.so;rootfs
+vendor/lib/libchromatix_ov8856kc_preview.so;rootfs
+vendor/lib/libchromatix_ov8856kc_preview_2m.so;rootfs
+vendor/lib/libchromatix_ov8856kc_preview_30fps.so;rootfs
+vendor/lib/libchromatix_ov8856kc_preview_30fps_2m.so;rootfs
+vendor/lib/libchromatix_ov8858_common.so;rootfs
+vendor/lib/libchromatix_ov8858_default_video.so;rootfs
+vendor/lib/libchromatix_ov8858_hfr_120fps.so;rootfs
+vendor/lib/libchromatix_ov8858_hfr_60fps.so;rootfs
+vendor/lib/libchromatix_ov8858_hfr_90fps.so;rootfs
+vendor/lib/libchromatix_ov8858_liveshot.so;rootfs
+vendor/lib/libchromatix_ov8858_preview.so;rootfs
+vendor/lib/libchromatix_ov8858_q8v19w_common.so;rootfs
+vendor/lib/libchromatix_ov8858_q8v19w_default_video.so;rootfs
+vendor/lib/libchromatix_ov8858_q8v19w_hfr_120fps.so;rootfs
+vendor/lib/libchromatix_ov8858_q8v19w_hfr_60fps.so;rootfs
+vendor/lib/libchromatix_ov8858_q8v19w_hfr_90fps.so;rootfs
+vendor/lib/libchromatix_ov8858_q8v19w_liveshot.so;rootfs
+vendor/lib/libchromatix_ov8858_q8v19w_preview.so;rootfs
+vendor/lib/libchromatix_ov8858_q8v19w_snapshot.so;rootfs
+vendor/lib/libchromatix_ov8858_q8v19w_video_nonHD.so;rootfs
+vendor/lib/libchromatix_ov8858_q8v19w_zsl.so;rootfs
+vendor/lib/libchromatix_ov8858_q8v19w_zsl_30.so;rootfs
+vendor/lib/libchromatix_ov8858_snapshot.so;rootfs
+vendor/lib/libchromatix_ov8865_q8v18a_common.so;rootfs
+vendor/lib/libchromatix_ov8865_q8v18a_default_video.so;rootfs
+vendor/lib/libchromatix_ov8865_q8v18a_hfr_120fps.so;rootfs
+vendor/lib/libchromatix_ov8865_q8v18a_hfr_60fps.so;rootfs
+vendor/lib/libchromatix_ov8865_q8v18a_hfr_90fps.so;rootfs
+vendor/lib/libchromatix_ov8865_q8v18a_liveshot.so;rootfs
+vendor/lib/libchromatix_ov8865_q8v18a_preview.so;rootfs
+vendor/lib/libchromatix_ov8865_q8v18a_snapshot.so;rootfs
+vendor/lib/libchromatix_ov8865_q8v18a_video_hd.so;rootfs
+vendor/lib/libchromatix_ov8865_q8v18a_zsl.so;rootfs
+vendor/lib/libchromatix_s5k3m2xm_common.so;rootfs
+vendor/lib/libchromatix_s5k3m2xm_default_video.so;rootfs
+vendor/lib/libchromatix_s5k3m2xm_hfr_120.so;rootfs
+vendor/lib/libchromatix_s5k3m2xm_hfr_60.so;rootfs
+vendor/lib/libchromatix_s5k3m2xm_hfr_90.so;rootfs
+vendor/lib/libchromatix_s5k3m2xm_liveshot.so;rootfs
+vendor/lib/libchromatix_s5k3m2xm_preview.so;rootfs
+vendor/lib/libchromatix_s5k3m2xm_snapshot.so;rootfs
+vendor/lib/libchromatix_skuab_shinetech_gc0339_common.so;rootfs
+vendor/lib/libchromatix_skuab_shinetech_gc0339_default_video.so;rootfs
+vendor/lib/libchromatix_skuab_shinetech_gc0339_liveshot.so;rootfs
+vendor/lib/libchromatix_skuab_shinetech_gc0339_preview.so;rootfs
+vendor/lib/libchromatix_skuab_shinetech_gc0339_snapshot.so;rootfs
+vendor/lib/libchromatix_skuab_shinetech_gc0339_zsl.so;rootfs
+vendor/lib/libchromatix_skuf_ov12830_p12v01c_common.so;rootfs
+vendor/lib/libchromatix_skuf_ov12830_p12v01c_default_video.so;rootfs
+vendor/lib/libchromatix_skuf_ov12830_p12v01c_hfr_120fps.so;rootfs
+vendor/lib/libchromatix_skuf_ov12830_p12v01c_hfr_60fps.so;rootfs
+vendor/lib/libchromatix_skuf_ov12830_p12v01c_hfr_90fps.so;rootfs
+vendor/lib/libchromatix_skuf_ov12830_p12v01c_preview.so;rootfs
+vendor/lib/libchromatix_skuf_ov12830_p12v01c_snapshot.so;rootfs
+vendor/lib/libchromatix_skuf_ov12830_p12v01c_video_hd.so;rootfs
+vendor/lib/libchromatix_skuf_ov12830_p12v01c_zsl.so;rootfs
+vendor/lib/libchromatix_skuf_ov5648_p5v23c_common.so;rootfs
+vendor/lib/libchromatix_skuf_ov5648_p5v23c_default_video.so;rootfs
+vendor/lib/libchromatix_skuf_ov5648_p5v23c_preview.so;rootfs
+vendor/lib/libchromatix_skuf_ov5648_p5v23c_snapshot.so;rootfs
+vendor/lib/libmmcamera2_c2d_module.so;rootfs
+vendor/lib/libmmcamera2_cpp_module.so;rootfs
+vendor/lib/libmmcamera2_frame_algorithm.so;rootfs
+vendor/lib/libmmcamera2_iface_modules.so;rootfs
+vendor/lib/libmmcamera2_imglib_modules.so;rootfs
+vendor/lib/libmmcamera2_is.so;rootfs
+vendor/lib/libmmcamera2_isp_modules.so;rootfs
+vendor/lib/libmmcamera2_pproc_modules.so;rootfs
+vendor/lib/libmmcamera2_q3a_core.so;rootfs
+vendor/lib/libmmcamera2_sensor_modules.so;rootfs
+vendor/lib/libmmcamera2_stats_algorithm.so;rootfs
+vendor/lib/libmmcamera2_stats_modules.so;rootfs
+vendor/lib/libmmcamera2_wnr_module.so;rootfs
+vendor/lib/libmmcamera_chromaflash_lib.so;rootfs
+vendor/lib/libmmcamera_dummyalgo.so;rootfs
+vendor/lib/libmmcamera_faceproc.so;rootfs
+vendor/lib/libmmcamera_hdr_gb_lib.so;rootfs
+vendor/lib/libmmcamera_hdr_lib.so;rootfs
+vendor/lib/libmmcamera_hi256.so;rootfs
+vendor/lib/libmmcamera_imglib.so;rootfs
+vendor/lib/libmmcamera_interface.so;rootfs
+vendor/lib/libmmcamera_optizoom_lib.so;rootfs
+vendor/lib/libmmcamera_ov8856kc.so;rootfs
+vendor/lib/libmmcamera_pdaf.so;rootfs
+vendor/lib/libmmcamera_pdafcamif.so;rootfs
+vendor/lib/libmmcamera_sunny_ov8856kc_eeprom.so;rootfs
+vendor/lib/libmmcamera_tintless_algo.so;rootfs
+vendor/lib/libmmcamera_tintless_bg_pca_algo.so;rootfs
+vendor/lib/libmmcamera_trueportrait_lib.so;rootfs
+vendor/lib/libmmcamera_truly_cm7700_eeprom.so;rootfs
+vendor/lib/libmmcamera_ubifocus_lib.so;rootfs
+vendor/lib/libmmcamera_wavelet_lib.so;rootfs
+vendor/lib/libjpegdhw.so;rootfs
+vendor/lib/libjpegehw.so;rootfs
+vendor/lib/libmmjpeg.so;rootfs
+vendor/lib/libmmjpeg_interface.so;rootfs
+vendor/lib/libmmqjpeg_codec.so;rootfs
+vendor/lib/libqomx_core.so;rootfs
+vendor/lib/libqomx_jpegdec.so;rootfs
+vendor/lib/libqomx_jpegenc.so;rootfs
+vendor/lib/libmm-qcamera.so;rootfs
+vendor/lib/liboemcamera.so;rootfs
+vendor/lib/vendor.qti.hardware.camera.device@1.0_vendor.so;rootfs
 
 # Camera firmware
-etc/firmware/cpp_firmware_v1_1_1.fw rootfs
-etc/firmware/cpp_firmware_v1_1_6.fw rootfs
-etc/firmware/cpp_firmware_v1_2_0.fw rootfs
-etc/firmware/cpp_firmware_v1_4_0.fw rootfs
+etc/firmware/cpp_firmware_v1_1_1.fw;rootfs
+etc/firmware/cpp_firmware_v1_1_6.fw;rootfs
+etc/firmware/cpp_firmware_v1_2_0.fw;rootfs
+etc/firmware/cpp_firmware_v1_4_0.fw;rootfs
 
 # DRM
-vendor/bin/qseecomd rootfs
-vendor/lib/libdrm.so rootfs
-vendor/lib/libdrmfs.so rootfs
-vendor/lib/libdrmtime.so rootfs
-vendor/lib/libdrmutils.so rootfs
-vendor/lib/libQSEEComAPI.so rootfs
-vendor/lib/librpmb.so rootfs
-vendor/lib/libssd.so rootfs
-vendor/lib/mediadrm/libdrmclearkeyplugin.so rootfs
-vendor/lib/libflp.so rootfs
+vendor/bin/qseecomd;rootfs
+vendor/lib/libdrm.so;rootfs
+vendor/lib/libdrmfs.so;rootfs
+vendor/lib/libdrmtime.so;rootfs
+vendor/lib/libdrmutils.so;rootfs
+vendor/lib/libQSEEComAPI.so;rootfs
+vendor/lib/librpmb.so;rootfs
+vendor/lib/libssd.so;rootfs
+vendor/lib/mediadrm/libdrmclearkeyplugin.so;rootfs
+vendor/lib/libflp.so;rootfs
 
 # GPS
-vendor/lib/libgeofence.so rootfs
-vendor/lib/libizat_client_api.so rootfs
-vendor/lib/libizat_core.so rootfs
-vendor/lib/liblbs_core.so rootfs
-vendor/lib/liblocation_api.so rootfs
-vendor/lib/liblocationservice.so rootfs
-vendor/lib/liblocationservice_glue.so rootfs
-vendor/lib/liblowi_client.so rootfs
-vendor/lib/liblowi_wifihal.so rootfs
-vendor/lib/libquipc_os_api.so rootfs
-vendor/lib/libulp2.so rootfs
-vendor/lib/libxtadapter.so rootfs
-vendor/lib/libxtwifi_ulp_adaptor.so rootfs
-vendor/lib/hw/vendor.qti.gnss@1.0-impl.so rootfs
-vendor/lib/libgnss.so rootfs
-vendor/lib/libgnsspps.so rootfs
-vendor/lib/libgps.utils.so rootfs
-vendor/lib/vendor.qti.gnss@1.0_vendor.so rootfs
-vendor/etc/flp.conf rootfs
-vendor/etc/izat.conf rootfs
-vendor/etc/sap.conf rootfs
-vendor/etc/gps.conf rootfs
+vendor/lib/libgeofence.so;rootfs
+vendor/lib/libizat_client_api.so;rootfs
+vendor/lib/libizat_core.so;rootfs
+vendor/lib/liblbs_core.so;rootfs
+vendor/lib/liblocation_api.so;rootfs
+vendor/lib/liblocationservice.so;rootfs
+vendor/lib/liblocationservice_glue.so;rootfs
+vendor/lib/liblowi_client.so;rootfs
+vendor/lib/liblowi_wifihal.so;rootfs
+vendor/lib/libquipc_os_api.so;rootfs
+vendor/lib/libulp2.so;rootfs
+vendor/lib/libxtadapter.so;rootfs
+vendor/lib/libxtwifi_ulp_adaptor.so;rootfs
+vendor/lib/hw/vendor.qti.gnss@1.0-impl.so;rootfs
+vendor/lib/libgnss.so;rootfs
+vendor/lib/libgnsspps.so;rootfs
+vendor/lib/libgps.utils.so;rootfs
+vendor/lib/vendor.qti.gnss@1.0_vendor.so;rootfs
+vendor/etc/flp.conf;rootfs
+vendor/etc/izat.conf;rootfs
+vendor/etc/sap.conf;rootfs
+vendor/etc/gps.conf;rootfs
 
 # OMX
-vendor/lib/libmmosal_proprietary.so rootfs
-vendor/lib/libmm-color-convertor.so rootfs
-vendor/lib/libI420colorconvert.so rootfs
-vendor/lib/libMpeg4SwEncoder.so rootfs
-vendor/lib/libOmxAacDec.so rootfs
-vendor/lib/libOmxAacEnc.so rootfs
-vendor/lib/libOmxAlacDecSw.so rootfs
-vendor/lib/libOmxAmrEnc.so rootfs
-vendor/lib/libOmxApeDecSw.so rootfs
-vendor/lib/libOmxCore.so rootfs
-vendor/lib/libOmxDsdDec.so rootfs
-vendor/lib/libOmxEvrcDec.so rootfs
-vendor/lib/libOmxEvrcEnc.so rootfs
-vendor/lib/libOmxG711Enc.so rootfs
-vendor/lib/libOmxQcelp13Dec.so rootfs
-vendor/lib/libOmxQcelp13Enc.so rootfs
-vendor/lib/libOmxSwVdec.so rootfs
-vendor/lib/libOmxSwVencMpeg4.so rootfs
-vendor/lib/libOmxVdec.so rootfs
-vendor/lib/libOmxVenc.so rootfs
-vendor/lib/libOmxVpp.so rootfs
-vendor/lib/libmm-omxcore.so rootfs
+vendor/lib/libmmosal_proprietary.so;rootfs
+vendor/lib/libmm-color-convertor.so;rootfs
+vendor/lib/libI420colorconvert.so;rootfs
+vendor/lib/libMpeg4SwEncoder.so;rootfs
+vendor/lib/libOmxAacDec.so;rootfs
+vendor/lib/libOmxAacEnc.so;rootfs
+vendor/lib/libOmxAlacDecSw.so;rootfs
+vendor/lib/libOmxAmrEnc.so;rootfs
+vendor/lib/libOmxApeDecSw.so;rootfs
+vendor/lib/libOmxCore.so;rootfs
+vendor/lib/libOmxDsdDec.so;rootfs
+vendor/lib/libOmxEvrcDec.so;rootfs
+vendor/lib/libOmxEvrcEnc.so;rootfs
+vendor/lib/libOmxG711Enc.so;rootfs
+vendor/lib/libOmxQcelp13Dec.so;rootfs
+vendor/lib/libOmxQcelp13Enc.so;rootfs
+vendor/lib/libOmxSwVdec.so;rootfs
+vendor/lib/libOmxSwVencMpeg4.so;rootfs
+vendor/lib/libOmxVdec.so;rootfs
+vendor/lib/libOmxVenc.so;rootfs
+vendor/lib/libOmxVpp.so;rootfs
+vendor/lib/libmm-omxcore.so;rootfs
 
 # Perf
-vendor/lib/libqti-iopd-client.so rootfs
-vendor/lib/libqti-perfd-client.so rootfs
-vendor/lib/libqti-perfd.so rootfs
-vendor/lib/libqti-util.so rootfs
-vendor/lib/libqtigef.so rootfs
-vendor/lib/vendor.qti.hardware.perf@1.0_vendor.so rootfs
-vendor/etc/perf/perfboostsconfig.xml  rootfs
+vendor/lib/libqti-iopd-client.so;rootfs
+vendor/lib/libqti-perfd-client.so;rootfs
+vendor/lib/libqti-perfd.so;rootfs
+vendor/lib/libqti-util.so;rootfs
+vendor/lib/libqtigef.so;rootfs
+vendor/lib/vendor.qti.hardware.perf@1.0_vendor.so;rootfs
+vendor/etc/perf/perfboostsconfig.xml ;rootfs
 
 # Qualcomm framework
-vendor/bin/irsc_util rootfs
-vendor/bin/pm-service rootfs
-vendor/lib/libdiag.so rootfs
-vendor/lib/libdiagjni.so rootfs
-vendor/lib/libdsi_netctrl.so rootfs
-vendor/lib/libdsutils.so rootfs
-vendor/lib/libidl.so rootfs
-vendor/lib/libqcci_legacy.so rootfs
-vendor/lib/libqdi.so rootfs
-vendor/lib/libqdp.so rootfs
-vendor/lib/libqmi.so rootfs
-vendor/lib/libqmi_cci.so rootfs
-vendor/lib/libqmi_client_helper.so rootfs
-vendor/lib/libqmi_client_qmux.so rootfs
-vendor/lib/libqmi_common_so.so rootfs
-vendor/lib/libqmi_csi.so rootfs
-vendor/lib/libqmi_encdec.so rootfs
-vendor/lib/libqmiservices.so rootfs
-vendor/lib/libsmemlog.so rootfs
-vendor/lib/libsubsystem_control.so rootfs
-vendor/etc/data/dsi_config.xml rootfs
-vendor/etc/data/netmgr_config.xml rootfs
-vendor/etc/data/qmi_config.xml rootfs
+vendor/bin/irsc_util;rootfs
+vendor/bin/pm-service;rootfs
+vendor/lib/libdiag.so;rootfs
+vendor/lib/libdiagjni.so;rootfs
+vendor/lib/libdsi_netctrl.so;rootfs
+vendor/lib/libdsutils.so;rootfs
+vendor/lib/libidl.so;rootfs
+vendor/lib/libqcci_legacy.so;rootfs
+vendor/lib/libqdi.so;rootfs
+vendor/lib/libqdp.so;rootfs
+vendor/lib/libqmi.so;rootfs
+vendor/lib/libqmi_cci.so;rootfs
+vendor/lib/libqmi_client_helper.so;rootfs
+vendor/lib/libqmi_client_qmux.so;rootfs
+vendor/lib/libqmi_common_so.so;rootfs
+vendor/lib/libqmi_csi.so;rootfs
+vendor/lib/libqmi_encdec.so;rootfs
+vendor/lib/libqmiservices.so;rootfs
+vendor/lib/libsmemlog.so;rootfs
+vendor/lib/libsubsystem_control.so;rootfs
+vendor/etc/data/dsi_config.xml;rootfs
+vendor/etc/data/netmgr_config.xml;rootfs
+vendor/etc/data/qmi_config.xml;rootfs
 
 # RIL/Radio
-vendor/bin/netmgrd rootfs
-vendor/bin/qmuxd rootfs
-vendor/rmt_storage rootfs
-vendor/lib/libconfigdb.so rootfs
-vendor/lib/libcneapiclient.so rootfs
-vendor/lib/libmdmdetect.so rootfs
-vendor/lib/libnetmgr.so rootfs
-vendor/lib/libril-qc-hal-qmi.so rootfs
-vendor/lib/libril-qc-ltedirectdisc.so rootfs
-vendor/lib/libril-qc-qmi-1.so rootfs
-vendor/lib/libril-qc-radioconfig.so rootfs
-vendor/lib/libril-qcril-hook-oem.so rootfs
-vendor/lib/libril.so rootfs
-vendor/lib/librilqmiservices.so rootfs
-vendor/lib/librilutils.so rootfs
-vendor/lib/libperipheral_client.so rootfs
-vendor/lib/libsystem_health_mon.so rootfs
-vendor/lib/libxml.so rootfs
-vendor/lib/vendor.qti.hardware.radio.am@1.0_vendor.so rootfs
-vendor/lib/vendor.qti.hardware.radio.atcmdfwd@1.0_vendor.so rootfs
-vendor/lib/vendor.qti.hardware.radio.ims@1.0_vendor.so rootfs
-vendor/lib/vendor.qti.hardware.radio.lpa@1.0_vendor.so rootfs
-vendor/lib/vendor.qti.hardware.radio.qcrilhook@1.0_vendor.so rootfs
-vendor/lib/vendor.qti.hardware.radio.qtiradio@1.0_vendor.so rootfs
-vendor/lib/vendor.qti.hardware.radio.uim@1.0_vendor.so rootfs
-vendor/lib/vendor.qti.hardware.radio.uim@1.1_vendor.so rootfs
-vendor/lib/vendor.qti.hardware.radio.uim_remote_client@1.0_vendor.so rootfs
-vendor/lib/vendor.qti.hardware.radio.uim_remote_server@1.0_vendor.so rootfs
-vendor/lib/libreference-ril.so rootfs
-vendor/lib/libqcrilFramework.so rootfs
+vendor/bin/netmgrd;rootfs
+vendor/bin/qmuxd;rootfs
+vendor/rmt_storage;rootfs
+vendor/lib/libconfigdb.so;rootfs
+vendor/lib/libcneapiclient.so;rootfs
+vendor/lib/libmdmdetect.so;rootfs
+vendor/lib/libnetmgr.so;rootfs
+vendor/lib/libril-qc-hal-qmi.so;rootfs
+vendor/lib/libril-qc-ltedirectdisc.so;rootfs
+vendor/lib/libril-qc-qmi-1.so;rootfs
+vendor/lib/libril-qc-radioconfig.so;rootfs
+vendor/lib/libril-qcril-hook-oem.so;rootfs
+vendor/lib/libril.so;rootfs
+vendor/lib/librilqmiservices.so;rootfs
+vendor/lib/librilutils.so;rootfs
+vendor/lib/libperipheral_client.so;rootfs
+vendor/lib/libsystem_health_mon.so;rootfs
+vendor/lib/libxml.so;rootfs
+vendor/lib/vendor.qti.hardware.radio.am@1.0_vendor.so;rootfs
+vendor/lib/vendor.qti.hardware.radio.atcmdfwd@1.0_vendor.so;rootfs
+vendor/lib/vendor.qti.hardware.radio.ims@1.0_vendor.so;rootfs
+vendor/lib/vendor.qti.hardware.radio.lpa@1.0_vendor.so;rootfs
+vendor/lib/vendor.qti.hardware.radio.qcrilhook@1.0_vendor.so;rootfs
+vendor/lib/vendor.qti.hardware.radio.qtiradio@1.0_vendor.so;rootfs
+vendor/lib/vendor.qti.hardware.radio.uim@1.0_vendor.so;rootfs
+vendor/lib/vendor.qti.hardware.radio.uim@1.1_vendor.so;rootfs
+vendor/lib/vendor.qti.hardware.radio.uim_remote_client@1.0_vendor.so;rootfs
+vendor/lib/vendor.qti.hardware.radio.uim_remote_server@1.0_vendor.so;rootfs
+vendor/lib/libreference-ril.so;rootfs
+vendor/lib/libqcrilFramework.so;rootfs
 
 # Sensors
-vendor/lib/hw/vendor.kyocera.hardware.sensors@1.0-impl.so rootfs
-vendor/lib/libsensors_utils.so rootfs
-vendor/lib/sensors.kc.so rootfs
-vendor/lib/vendor.kyocera.hardware.sensors@1.0_vendor.so rootfs
+vendor/lib/hw/vendor.kyocera.hardware.sensors@1.0-impl.so;rootfs
+vendor/lib/libsensors_utils.so;rootfs
+vendor/lib/sensors.kc.so;rootfs
+vendor/lib/vendor.kyocera.hardware.sensors@1.0_vendor.so;rootfs
 
 # Thermal
-vendor/bin/thermal-engine rootfs
-vendor/lib/hw/vendor.kyocera.hardware.thermalmonitor@1.0-impl.so rootfs
-vendor/lib/libthermalclient.so rootfs
-vendor/lib/libthermalioctl.so rootfs
+vendor/bin/thermal-engine;rootfs
+vendor/lib/hw/vendor.kyocera.hardware.thermalmonitor@1.0-impl.so;rootfs
+vendor/lib/libthermalclient.so;rootfs
+vendor/lib/libthermalioctl.so;rootfs
 
 # Time services
-vendor/app/TimeService/TimeService.apk rootfs
-vendor/bin/time_daemon rootfs
-vendor/lib/libtime_genoff.so rootfs
+vendor/app/TimeService/TimeService.apk;rootfs
+vendor/bin/time_daemon;rootfs
+vendor/lib/libtime_genoff.so;rootfs
 
 # ANT+
-vendor/lib/com.qualcomm.qti.ant@1.0_vendor.so rootfs
-vendor/lib/hw/com.qualcomm.qti.ant@1.0-impl.so rootfs
+vendor/lib/com.qualcomm.qti.ant@1.0_vendor.so;rootfs
+vendor/lib/hw/com.qualcomm.qti.ant@1.0-impl.so;rootfs
 
 # Bluetooth
-vendor/lib/com.qualcomm.qti.bluetooth_audio@1.0_vendor.so rootfs
-etc/bluetooth/bt_did.conf rootfs
-etc/bluetooth/bt_profile.conf rootfs
-etc/bluetooth/bt_stack.conf rootfs
-etc/bluetooth/interop_database.conf rootfs
+vendor/lib/com.qualcomm.qti.bluetooth_audio@1.0_vendor.so;rootfs
+etc/bluetooth/bt_did.conf;rootfs
+etc/bluetooth/bt_profile.conf;rootfs
+etc/bluetooth/bt_stack.conf;rootfs
+etc/bluetooth/interop_database.conf;rootfs
 
 # DPM
-vendor/lib/com.qualcomm.qti.dpm.api@1.0_vendor.so rootfs
-etc/dpm/dpm.conf rootfs
-etc/dpm/nsrm/NsrmConfiguration.xml rootfs
+vendor/lib/com.qualcomm.qti.dpm.api@1.0_vendor.so;rootfs
+etc/dpm/dpm.conf;rootfs
+etc/dpm/nsrm/NsrmConfiguration.xml;rootfs
 
 # Wi-Fi Display?
-vendor/lib/com.qualcomm.qti.wifidisplayhal@1.0-impl.so rootfs
-vendor/lib/com.qualcomm.qti.wifidisplayhal@1.0_vendor.so rootfs
+vendor/lib/com.qualcomm.qti.wifidisplayhal@1.0-impl.so;rootfs
+vendor/lib/com.qualcomm.qti.wifidisplayhal@1.0_vendor.so;rootfs
 
 # Qualcomm CnE Connectivity Engine
-vendor/lib/com.quicinc.cne.api@1.0.so rootfs
-vendor/lib/com.quicinc.cne.constants@1.0.so rootfs
-vendor/lib/com.quicinc.cne.constants@2.0.so rootfs
-vendor/lib/com.quicinc.cne.server@1.0.so rootfs
-vendor/lib/com.quicinc.cne.server@2.0.so rootfs
-vendor/lib/libcne.so rootfs
-vendor/lib/libcneoplookup.so rootfs
-vendor/lib/libcneqmiutils.so rootfs
-etc/cne/SwimConfig.xml rootfs
-etc/cne/andsfCne.xml rootfs
-vendor/etc/cne/wqeclient/ATT/ATT_profile1.xml rootfs
-vendor/etc/cne/wqeclient/ATT/ATT_profile2.xml rootfs
-vendor/etc/cne/wqeclient/ATT/ATT_profile3.xml rootfs
-vendor/etc/cne/wqeclient/ATT/ATT_profile4.xml rootfs
-vendor/etc/cne/wqeclient/ATT/ATT_profile5.xml rootfs
-vendor/etc/cne/wqeclient/ATT/ATT_profile6.xml rootfs
-vendor/etc/cne/wqeclient/ROW/ROW_profile1.xml rootfs
-vendor/etc/cne/wqeclient/ROW/ROW_profile15.xml rootfs
-vendor/etc/cne/wqeclient/ROW/ROW_profile16.xml rootfs
-vendor/etc/cne/wqeclient/ROW/ROW_profile17.xml rootfs
-vendor/etc/cne/wqeclient/ROW/ROW_profile18.xml rootfs
-vendor/etc/cne/wqeclient/ROW/ROW_profile19.xml rootfs
-vendor/etc/cne/wqeclient/ROW/ROW_profile2.xml rootfs
-vendor/etc/cne/wqeclient/ROW/ROW_profile20.xml rootfs
-vendor/etc/cne/wqeclient/ROW/ROW_profile21.xml rootfs
-vendor/etc/cne/wqeclient/ROW/ROW_profile3.xml rootfs
-vendor/etc/cne/wqeclient/ROW/ROW_profile32.xml rootfs
-vendor/etc/cne/wqeclient/ROW/ROW_profile4.xml rootfs
-vendor/etc/cne/wqeclient/ROW/ROW_profile5.xml rootfs
-vendor/etc/cne/wqeclient/ROW/ROW_profile6.xml rootfs
-vendor/etc/cne/wqeclient/ROW/ROW_profile7.xml rootfs
-vendor/etc/cne/wqeclient/VZW/VZW_profile1.xml rootfs
-vendor/etc/cne/wqeclient/VZW/VZW_profile2.xml rootfs
-vendor/etc/cne/wqeclient/VZW/VZW_profile3.xml rootfs
-vendor/etc/cne/wqeclient/VZW/VZW_profile4.xml rootfs
-vendor/etc/cne/wqeclient/VZW/VZW_profile5.xml rootfs
-vendor/etc/cne/wqeclient/VZW/VZW_profile6.xml rootfs
+vendor/lib/com.quicinc.cne.api@1.0.so;rootfs
+vendor/lib/com.quicinc.cne.constants@1.0.so;rootfs
+vendor/lib/com.quicinc.cne.constants@2.0.so;rootfs
+vendor/lib/com.quicinc.cne.server@1.0.so;rootfs
+vendor/lib/com.quicinc.cne.server@2.0.so;rootfs
+vendor/lib/libcne.so;rootfs
+vendor/lib/libcneoplookup.so;rootfs
+vendor/lib/libcneqmiutils.so;rootfs
+etc/cne/SwimConfig.xml;rootfs
+etc/cne/andsfCne.xml;rootfs
+vendor/etc/cne/wqeclient/ATT/ATT_profile1.xml;rootfs
+vendor/etc/cne/wqeclient/ATT/ATT_profile2.xml;rootfs
+vendor/etc/cne/wqeclient/ATT/ATT_profile3.xml;rootfs
+vendor/etc/cne/wqeclient/ATT/ATT_profile4.xml;rootfs
+vendor/etc/cne/wqeclient/ATT/ATT_profile5.xml;rootfs
+vendor/etc/cne/wqeclient/ATT/ATT_profile6.xml;rootfs
+vendor/etc/cne/wqeclient/ROW/ROW_profile1.xml;rootfs
+vendor/etc/cne/wqeclient/ROW/ROW_profile15.xml;rootfs
+vendor/etc/cne/wqeclient/ROW/ROW_profile16.xml;rootfs
+vendor/etc/cne/wqeclient/ROW/ROW_profile17.xml;rootfs
+vendor/etc/cne/wqeclient/ROW/ROW_profile18.xml;rootfs
+vendor/etc/cne/wqeclient/ROW/ROW_profile19.xml;rootfs
+vendor/etc/cne/wqeclient/ROW/ROW_profile2.xml;rootfs
+vendor/etc/cne/wqeclient/ROW/ROW_profile20.xml;rootfs
+vendor/etc/cne/wqeclient/ROW/ROW_profile21.xml;rootfs
+vendor/etc/cne/wqeclient/ROW/ROW_profile3.xml;rootfs
+vendor/etc/cne/wqeclient/ROW/ROW_profile32.xml;rootfs
+vendor/etc/cne/wqeclient/ROW/ROW_profile4.xml;rootfs
+vendor/etc/cne/wqeclient/ROW/ROW_profile5.xml;rootfs
+vendor/etc/cne/wqeclient/ROW/ROW_profile6.xml;rootfs
+vendor/etc/cne/wqeclient/ROW/ROW_profile7.xml;rootfs
+vendor/etc/cne/wqeclient/VZW/VZW_profile1.xml;rootfs
+vendor/etc/cne/wqeclient/VZW/VZW_profile2.xml;rootfs
+vendor/etc/cne/wqeclient/VZW/VZW_profile3.xml;rootfs
+vendor/etc/cne/wqeclient/VZW/VZW_profile4.xml;rootfs
+vendor/etc/cne/wqeclient/VZW/VZW_profile5.xml;rootfs
+vendor/etc/cne/wqeclient/VZW/VZW_profile6.xml;rootfs
 
 # Audio
-vendor/lib/hw/audio.primary.default.so rootfs
-vendor/lib/hw/audio.primary.msm8909.so rootfs
-vendor/lib/hw/audio.r_submix.default.so rootfs
-vendor/lib/hw/audio.usb.default.so rootfs
-vendor/lib/libaudio_diag.so rootfs
-vendor/lib/libaudioalsa.so rootfs
-vendor/lib/libaudioUsbAlert.so rootfs
-vendor/lib/libwebrtc_audio_preprocessing.so rootfs
-vendor/lib/soundfx/libaudiopreprocessing.so rootfs
-vendor/lib/soundfx/libbundlewrapper.so rootfs
-vendor/lib/soundfx/libdownmix.so rootfs
-vendor/lib/soundfx/libeffectproxy.so rootfs
-vendor/lib/soundfx/libldnhncr.so rootfs
-vendor/lib/soundfx/libqcbassboost.so rootfs
-vendor/lib/soundfx/libqcompostprocbundle.so rootfs
-vendor/lib/soundfx/libqcomvisualizer.so rootfs
-vendor/lib/soundfx/libqcomvoiceprocessing.so rootfs
-vendor/lib/soundfx/libqcreverb.so rootfs
-vendor/lib/soundfx/libqcvirt.so rootfs
-vendor/lib/soundfx/libreverbwrapper.so rootfs
-vendor/lib/soundfx/libvisualizer.so rootfs
-vendor/lib/libalsautils.so rootfs
-vendor/lib/libaudcal.so rootfs
-vendor/lib/libacdb-fts.so rootfs
-vendor/lib/libacdbloader.so rootfs
-vendor/lib/libacdbmapper.so rootfs
-vendor/lib/libacdbrtac.so rootfs
-vendor/lib/libadiertac.so rootfs
-vendor/etc/acdbdata/MTP/MTP_Bluetooth_cal.acdb rootfs
-vendor/etc/acdbdata/MTP/MTP_General_cal.acdb rootfs
-vendor/etc/acdbdata/MTP/MTP_Global_cal.acdb rootfs
-vendor/etc/acdbdata/MTP/MTP_Handset_cal.acdb rootfs
-vendor/etc/acdbdata/MTP/MTP_Hdmi_cal.acdb rootfs
-vendor/etc/acdbdata/MTP/MTP_Headset_cal.acdb rootfs
-vendor/etc/acdbdata/MTP/MTP_Speaker_cal.acdb rootfs
-vendor/etc/acdbdata/MTP/MTP_workspaceFile.qwsp rootfs
-vendor/etc/acdbdata/QRD/QRD_Bluetooth_cal.acdb rootfs
-vendor/etc/acdbdata/QRD/QRD_General_cal.acdb rootfs
-vendor/etc/acdbdata/QRD/QRD_Global_cal.acdb rootfs
-vendor/etc/acdbdata/QRD/QRD_Handset_cal.acdb rootfs
-vendor/etc/acdbdata/QRD/QRD_Hdmi_cal.acdb rootfs
-vendor/etc/acdbdata/QRD/QRD_Headset_cal.acdb rootfs
-vendor/etc/acdbdata/QRD/QRD_Speaker_cal.acdb rootfs
-vendor/etc/acdbdata/QRD/QRD_workspaceFile.qwsp rootfs
-vendor/lib/libdrc.so rootfs
-vendor/etc/drc/drc_cfg_5.1.txt rootfs
-vendor/etc/drc/drc_cfg_AZ.txt rootfs
+vendor/lib/hw/audio.primary.default.so;rootfs
+vendor/lib/hw/audio.primary.msm8909.so;rootfs
+vendor/lib/hw/audio.r_submix.default.so;rootfs
+vendor/lib/hw/audio.usb.default.so;rootfs
+vendor/lib/libaudio_diag.so;rootfs
+vendor/lib/libaudioalsa.so;rootfs
+vendor/lib/libaudioUsbAlert.so;rootfs
+vendor/lib/libwebrtc_audio_preprocessing.so;rootfs
+vendor/lib/soundfx/libaudiopreprocessing.so;rootfs
+vendor/lib/soundfx/libbundlewrapper.so;rootfs
+vendor/lib/soundfx/libdownmix.so;rootfs
+vendor/lib/soundfx/libeffectproxy.so;rootfs
+vendor/lib/soundfx/libldnhncr.so;rootfs
+vendor/lib/soundfx/libqcbassboost.so;rootfs
+vendor/lib/soundfx/libqcompostprocbundle.so;rootfs
+vendor/lib/soundfx/libqcomvisualizer.so;rootfs
+vendor/lib/soundfx/libqcomvoiceprocessing.so;rootfs
+vendor/lib/soundfx/libqcreverb.so;rootfs
+vendor/lib/soundfx/libqcvirt.so;rootfs
+vendor/lib/soundfx/libreverbwrapper.so;rootfs
+vendor/lib/soundfx/libvisualizer.so;rootfs
+vendor/lib/libalsautils.so;rootfs
+vendor/lib/libaudcal.so;rootfs
+vendor/lib/libacdb-fts.so;rootfs
+vendor/lib/libacdbloader.so;rootfs
+vendor/lib/libacdbmapper.so;rootfs
+vendor/lib/libacdbrtac.so;rootfs
+vendor/lib/libadiertac.so;rootfs
+vendor/etc/acdbdata/MTP/MTP_Bluetooth_cal.acdb;rootfs
+vendor/etc/acdbdata/MTP/MTP_General_cal.acdb;rootfs
+vendor/etc/acdbdata/MTP/MTP_Global_cal.acdb;rootfs
+vendor/etc/acdbdata/MTP/MTP_Handset_cal.acdb;rootfs
+vendor/etc/acdbdata/MTP/MTP_Hdmi_cal.acdb;rootfs
+vendor/etc/acdbdata/MTP/MTP_Headset_cal.acdb;rootfs
+vendor/etc/acdbdata/MTP/MTP_Speaker_cal.acdb;rootfs
+vendor/etc/acdbdata/MTP/MTP_workspaceFile.qwsp;rootfs
+vendor/etc/acdbdata/QRD/QRD_Bluetooth_cal.acdb;rootfs
+vendor/etc/acdbdata/QRD/QRD_General_cal.acdb;rootfs
+vendor/etc/acdbdata/QRD/QRD_Global_cal.acdb;rootfs
+vendor/etc/acdbdata/QRD/QRD_Handset_cal.acdb;rootfs
+vendor/etc/acdbdata/QRD/QRD_Hdmi_cal.acdb;rootfs
+vendor/etc/acdbdata/QRD/QRD_Headset_cal.acdb;rootfs
+vendor/etc/acdbdata/QRD/QRD_Speaker_cal.acdb;rootfs
+vendor/etc/acdbdata/QRD/QRD_workspaceFile.qwsp;rootfs
+vendor/lib/libdrc.so;rootfs
+vendor/etc/drc/drc_cfg_5.1.txt;rootfs
+vendor/etc/drc/drc_cfg_AZ.txt;rootfs
 
 # MSM8909 (Snapdraon 210)-specific blobs
-vendor/lib/hw/gatekeeper.msm8909.so rootfs
-vendor/lib/hw/gralloc.default.so rootfs
-vendor/lib/hw/gralloc.msm8909.so rootfs
-vendor/lib/hw/hwcomposer.msm8909.so rootfs
-vendor/lib/hw/keystore.msm8909.so rootfs
-vendor/lib/hw/local_time.default.so rootfs
-vendor/lib/hw/memtrack.msm8909.so rootfs
-vendor/lib/hw/power.default.so rootfs
-vendor/lib/hw/power.qcom.so rootfs
+vendor/lib/hw/gatekeeper.msm8909.so;rootfs
+vendor/lib/hw/gralloc.default.so;rootfs
+vendor/lib/hw/gralloc.msm8909.so;rootfs
+vendor/lib/hw/hwcomposer.msm8909.so;rootfs
+vendor/lib/hw/keystore.msm8909.so;rootfs
+vendor/lib/hw/local_time.default.so;rootfs
+vendor/lib/hw/memtrack.msm8909.so;rootfs
+vendor/lib/hw/power.default.so;rootfs
+vendor/lib/hw/power.qcom.so;rootfs
 
 # Kyocera-specific blobs
-vendor/bin/irda_diag rootfs
-vendor/lib/hw/vendor.kyocera.hardware.irda@1.0-impl.so rootfs
-vendor/lib/hw/vendor.kyocera.hardware.kcjprop@1.0-impl.so rootfs
-vendor/lib/hw/vendor.kyocera.hardware.kclight@1.0-impl.so rootfs
-vendor/lib/hw/vendor.kyocera.hardware.qalog@1.0-impl.so rootfs
-vendor/app/IrDATransfer/IrDATransfer.apk rootfs
+vendor/bin/irda_diag;rootfs
+vendor/lib/hw/vendor.kyocera.hardware.irda@1.0-impl.so;rootfs
+vendor/lib/hw/vendor.kyocera.hardware.kcjprop@1.0-impl.so;rootfs
+vendor/lib/hw/vendor.kyocera.hardware.kclight@1.0-impl.so;rootfs
+vendor/lib/hw/vendor.kyocera.hardware.qalog@1.0-impl.so;rootfs
+vendor/app/IrDATransfer/IrDATransfer.apk;rootfs
 
 # Power
-vendor/lib/hw/vendor.qti.esepowermanager@1.0-impl.so rootfs
-vendor/lib/hw/vendor.kyocera.hardware.powersupply@1.0-impl.so rootfs
+vendor/lib/hw/vendor.qti.esepowermanager@1.0-impl.so;rootfs
+vendor/lib/hw/vendor.kyocera.hardware.powersupply@1.0-impl.so;rootfs
 
 # Security
-vendor/lib/libQTEEConnector_vendor.so rootfs
+vendor/lib/libQTEEConnector_vendor.so;rootfs
 
 # Hardware
-vendor/lib/hw/vendor.qti.hardware.fm@1.0-impl.so rootfs
-vendor/lib/hw/vendor.qti.hardware.iop@1.0-impl.so rootfs
-vendor/lib/hw/vendor.qti.hardware.qteeconnector@1.0-impl.so rootfs
+vendor/lib/hw/vendor.qti.hardware.fm@1.0-impl.so;rootfs
+vendor/lib/hw/vendor.qti.hardware.iop@1.0-impl.so;rootfs
+vendor/lib/hw/vendor.qti.hardware.qteeconnector@1.0-impl.so;rootfs
 
 # Vibrator
-vendor/lib/hw/vibrator.default.so rootfs
+vendor/lib/hw/vibrator.default.so;rootfs
 
 # Codecs
-vendor/lib/libAlacSwDec.so rootfs
-vendor/lib/libApeSwDec.so rootfs
-vendor/lib/libFlacSwDec.so rootfs
-vendor/lib/libadpcmdec.so rootfs
-vendor/lib/libmediacodecservice.so rootfs
+vendor/lib/libAlacSwDec.so;rootfs
+vendor/lib/libApeSwDec.so;rootfs
+vendor/lib/libFlacSwDec.so;rootfs
+vendor/lib/libadpcmdec.so;rootfs
+vendor/lib/libmediacodecservice.so;rootfs
 
 # Venus firmware
-firmware/image/venus.b00 rootfs
-firmware/image/venus.b01 rootfs
-firmware/image/venus.b02 rootfs
-firmware/image/venus.b03 rootfs
-firmware/image/venus.b04 rootfs
-firmware/image/venus.mdt rootfs
+firmware/image/venus.b00;rootfs
+firmware/image/venus.b01;rootfs
+firmware/image/venus.b02;rootfs
+firmware/image/venus.b03;rootfs
+firmware/image/venus.b04;rootfs
+firmware/image/venus.mdt;rootfs
 
 # Graphics (Adreno 305)
 etc/firmware/a300_pfp.fw
 etc/firmware/a300_pm4.fw
-vendor/lib/egl/eglsubAndroid.so rootfs
-vendor/lib/egl/libEGL_adreno.so rootfs
-vendor/lib/egl/libGLESv1_CM_adreno.so rootfs
-vendor/lib/egl/libGLESv2_adreno.so rootfs
-vendor/lib/egl/libq3dtools_adreno.so rootfs
-vendor/lib/libC2D2.so rootfs
-vendor/lib/libCB.so rootfs
-vendor/lib/libOpenCL.so rootfs
-vendor/lib/libRSDriver_adreno.so rootfs
-vendor/lib/libadreno_utils.so rootfs
-vendor/lib/librs_adreno.so rootfs
-vendor/lib/librs_adreno_sha1.so rootfs
-vendor/lib/libgpu_tonemapper.so rootfs
-vendor/lib/libllvm-qcom.so rootfs
-vendor/lib/libgsl.so rootfs
-vendor/lib/libsc-a2xx.so rootfs
-vendor/lib/libsc-a3xx.so rootfs
+vendor/lib/egl/eglsubAndroid.so;rootfs
+vendor/lib/egl/libEGL_adreno.so;rootfs
+vendor/lib/egl/libGLESv1_CM_adreno.so;rootfs
+vendor/lib/egl/libGLESv2_adreno.so;rootfs
+vendor/lib/egl/libq3dtools_adreno.so;rootfs
+vendor/lib/libC2D2.so;rootfs
+vendor/lib/libCB.so;rootfs
+vendor/lib/libOpenCL.so;rootfs
+vendor/lib/libRSDriver_adreno.so;rootfs
+vendor/lib/libadreno_utils.so;rootfs
+vendor/lib/librs_adreno.so;rootfs
+vendor/lib/librs_adreno_sha1.so;rootfs
+vendor/lib/libgpu_tonemapper.so;rootfs
+vendor/lib/libllvm-qcom.so;rootfs
+vendor/lib/libgsl.so;rootfs
+vendor/lib/libsc-a2xx.so;rootfs
+vendor/lib/libsc-a3xx.so;rootfs
 
 # Digital TV
-vendor/bin/dtvtuner_diag rootfs
-vendor/lib/libdtvtuner.so rootfs
-vendor/lib/vendor.kyocera.hardware.dtvtuner@1.0_vendor.so rootfs
+vendor/bin/dtvtuner_diag;rootfs
+vendor/lib/libdtvtuner.so;rootfs
+vendor/lib/vendor.kyocera.hardware.dtvtuner@1.0_vendor.so;rootfs
 
 # ADSP
-vendor/lib/libadsp_default_listener.so rootfs
-vendor/lib/libadsprpc.so rootfs
-vendor/lib/rfsa/adsp/libapps_mem_heap.so rootfs
-vendor/lib/rfsa/adsp/libdspCV_skel.so rootfs
-vendor/lib/rfsa/adsp/libfastcvadsp.so rootfs
-vendor/lib/rfsa/adsp/libfastcvadsp_skel.so rootfs
-vendor/bin/adsprpcd rootfs
+vendor/lib/libadsp_default_listener.so;rootfs
+vendor/lib/libadsprpc.so;rootfs
+vendor/lib/rfsa/adsp/libapps_mem_heap.so;rootfs
+vendor/lib/rfsa/adsp/libdspCV_skel.so;rootfs
+vendor/lib/rfsa/adsp/libfastcvadsp.so;rootfs
+vendor/lib/rfsa/adsp/libfastcvadsp_skel.so;rootfs
+vendor/bin/adsprpcd;rootfs
 
 # Battery
-vendor/bin/vm_bms rootfs
+vendor/bin/vm_bms;rootfs
 
 # Bluetooth
-vendor/bin/btnvtool rootfs
-vendor/bin/bluetooth_diag rootfs
-vendor/bin/hci_qcomm_init rootfs
-vendor/lib/libbt-vendor.so rootfs
-vendor/lib/libbthost_if.so rootfs
-vendor/lib/libbtnv.so rootfs
-vendor/lib/libbt-hidlclient.so rootfs
+vendor/bin/btnvtool;rootfs
+vendor/bin/bluetooth_diag;rootfs
+vendor/bin/hci_qcomm_init;rootfs
+vendor/lib/libbt-vendor.so;rootfs
+vendor/lib/libbthost_if.so;rootfs
+vendor/lib/libbtnv.so;rootfs
+vendor/lib/libbt-hidlclient.so;rootfs
 
 # HDCP
-vendor/lib/libhdcp1prov.so rootfs
-vendor/lib/libhdcp2p2prov.so rootfs
-vendor/lib/libmm-hdcpmgr.so rootfs
+vendor/lib/libhdcp1prov.so;rootfs
+vendor/lib/libhdcp2p2prov.so;rootfs
+vendor/lib/libmm-hdcpmgr.so;rootfs
 
 # Uncategorized/Varied/Unknown
-vendor/lib/libalarmservice_jni.so rootfs
-vendor/lib/libavservices_minijail_vendor.so rootfs
-vendor/lib/libbccQTI.so rootfs
-vendor/lib/libc2d30-a3xx.so rootfs
-vendor/lib/libc2d30-a4xx.so rootfs
-vendor/lib/libc2d30-a5xx.so rootfs
-vendor/lib/libc2dcolorconvert.so rootfs
-vendor/lib/libcdsprpc.so rootfs
-vendor/lib/libchromaflash.so rootfs
-vendor/lib/libdataitems.so rootfs
-vendor/lib/libdme_main.so rootfs
-vendor/lib/libdpmqmihal.so rootfs
-vendor/lib/libdrplugin_client.so rootfs
-vendor/lib/libdsd2pcm.so rootfs
-vendor/lib/libeffects.so rootfs
-vendor/lib/libevent_observer.so rootfs
-vendor/lib/libfastcrc.so rootfs
-vendor/lib/libfastcvadsp_stub.so rootfs
-vendor/lib/libfastcvopt.so rootfs
-vendor/lib/libfeedbackhandler.so rootfs
-vendor/lib/libgdtap.so rootfs
-vendor/lib/libgrallocutils.so rootfs
-vendor/lib/libhdr_tm.so rootfs
-vendor/lib/libhwc2on1adapter.so rootfs
-vendor/lib/libhwminijail.so rootfs
-vendor/lib/libhypv_intercept.so rootfs
-vendor/lib/libjson.so rootfs
-vendor/lib/libkeymasterdeviceutils.so rootfs
-vendor/lib/libkeymasterprovision.so rootfs
-vendor/lib/libkeymasterutils.so rootfs
-vendor/lib/libloc_api_v02.so rootfs
-vendor/lib/libloc_core.so rootfs
-vendor/lib/libloc_ds_api.so rootfs
-vendor/lib/libloc_externalDr.so rootfs
-vendor/lib/libloc_pla.so rootfs
-vendor/lib/libloc_stub.so rootfs
-vendor/lib/liblqe.so rootfs
-vendor/lib/libmdsprpc.so rootfs
-vendor/lib/libminijail_vendor.so rootfs
-vendor/lib/libmmipl.so rootfs
-vendor/lib/libnbaio_mono.so rootfs
-vendor/lib/liboemaids_vendor.so rootfs
-vendor/lib/liboptizoom.so rootfs
-vendor/lib/libpdmapper.so rootfs
-vendor/lib/libpdnotifier.so rootfs
-vendor/lib/libperfgluelayer.so rootfs
-vendor/lib/libpredtm.so rootfs
-vendor/lib/libpredtm_hw.so rootfs
-vendor/lib/libqalog.so rootfs
-vendor/lib/libqcmaputils.so rootfs
-vendor/lib/libqdMetaData.so rootfs
-vendor/lib/libqdutils.so rootfs
-vendor/lib/libqisl.so rootfs
-vendor/lib/libqservice.so rootfs
-vendor/lib/libqvrservice_client.so rootfs
-vendor/lib/librecovery_updater_msm.so rootfs
-vendor/lib/librmnetctl.so rootfs
-vendor/lib/libscalar.so rootfs
-vendor/lib/libsdm-color.so rootfs
-vendor/lib/libsdm-disp-vndapis.so rootfs
-vendor/lib/libsdmcore.so rootfs
-vendor/lib/libsdmextension.so rootfs
-vendor/lib/libsdmutils.so rootfs
-vendor/lib/libsdsprpc.so rootfs
-vendor/lib/libsecureui.so rootfs
-vendor/lib/libsecureui_svcsock.so rootfs
-vendor/lib/libselinux_vendor.so rootfs
-vendor/lib/libsettings.so rootfs
-vendor/lib/libstagefrighthw.so rootfs
-vendor/lib/libstreamparser.so rootfs
-vendor/lib/libsurround_3mic_proc.so rootfs
-vendor/lib/libswvdec.so rootfs
-vendor/lib/libtinycompress_vendor.so rootfs
-vendor/lib/libtinyxml.so rootfs
-vendor/lib/libtinyxml2_1.so rootfs
-vendor/lib/libtrueportrait.so rootfs
-vendor/lib/libubifocus.so rootfs
-vendor/lib/libvideoutils.so rootfs
-vendor/lib/libvpplibrary.so rootfs
-vendor/lib/libvpptestutils.so rootfs
-vendor/lib/libvqzip.so rootfs
-vendor/lib/libwms.so rootfs
-vendor/lib/libwqe.so rootfs
-vendor/lib/mediacas/libclearkeycasplugin.so rootfs
-vendor/lib/modules/pronto/pronto_wlan.ko rootfs
-vendor/lib/vendor.display.config@1.0_vendor.so rootfs
-vendor/lib/vendor.display.config@1.1_vendor.so rootfs
-vendor/lib/vendor.qti.esepowermanager@1.0_vendor.so rootfs
-vendor/lib/vendor.qti.hardware.alarm@1.0.so rootfs
-vendor/lib/vendor.qti.hardware.data.latency@1.0_vendor.so rootfs
-vendor/lib/vendor.qti.hardware.fm@1.0_vendor.so rootfs
-vendor/lib/vendor.qti.hardware.iop@1.0_vendor.so rootfs
-vendor/lib/vendor.qti.hardware.iop@2.0_vendor.so rootfs
-vendor/lib/vendor.qti.hardware.limits@1.0_vendor.so rootfs
-vendor/lib/vendor.qti.hardware.qdutils_disp@1.0_vendor.so rootfs
-vendor/lib/vendor.qti.hardware.qteeconnector@1.0_vendor.so rootfs
-vendor/lib/vendor.qti.hardware.seccam@1.0_vendor.so rootfs
-vendor/lib/vendor.qti.hardware.tui_comm@1.0_vendor.so rootfs
-vendor/lib/vendor.qti.hardware.vpp@1.1_vendor.so rootfs
-vendor/lib/vendor.qti.voiceprint@1.0.so rootfs
-vendor/lib/libCipo_ae.so rootfs
-vendor/lib/libCipo_awb.so rootfs
-vendor/lib/libDRPlugin.so rootfs
-vendor/lib/libGPTEE_vendor.so rootfs
-vendor/lib/libGPreqcancel.so rootfs
-vendor/lib/libGPreqcancel_svc.so rootfs
-vendor/lib/libSecureUILib.so rootfs
-vendor/lib/libStDrvInt.so rootfs
-vendor/lib/libSubSystemShutdown.so rootfs
-vendor/lib/libUBWC.so rootfs
-vendor/lib/lib_drplugin_server.so rootfs
-vendor/lib/libadm.so rootfs
+vendor/lib/libalarmservice_jni.so;rootfs
+vendor/lib/libavservices_minijail_vendor.so;rootfs
+vendor/lib/libbccQTI.so;rootfs
+vendor/lib/libc2d30-a3xx.so;rootfs
+vendor/lib/libc2d30-a4xx.so;rootfs
+vendor/lib/libc2d30-a5xx.so;rootfs
+vendor/lib/libc2dcolorconvert.so;rootfs
+vendor/lib/libcdsprpc.so;rootfs
+vendor/lib/libchromaflash.so;rootfs
+vendor/lib/libdataitems.so;rootfs
+vendor/lib/libdme_main.so;rootfs
+vendor/lib/libdpmqmihal.so;rootfs
+vendor/lib/libdrplugin_client.so;rootfs
+vendor/lib/libdsd2pcm.so;rootfs
+vendor/lib/libeffects.so;rootfs
+vendor/lib/libevent_observer.so;rootfs
+vendor/lib/libfastcrc.so;rootfs
+vendor/lib/libfastcvadsp_stub.so;rootfs
+vendor/lib/libfastcvopt.so;rootfs
+vendor/lib/libfeedbackhandler.so;rootfs
+vendor/lib/libgdtap.so;rootfs
+vendor/lib/libgrallocutils.so;rootfs
+vendor/lib/libhdr_tm.so;rootfs
+vendor/lib/libhwc2on1adapter.so;rootfs
+vendor/lib/libhwminijail.so;rootfs
+vendor/lib/libhypv_intercept.so;rootfs
+vendor/lib/libjson.so;rootfs
+vendor/lib/libkeymasterdeviceutils.so;rootfs
+vendor/lib/libkeymasterprovision.so;rootfs
+vendor/lib/libkeymasterutils.so;rootfs
+vendor/lib/libloc_api_v02.so;rootfs
+vendor/lib/libloc_core.so;rootfs
+vendor/lib/libloc_ds_api.so;rootfs
+vendor/lib/libloc_externalDr.so;rootfs
+vendor/lib/libloc_pla.so;rootfs
+vendor/lib/libloc_stub.so;rootfs
+vendor/lib/liblqe.so;rootfs
+vendor/lib/libmdsprpc.so;rootfs
+vendor/lib/libminijail_vendor.so;rootfs
+vendor/lib/libmmipl.so;rootfs
+vendor/lib/libnbaio_mono.so;rootfs
+vendor/lib/liboemaids_vendor.so;rootfs
+vendor/lib/liboptizoom.so;rootfs
+vendor/lib/libpdmapper.so;rootfs
+vendor/lib/libpdnotifier.so;rootfs
+vendor/lib/libperfgluelayer.so;rootfs
+vendor/lib/libpredtm.so;rootfs
+vendor/lib/libpredtm_hw.so;rootfs
+vendor/lib/libqalog.so;rootfs
+vendor/lib/libqcmaputils.so;rootfs
+vendor/lib/libqdMetaData.so;rootfs
+vendor/lib/libqdutils.so;rootfs
+vendor/lib/libqisl.so;rootfs
+vendor/lib/libqservice.so;rootfs
+vendor/lib/libqvrservice_client.so;rootfs
+vendor/lib/librecovery_updater_msm.so;rootfs
+vendor/lib/librmnetctl.so;rootfs
+vendor/lib/libscalar.so;rootfs
+vendor/lib/libsdm-color.so;rootfs
+vendor/lib/libsdm-disp-vndapis.so;rootfs
+vendor/lib/libsdmcore.so;rootfs
+vendor/lib/libsdmextension.so;rootfs
+vendor/lib/libsdmutils.so;rootfs
+vendor/lib/libsdsprpc.so;rootfs
+vendor/lib/libsecureui.so;rootfs
+vendor/lib/libsecureui_svcsock.so;rootfs
+vendor/lib/libselinux_vendor.so;rootfs
+vendor/lib/libsettings.so;rootfs
+vendor/lib/libstagefrighthw.so;rootfs
+vendor/lib/libstreamparser.so;rootfs
+vendor/lib/libsurround_3mic_proc.so;rootfs
+vendor/lib/libswvdec.so;rootfs
+vendor/lib/libtinycompress_vendor.so;rootfs
+vendor/lib/libtinyxml.so;rootfs
+vendor/lib/libtinyxml2_1.so;rootfs
+vendor/lib/libtrueportrait.so;rootfs
+vendor/lib/libubifocus.so;rootfs
+vendor/lib/libvideoutils.so;rootfs
+vendor/lib/libvpplibrary.so;rootfs
+vendor/lib/libvpptestutils.so;rootfs
+vendor/lib/libvqzip.so;rootfs
+vendor/lib/libwms.so;rootfs
+vendor/lib/libwqe.so;rootfs
+vendor/lib/mediacas/libclearkeycasplugin.so;rootfs
+vendor/lib/modules/pronto/pronto_wlan.ko;rootfs
+vendor/lib/vendor.display.config@1.0_vendor.so;rootfs
+vendor/lib/vendor.display.config@1.1_vendor.so;rootfs
+vendor/lib/vendor.qti.esepowermanager@1.0_vendor.so;rootfs
+vendor/lib/vendor.qti.hardware.alarm@1.0.so;rootfs
+vendor/lib/vendor.qti.hardware.data.latency@1.0_vendor.so;rootfs
+vendor/lib/vendor.qti.hardware.fm@1.0_vendor.so;rootfs
+vendor/lib/vendor.qti.hardware.iop@1.0_vendor.so;rootfs
+vendor/lib/vendor.qti.hardware.iop@2.0_vendor.so;rootfs
+vendor/lib/vendor.qti.hardware.limits@1.0_vendor.so;rootfs
+vendor/lib/vendor.qti.hardware.qdutils_disp@1.0_vendor.so;rootfs
+vendor/lib/vendor.qti.hardware.qteeconnector@1.0_vendor.so;rootfs
+vendor/lib/vendor.qti.hardware.seccam@1.0_vendor.so;rootfs
+vendor/lib/vendor.qti.hardware.tui_comm@1.0_vendor.so;rootfs
+vendor/lib/vendor.qti.hardware.vpp@1.1_vendor.so;rootfs
+vendor/lib/vendor.qti.voiceprint@1.0.so;rootfs
+vendor/lib/libCipo_ae.so;rootfs
+vendor/lib/libCipo_awb.so;rootfs
+vendor/lib/libDRPlugin.so;rootfs
+vendor/lib/libGPTEE_vendor.so;rootfs
+vendor/lib/libGPreqcancel.so;rootfs
+vendor/lib/libGPreqcancel_svc.so;rootfs
+vendor/lib/libSecureUILib.so;rootfs
+vendor/lib/libStDrvInt.so;rootfs
+vendor/lib/libSubSystemShutdown.so;rootfs
+vendor/lib/libUBWC.so;rootfs
+vendor/lib/lib_drplugin_server.so;rootfs
+vendor/lib/libadm.so;rootfs
