@@ -1,15 +1,9 @@
-# Inherit product configuration from dependencies
-$(call inherit-product, $(SRC_TARGET_DIR)/product/embedded.mk)
-$(call inherit-product, device/kyocera/902KC/device.mk)
-$(call inherit-product, vendor/omni/config/common.mk)
+DEVICE_PACKAGE_OVERLAYS += device/kyocera/902KC/overlay
 
-# Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := 902KC
-PRODUCT_NAME := 902KC
-PRODUCT_BRAND := KYOCERA
-PRODUCT_MODEL := NP902KC
-PRODUCT_MANUFACTURER := kyocera
-PRODUCT_RELEASE_NAME := KYOCERA NP902KC
+# Inherit product configuration from dependencies
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+$(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
+
 
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := hdpi
@@ -40,10 +34,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     camera.msm8909
 
-# Charger
-PRODUCT_PACKAGES += \
-    charger_res_images
-
 # CNE
 PRODUCT_PACKAGES += \
     libcnefeatureconfig
@@ -72,10 +62,8 @@ PRODUCT_PACKAGES += \
 
 # FM radio
 PRODUCT_PACKAGES += \
-    FM2 \
-    FMRecord \
-    libqcomfm_jni \
-    qcom.fmradio
+    FMRadio \
+    libfmjni
 
 # GPS
 PRODUCT_PACKAGES += \
@@ -96,15 +84,11 @@ PRODUCT_PACKAGES += \
 
 # OMX
 PRODUCT_PACKAGES += \
-    libdashplayer \
+    libextmedia_jni \
     libOmxCore \
     libOmxVdec \
     libOmxVenc \
-    libstagefrighthw \
-    qcmediaplayer
-
-PRODUCT_BOOT_JARS += \
-    qcmediaplayer
+    libstagefrighthw
 
 # Power
 PRODUCT_PACKAGES += \
@@ -112,7 +96,6 @@ PRODUCT_PACKAGES += \
 
 # Wifi
 PRODUCT_PACKAGES += \
-    dhcpcd.conf \
     hostapd \
     wpa_supplicant
 
@@ -120,6 +103,14 @@ PRODUCT_PACKAGES += \
     libQWiFiSoftApCfg \
     libwcnss_qmi \
     wcnss_service
+
+# Ramdisk
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,device/kyocera/902KC/ramdisk,root)
+
+# Prebuilt
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,device/kyocera/902KC/prebuilt/system,system)
 
 # Media codecs
 PRODUCT_COPY_FILES += \
@@ -143,5 +134,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
     frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
     frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
+    frameworks/native/data/etc/android.software.midi.xml:system/etc/permissions/android.software.midi.xml \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml
