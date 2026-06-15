@@ -1,0 +1,110 @@
+##### FILES #####
+/dev/socket/adbd                                                                                    u:object_r:adbd_socket:s0
+/system/bin/adbd                                                                                    u:object_r:adbd_exec:s0
+
+##### POLICIES #####
+type adbd, coredomain, domain, hal_graphics_allocator_client, halclientdomain, mlstrustedsubject, netdomain;
+type adbd_exec, exec_type, file_type;
+type adbd_socket, coredomain_socket, file_type;
+type adbd_tmpfs, file_type;
+
+init_daemon_domain(adbd);
+binder_use(adbd);
+
+type_transition adbd shell_exec:process shell;
+type_transition adbd tmpfs:file adbd_tmpfs;
+
+binder_call(adbd, surfaceflinger);
+
+unix_socket_connect(adbd, property, appdomain);
+
+allow adbd adb_keys_file:dir {search};
+allow adbd adb_keys_file:file {getattr ioctl lock map open read};
+allow adbd adbd_tmpfs:file {getattr read write};
+allow adbd anr_data_file:dir {getattr ioctl lock open read search};
+allow adbd anr_data_file:file {getattr ioctl lock map open read};
+allow adbd apk_data_file:dir {getattr ioctl lock open read search};
+allow adbd apk_data_file:file {getattr ioctl lock map open read};
+allow adbd apk_data_file:lnk_file {getattr ioctl lock map open read};
+allow adbd app_data_file:dir {search};
+allow adbd app_data_file:sock_file {write};
+allow adbd bootchart_data_file:dir {search};
+allow adbd bootchart_data_file:file {getattr ioctl lock map open read};
+allow adbd config_gz:file {getattr ioctl lock map open read};
+allow adbd device_logging_prop:file {getattr ioctl lock map open read};
+allow adbd devpts:chr_file {append getattr ioctl lock map open read write};
+allow adbd ffs_prop:file {getattr ioctl lock map open read};
+allow adbd ffs_prop:property_service {set};
+allow adbd file_contexts_file:file {getattr ioctl lock map open read};
+allow adbd functionfs:dir {search};
+allow adbd functionfs:file {append getattr ioctl lock map open read write};
+allow adbd gpu_device:chr_file {append getattr ioctl lock map open read write};
+allow adbd init:unix_stream_socket {connectto};
+allow adbd ion_device:chr_file {append getattr ioctl lock map open read write};
+allow adbd kernel:security {read_policy};
+allow adbd media_rw_data_file:dir {add_name create getattr ioctl lock open read remove_name rename reparent rmdir search setattr write};
+allow adbd media_rw_data_file:file {append create getattr ioctl lock map open read rename setattr unlink write};
+allow adbd mnt_user_file:dir {getattr ioctl lock open read search};
+allow adbd mnt_user_file:lnk_file {getattr ioctl lock map open read};
+allow adbd powerctl_prop:file {getattr ioctl lock map open read};
+allow adbd powerctl_prop:property_service {set};
+allow adbd profman_dump_data_file:dir {getattr ioctl lock open read search};
+allow adbd profman_dump_data_file:file {getattr ioctl lock map open read};
+allow adbd property_contexts_file:file {getattr ioctl lock map open read};
+allow adbd rootfs:dir {getattr ioctl lock open read search};
+allow adbd rootfs:lnk_file {getattr ioctl lock map open read};
+allow adbd sdcard_type:dir {add_name create getattr ioctl lock open read remove_name rename reparent rmdir search setattr write};
+allow adbd sdcard_type:file {append create getattr ioctl lock map open read rename setattr unlink write};
+allow adbd seapp_contexts_file:file {getattr ioctl lock map open read};
+allow adbd self:capability {setgid setuid};
+allow adbd self:capability {setpcap};
+allow adbd selinuxfs:dir {getattr ioctl lock open read search};
+allow adbd selinuxfs:file {getattr ioctl lock map open read};
+allow adbd sepolicy_file:file {getattr ioctl lock map open read};
+allow adbd serialno_prop:file {getattr ioctl lock map open read};
+allow adbd service_contexts_file:file {getattr ioctl lock map open read};
+allow adbd shell:process {noatsecure signal};
+allow adbd shell:process {rlimitinh siginh};
+allow adbd shell:process {transition};
+allow adbd shell_data_file:dir {add_name create getattr ioctl lock open read remove_name rename reparent rmdir search setattr write};
+allow adbd shell_data_file:file {append create getattr ioctl lock map open read rename setattr unlink write};
+allow adbd shell_exec:file {execute getattr map open read};
+allow adbd shell_prop:file {getattr ioctl lock map open read};
+allow adbd shell_prop:property_service {set};
+allow adbd storage_file:dir {getattr ioctl lock open read search};
+allow adbd storage_file:lnk_file {getattr ioctl lock map open read};
+allow adbd surfaceflinger:binder {transfer};
+allow adbd surfaceflinger_service:service_manager {find};
+allow adbd system_file:dir {getattr ioctl lock open read search};
+allow adbd system_file:file {execute execute_no_trans getattr ioctl lock map open read};
+allow adbd system_file:file {getattr ioctl lock map open read};
+allow adbd system_file:lnk_file {getattr ioctl lock map open read};
+allow adbd tmpfs:dir {getattr search};
+allow adbd tmpfs:dir {search};
+allow adbd tmpfs:lnk_file {getattr ioctl lock map open read};
+allow adbd zygote_exec:file {getattr ioctl lock map open read};
+dontaudit adbd shell:process {noatsecure};
+neverallow adbd base_typeattr_180:process {transition};
+neverallow adbd domain:process {dyntransition};
+
+##### FOREIGNS #####
+allow appdomain adbd:fd {use};
+allow appdomain adbd:process {sigchld};
+allow appdomain adbd:unix_stream_socket {connectto};
+allow appdomain adbd:unix_stream_socket {getattr getopt ioctl read shutdown write};
+allow incident adbd:fd {use};
+allow incident adbd:process {sigchld};
+allow incident adbd:unix_stream_socket {read write};
+allow runas adbd:fd {use};
+allow runas adbd:process {sigchld};
+allow runas adbd:unix_stream_socket {read write};
+allow shell adbd:process {sigchld};
+allow surfaceflinger adbd:binder {call transfer};
+allow surfaceflinger adbd:fd {use};
+allow surfaceflinger adbd:unix_stream_socket {getattr read write};
+allow system_server adbd:fd {use};
+allow system_server adbd:unix_stream_socket {connectto};
+allow system_server adbd:unix_stream_socket {getattr getopt ioctl read shutdown write};
+allow system_server adbd_socket:sock_file {append getattr ioctl lock map open read write};
+neverallow appdomain adbd_socket:sock_file {write};
+

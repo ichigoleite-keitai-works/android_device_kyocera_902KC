@@ -1,0 +1,69 @@
+##### POLICIES #####
+type platform_app, appdomain, bluetoothdomain, coredomain, domain, domain_deprecated, netdomain;
+type platform_app_tmpfs, file_type;
+
+type_transition platform_app tmpfs:file platform_app_tmpfs;
+
+binder_call(platform_app, wfdservice);
+
+allow platform_app apk_private_data_file:dir {search};
+allow platform_app apk_private_tmp_file:dir {add_name getattr ioctl lock open read remove_name search write};
+allow platform_app apk_private_tmp_file:file {append getattr ioctl lock map open read write};
+allow platform_app apk_tmp_file:dir {add_name getattr ioctl lock open read remove_name search write};
+allow platform_app apk_tmp_file:file {append getattr ioctl lock map open read write};
+allow platform_app app_api_service:service_manager {find};
+allow platform_app asec_apk_file:dir {add_name create getattr ioctl lock open read remove_name rename reparent rmdir search setattr write};
+allow platform_app asec_apk_file:file {append create getattr ioctl lock map open read rename setattr unlink write};
+allow platform_app audioserver_service:service_manager {find};
+allow platform_app cache_file:dir {add_name create getattr ioctl lock open read remove_name rename reparent rmdir search setattr write};
+allow platform_app cache_file:file {append create getattr ioctl lock map open read rename setattr unlink write};
+allow platform_app cameraserver_service:service_manager {find};
+allow platform_app cne_service:service_manager {find};
+allow platform_app color_service:service_manager {find};
+allow platform_app dpmd:unix_stream_socket {connectto};
+allow platform_app dpmd_socket:sock_file {append lock map open write};
+allow platform_app dpmservice:service_manager {find};
+allow platform_app dpmtcm_socket:sock_file {append lock map open write};
+allow platform_app dpmwrapper_socket:sock_file {append lock map open write};
+allow platform_app drmserver_service:service_manager {find};
+allow platform_app icon_file:file {getattr open read};
+allow platform_app media_rw_data_file:dir {add_name create getattr ioctl lock open read remove_name rename reparent rmdir search setattr write};
+allow platform_app media_rw_data_file:file {append create getattr ioctl lock map open read rename setattr unlink write};
+allow platform_app mediacodec_service:service_manager {find};
+allow platform_app mediadrmserver_service:service_manager {find};
+allow platform_app mediaextractor_service:service_manager {find};
+allow platform_app mediametrics_service:service_manager {find};
+allow platform_app mediaserver_service:service_manager {find};
+allow platform_app mnt_media_rw_file:dir {getattr ioctl lock open read search};
+allow platform_app persistent_data_block_service:service_manager {find};
+allow platform_app platform_app_tmpfs:file {execute};
+allow platform_app platform_app_tmpfs:file {getattr read write};
+allow platform_app preloads_data_file:dir {getattr ioctl lock open read search};
+allow platform_app preloads_data_file:file {getattr ioctl lock map open read};
+allow platform_app preloads_media_file:dir {getattr ioctl lock open read search};
+allow platform_app preloads_media_file:file {getattr ioctl lock map open read};
+allow platform_app radio_service:service_manager {find};
+allow platform_app rootfs:dir {getattr};
+allow platform_app runtime_event_log_tags_file:file {getattr ioctl lock map open read};
+allow platform_app shell_data_file:dir {search};
+allow platform_app shell_data_file:file {getattr open read};
+allow platform_app surfaceflinger_service:service_manager {find};
+allow platform_app system_api_service:service_manager {find};
+allow platform_app timezone_service:service_manager {find};
+allow platform_app tmpfs:dir {getattr search};
+allow platform_app vfat:dir {add_name create getattr ioctl lock open read remove_name rename reparent rmdir search setattr write};
+allow platform_app vfat:file {append create getattr ioctl lock map open read rename setattr unlink write};
+allow platform_app vr_manager_service:service_manager {find};
+allow platform_app wfdservice:binder {transfer};
+neverallow platform_app fuse_device:chr_file {append audit_access create entrypoint execmod execute execute_no_trans getattr ioctl link lock map mounton open quotaon read relabelfrom relabelto rename setattr unlink write};
+
+##### REMAININGS #####
+(typealias platform_app_data_file)
+(typealiasactual platform_app_data_file app_data_file)
+
+##### FOREIGNS #####
+allow dpmd platform_app:fd {use};
+allow dpmd platform_app:tcp_socket {append bind connect getattr getopt ioctl lock read setattr setopt shutdown write};
+allow wfdservice platform_app:binder {call transfer};
+allow wfdservice platform_app:fd {use};
+
