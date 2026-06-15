@@ -1,5 +1,5 @@
-#!/system/bin/sh
-# Copyright (c) 2009-2015, The Linux Foundation. All rights reserved.
+#!/vendor/bin/sh
+# Copyright (c) 2015, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -26,24 +26,18 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-target=`getprop ro.board.platform`
-
-start_vm_bms()
+#
+# Function to start sensors for SSC enabled platforms
+#
+start_sensors()
 {
-	if [ -e /dev/vm_bms ]; then
-		chown -h root.system /sys/class/power_supply/bms/current_now
-		chown -h root.system /sys/class/power_supply/bms/voltage_ocv
-		chmod 0664 /sys/class/power_supply/bms/current_now
-		chmod 0664 /sys/class/power_supply/bms/voltage_ocv
-		start vm_bms
-	fi
+    if [ -c /dev/msm_dsps -o -c /dev/sensors ]; then
+        chmod -h 775 /persist/sensors
+        chmod -h 664 /persist/sensors/sensors_settings
+        mkdir -p /persist/sensors/registry/registry
+        chown -h system.root /persist/sensors/sensors_settings
+        start sensors
+    fi
 }
 
-case "$target" in
-    "msm8916")
-        start_vm_bms
-        ;;
-    "msm8909")
-        start_vm_bms
-        ;;
-esac
+#start_sensors
