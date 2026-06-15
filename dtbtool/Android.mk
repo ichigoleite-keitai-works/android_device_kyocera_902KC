@@ -10,7 +10,7 @@ LOCAL_CFLAGS += \
 	-Wall
 
 ## Hybrid v1/v2 dtbTool. Use a different name to avoid conflicts with copies in device repos
-LOCAL_MODULE := dtbTool.alcatel.msm8909
+LOCAL_MODULE := dtbTool.kyocera.msm8909
 LOCAL_MODULE_TAGS := optional
 
 include $(BUILD_HOST_EXECUTABLE)
