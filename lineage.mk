@@ -11,7 +11,7 @@ $(call inherit-product, device/kyocera/902KC/902KC.mk)
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := 902KC
-PRODUCT_NAME := 902KC
+PRODUCT_NAME := lineage_902KC
 PRODUCT_BRAND := KYOCERA
 PRODUCT_MODEL := NP902KC
 PRODUCT_MANUFACTURER := kyocera
