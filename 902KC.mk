@@ -50,10 +50,6 @@ PRODUCT_PACKAGES += \
     hwcomposer.msm8909 \
     memtrack.msm8909
 
-# Doze
-PRODUCT_PACKAGES += \
-    DozeService
-
 # Ebtables
 PRODUCT_PACKAGES += \
     ebtables \
