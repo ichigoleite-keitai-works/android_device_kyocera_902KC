@@ -51,8 +51,10 @@ ifneq (,$(filter eng, $(TARGET_BUILD_VARIANT)))
 endif
 
 # Add the system properties.
-TARGET_SYSTEM_PROP += \
-    $(LOCAL_PATH)/go_defaults.prop
+
+# added to system.prop
+#TARGET_SYSTEM_PROP += \
+#    $(LOCAL_PATH)/go_defaults.prop
 
 # use the go specific handheld_core_hardware.xml from frameworks
 PRODUCT_COPY_FILES += \

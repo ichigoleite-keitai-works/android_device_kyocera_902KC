@@ -242,3 +242,38 @@ dalvik.vm.systemservercompilerfilter=speed-profile
 net.bt.name=Android
 dalvik.vm.stack-trace-dir=/data/anr
 ro.expect.recovery_id=0xad1c9362c07483cb7e81c3eb05effba2e5986761000000000000000000000000
+
+# Sets Android Go recommended default values for propreties.
+
+# Set lowram options
+ro.lmk.critical_upgrade=true
+ro.lmk.upgrade_pressure=40
+ro.lmk.downgrade_pressure=60
+ro.lmk.kill_heaviest_task=false
+ro.statsd.enable=true
+
+# set threshold to filter unused apps
+pm.dexopt.downgrade_after_inactive_days=10
+
+# set the compiler filter for shared apks to quicken.
+# Rationale: speed has a lot of dex code expansion, it uses more ram and space
+# compared to quicken. Using quicken for shared APKs on Go devices may save RAM.
+# Note that this is a trade-off: here we trade clean pages for dirty pages,
+# extra cpu and battery. That's because the quicken files will be jit-ed in all
+# the processes that load of shared apk and the code cache is not shared.
+# Some notable apps that will be affected by this are gms and chrome.
+# b/65591595.
+pm.dexopt.shared=quicken
+
+# Default heap sizes. Allow up to 256m for large heaps to make sure a single app
+# doesn't take all of the RAM.
+dalvik.vm.heapgrowthlimit=128m
+dalvik.vm.heapsize=256m
+
+# 512MB specific properties. (yes this phone has 1gb but why not)
+
+# lmkd can kill more now.
+ro.lmk.medium=700
+
+# madvise random in ART to reduce page cache thrashing.
+dalvik.vm.madvise-random=true
