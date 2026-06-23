@@ -52,8 +52,8 @@ endif
 
 # Add the system properties.
 TARGET_SYSTEM_PROP += \
-    $(DEVICE_PATH)/go_defaults.prop
+    $(LOCAL_PATH)/go_defaults.prop
 
 # use the go specific handheld_core_hardware.xml from frameworks
 PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/frameworks/native/data/etc/go_handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml
+    $(LOCAL_PATH)/frameworks/native/data/etc/go_handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml
