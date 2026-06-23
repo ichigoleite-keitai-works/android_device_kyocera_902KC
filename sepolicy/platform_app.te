@@ -1,4 +1,3 @@
-##### POLICIES #####
 type platform_app, appdomain, bluetoothdomain, coredomain, domain, domain_deprecated, netdomain;
 type platform_app_tmpfs, file_type;
 
@@ -56,14 +55,3 @@ allow platform_app vfat:file {append create getattr ioctl lock map open read ren
 allow platform_app vr_manager_service:service_manager {find};
 allow platform_app wfdservice:binder {transfer};
 neverallow platform_app fuse_device:chr_file {append audit_access create entrypoint execmod execute execute_no_trans getattr ioctl link lock map mounton open quotaon read relabelfrom relabelto rename setattr unlink write};
-
-##### REMAININGS #####
-(typealias platform_app_data_file)
-(typealiasactual platform_app_data_file app_data_file)
-
-##### FOREIGNS #####
-allow dpmd platform_app:fd {use};
-allow dpmd platform_app:tcp_socket {append bind connect getattr getopt ioctl lock read setattr setopt shutdown write};
-allow wfdservice platform_app:binder {call transfer};
-allow wfdservice platform_app:fd {use};
-

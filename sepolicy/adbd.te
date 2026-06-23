@@ -1,8 +1,3 @@
-##### FILES #####
-/dev/socket/adbd                                                                                    u:object_r:adbd_socket:s0
-/system/bin/adbd                                                                                    u:object_r:adbd_exec:s0
-
-##### POLICIES #####
 type adbd, coredomain, domain, hal_graphics_allocator_client, halclientdomain, mlstrustedsubject, netdomain;
 type adbd_exec, exec_type, file_type;
 type adbd_socket, coredomain_socket, file_type;
@@ -86,25 +81,3 @@ allow adbd zygote_exec:file {getattr ioctl lock map open read};
 dontaudit adbd shell:process {noatsecure};
 neverallow adbd base_typeattr_180:process {transition};
 neverallow adbd domain:process {dyntransition};
-
-##### FOREIGNS #####
-allow appdomain adbd:fd {use};
-allow appdomain adbd:process {sigchld};
-allow appdomain adbd:unix_stream_socket {connectto};
-allow appdomain adbd:unix_stream_socket {getattr getopt ioctl read shutdown write};
-allow incident adbd:fd {use};
-allow incident adbd:process {sigchld};
-allow incident adbd:unix_stream_socket {read write};
-allow runas adbd:fd {use};
-allow runas adbd:process {sigchld};
-allow runas adbd:unix_stream_socket {read write};
-allow shell adbd:process {sigchld};
-allow surfaceflinger adbd:binder {call transfer};
-allow surfaceflinger adbd:fd {use};
-allow surfaceflinger adbd:unix_stream_socket {getattr read write};
-allow system_server adbd:fd {use};
-allow system_server adbd:unix_stream_socket {connectto};
-allow system_server adbd:unix_stream_socket {getattr getopt ioctl read shutdown write};
-allow system_server adbd_socket:sock_file {append getattr ioctl lock map open read write};
-neverallow appdomain adbd_socket:sock_file {write};
-
