@@ -258,7 +258,7 @@ vendor/etc/data/qmi_config.xml
 # RIL/Radio
 vendor/bin/netmgrd
 vendor/bin/qmuxd
-vendor/rmt_storage
+vendor/bin/rmt_storage
 vendor/lib/libconfigdb.so
 vendor/lib/libcneapiclient.so
 vendor/lib/libmdmdetect.so
