@@ -269,11 +269,3 @@ pm.dexopt.shared=quicken
 # doesn't take all of the RAM.
 dalvik.vm.heapgrowthlimit=128m
 dalvik.vm.heapsize=256m
-
-# 512MB specific properties. (yes this phone has 1gb but why not)
-
-# lmkd can kill more now.
-ro.lmk.medium=700
-
-# madvise random in ART to reduce page cache thrashing.
-dalvik.vm.madvise-random=true
