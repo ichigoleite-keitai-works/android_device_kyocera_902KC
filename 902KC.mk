@@ -59,6 +59,10 @@ PRODUCT_PACKAGES += \
     ethertypes \
     libebtc
 
+# Doze
+PRODUCT_PACKAGES += \
+    DozeService
+
 # FM radio
 PRODUCT_PACKAGES += \
     FMRadio \
