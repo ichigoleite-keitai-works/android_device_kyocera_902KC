@@ -406,7 +406,7 @@ vendor/bin/kc_batterymonitord
 vendor/bin/kc_offchg_led
 vendor/bin/kc_thermal_dynamic_adj
 vendor/bin/ksubdispdiag
-vendor/bin/leg_diag
+vendor/bin/led_diag
 
 # Security
 vendor/lib/libQTEEConnector_vendor.so
