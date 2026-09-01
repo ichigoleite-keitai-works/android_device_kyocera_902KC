@@ -5,7 +5,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 
 # Go time.
-$(call inherit-product, $(LOCAL_PATH)/go_defaults.mk)
+$(call inherit-product, $(LOCAL_PATH)/android_go.mk)
 
 
 PRODUCT_AAPT_CONFIG := normal
