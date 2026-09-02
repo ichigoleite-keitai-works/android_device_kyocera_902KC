@@ -40,7 +40,7 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    camera.msm8909
+    camera.msm8916
 
 # CNE
 PRODUCT_PACKAGES += \
