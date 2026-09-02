@@ -5,6 +5,12 @@ LOCAL_PATH:=$(call my-dir)
 # Build command line test app: mm-qcamera-app
 include $(CLEAR_VARS)
 
+LOCAL_CLANG_CFLAGS += \
+        -Wno-error=memsize-comparison \
+        -Wno-error=missing-field-initializers \
+        -Wno-error=pointer-bool-conversion \
+        -Wno-error=enum-conversion
+
 LOCAL_CFLAGS:= \
         -DAMSS_VERSION=$(AMSS_VERSION) \
         $(mmcamera_debug_defines) \
@@ -16,9 +22,6 @@ LOCAL_CFLAGS += -DUSE_ION
 endif
 
 LOCAL_CFLAGS += -D_ANDROID_
-
-LOCAL_CLANG_CFLAGS += \
-        -Wno-error=enum-conversion
 
 LOCAL_SRC_FILES:= \
         src/mm_qcamera_main_menu.c \
@@ -111,6 +114,12 @@ ifeq ($(call is-vendor-board-platform,QCOM),true)
 # Build tuning library
 include $(CLEAR_VARS)
 
+LOCAL_CLANG_CFLAGS += \
+        -Wno-error=memsize-comparison \
+        -Wno-error=missing-field-initializers \
+        -Wno-error=pointer-bool-conversion \
+        -Wno-error=enum-conversion
+
 LOCAL_CFLAGS:= \
         -DAMSS_VERSION=$(AMSS_VERSION) \
         $(mmcamera_debug_defines) \
@@ -122,9 +131,6 @@ LOCAL_CFLAGS += -DUSE_ION
 endif
 
 LOCAL_CFLAGS += -D_ANDROID_
-
-LOCAL_CLANG_CFLAGS += \
-        -Wno-error=enum-conversion
 
 LOCAL_SRC_FILES:= \
         src/mm_qcamera_main_menu.c \

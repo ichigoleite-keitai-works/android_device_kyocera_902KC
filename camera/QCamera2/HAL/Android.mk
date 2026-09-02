@@ -6,8 +6,7 @@ LOCAL_CLANG_CFLAGS += \
         -Wno-error=strlcpy-strlcat-size \
         -Wno-error=gnu-designator \
         -Wno-error=unused-variable \
-        -Wno-error=format \
-        -Wno-error=unused-parameter
+        -Wno-error=format
 
 LOCAL_SRC_FILES := \
         QCamera2Factory.cpp \
@@ -26,7 +25,6 @@ LOCAL_SRC_FILES := \
         wrapper/QualcommCamera.cpp
 
 LOCAL_CFLAGS = -Wall -Wextra -Werror
-LOCAL_CFLAGS += -DDEFAULT_ZSL_MODE_ON
 
 #Debug logs are enabled
 #LOCAL_CFLAGS += -DDISABLE_DEBUG_LOG
@@ -83,7 +81,6 @@ LOCAL_SHARED_LIBRARIES += libts_face_beautify_hal libts_detected_face_hal
 endif
 LOCAL_MODULE_RELATIVE_PATH    := hw
 LOCAL_MODULE := camera.$(TARGET_BOARD_PLATFORM)
-LOCAL_32_BIT_ONLY := true
 LOCAL_MODULE_TAGS := optional
 
 include $(BUILD_SHARED_LIBRARY)
@@ -91,3 +88,5 @@ include $(BUILD_SHARED_LIBRARY)
 ifeq ($(TARGET_USES_AOSP),false)
 include $(LOCAL_PATH)/test/Android.mk
 endif
+
+#include $(LOCAL_PATH)/test/Android.mk

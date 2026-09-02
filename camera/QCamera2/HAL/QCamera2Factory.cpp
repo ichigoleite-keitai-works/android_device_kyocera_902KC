@@ -167,6 +167,7 @@ int QCamera2Factory::cameraDeviceOpen(int camera_id,
         ALOGE("Allocation of hardware interface failed");
         return NO_MEMORY;
     }
+
     while (cameraretry < 3) {
         rc = hw->openCamera(hw_device);
         if (rc == NO_ERROR)
