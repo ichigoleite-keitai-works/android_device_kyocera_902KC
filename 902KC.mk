@@ -1,4 +1,6 @@
 DEVICE_PACKAGE_OVERLAYS += device/kyocera/902KC/overlay
+# Automatically add overlays
+LOCAL_AAPT_FLAGS += --auto-add-overlay
 
 # Inherit product configuration from dependencies
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
