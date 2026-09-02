@@ -248,6 +248,7 @@
             64 - Volume rocker
          For example, a device with Home, Back and Menu keys would set this
          config to 7. -->
+    <add-resource type="integer" name="config_deviceHardwareKeys" />
     <integer name="config_deviceHardwareKeys">71</integer>
 
     <!-- Hardware keys present on the device with the ability to wake, stored as a bit field.
@@ -262,6 +263,7 @@
             64 - Volume rocker
          For example, a device with Home, Back and Menu keys would set this
          config to 7. -->
+    <add-resource type="integer" name="config_deviceHardwareWakeKeys" />
     <integer name="config_deviceHardwareWakeKeys">64</integer>
 
     <integer name="config_buttonBrightnessSettingDefault">0</integer>
@@ -288,6 +290,7 @@
     <string translatable="false" name="config_radio_access_family">GSM|WCDMA|LTE</string>
 
     <!-- Enable blur support -->
+    <add-resource type="bool" name="config_uiBlurEnabled" />
     <bool name="config_uiBlurEnabled">true</bool>
 
 </resources>
