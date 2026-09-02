@@ -19,6 +19,8 @@ ifeq ($(QCPATH),)
 LOCAL_CFLAGS += -DOSS_BUILD
 endif
 
+LOCAL_LDLIBS := -llog
+
 LOCAL_SHARED_LIBRARIES := \
     libutils \
     libcutils \
