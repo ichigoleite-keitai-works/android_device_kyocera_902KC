@@ -1,0 +1,20 @@
+# This software is contributed or developed by KYOCERA Corporation.
+# (C) 2018 KYOCERA Corporation
+
+on boot
+    chown system system /sys/class/leds/mobilelightinfo/brightness
+    chmod 0660 /sys/class/leds/mobilelightinfo/brightness
+    chown system system /sys/class/leds/ledinfo/brightness
+    chown system system /sys/class/leds/backlightinfo/brightness
+    chown system system /sys/class/leds/red/control_ex
+    chown system system /sys/class/leds/green/control_ex
+    chown system system /sys/class/leds/amber/control_ex
+    chown system system /dev/leds-ledlight
+    chmod 0660 /dev/leds-ledlight
+    chown system system /sys/class/leds/backlightinfo/max_brightness
+
+service leds_ctrl /system/vendor/bin/leds_ctrl
+    class core
+    user system
+    group system
+    oneshot
