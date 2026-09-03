@@ -71,6 +71,7 @@ LOCAL_C_INCLUDES += $(call project-path-for,qcom-display)/libgralloc
 LOCAL_C_INCLUDES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
 LOCAL_C_INCLUDES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include/media
 LOCAL_C_INCLUDES += frameworks/native/libs/nativebase/include
+LOCAL_C_INCLUDES += frameworks/native/libs/arect/include
 ifeq ($(TARGET_TS_MAKEUP),true)
 LOCAL_CFLAGS += -DTARGET_TS_MAKEUP
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/tsMakeuplib/include
