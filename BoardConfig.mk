@@ -103,7 +103,7 @@ BOARD_VENDORIMAGE_PARTITION_SIZE := 314572800
 # Recovery
 TARGET_OTA_ASSERT_DEVICE := 902KC
 TARGET_RECOVERY_QCOM_RTC_FIX := true
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery.fstab
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/recovery.fstab
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
