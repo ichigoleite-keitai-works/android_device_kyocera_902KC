@@ -71,6 +71,7 @@ LOCAL_C_INCLUDES += $(call project-path-for,qcom-display)/libgralloc
 LOCAL_C_INCLUDES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
 LOCAL_C_INCLUDES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include/media
 LOCAL_C_INCLUDES += frameworks/native/libs/nativebase/include
+LOCAL_C_INCLUDES += frameworks/native/libs/arect/include
 LOCAL_C_INCLUDES += system/libhidl/transport/token/1.0/utils/include
 ifeq ($(TARGET_TS_MAKEUP),true)
 LOCAL_CFLAGS += -DTARGET_TS_MAKEUP
