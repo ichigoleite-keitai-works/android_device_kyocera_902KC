@@ -42,25 +42,6 @@ PRODUCT_PACKAGES += \
     tinymix
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/audio/acdbdata/MTP/MTP_Bluetooth_cal.acdb:vendor/etc/acdbdata/MTP/MTP_Bluetooth_cal.acdb \
-    $(LOCAL_PATH)/audio/acdbdata/MTP/MTP_General_cal.acdb:vendor/etc/MTP/MTP_General_cal.acdb \
-    $(LOCAL_PATH)/audio/acdbdata/MTP/MTP_Global_cal.acdb:vendor/etc/MTP/MTP_Global_cal.acdb \
-    $(LOCAL_PATH)/audio/acdbdata/MTP/MTP_Handset_cal.acdb:vendor/etc/MTP/MTP_Handset_cal.acdb \
-    $(LOCAL_PATH)/audio/acdbdata/MTP/MTP_Hdmi_cal.acdb:vendor/etc/MTP/MTP_Hdmi_cal.acdb \
-    $(LOCAL_PATH)/audio/acdbdata/MTP/MTP_Headset_cal.acdb:vendor/etc/MTP/MTP_Headset_cal.acdb \
-    $(LOCAL_PATH)/audio/acdbdata/MTP/MTP_Speaker_cal.acdb:vendor/etc/MTP/MTP_Speaker_cal.acdb \
-    $(LOCAL_PATH)/audio/acdbdata/QRD/QRD_Bluetooth_cal.acdb:vendor/etc/acdbdata/QRD/QRD_Bluetooth_cal.acdb \
-    $(LOCAL_PATH)/audio/acdbdata/QRD/QRD_General_cal.acdb:vendor/etc/QRD/QRD_General_cal.acdb \
-    $(LOCAL_PATH)/audio/acdbdata/QRD/QRD_Global_cal.acdb:vendor/etc/QRD/QRD_Global_cal.acdb \
-    $(LOCAL_PATH)/audio/acdbdata/QRD/QRD_Handset_cal.acdb:vendor/etc/QRD/QRD_Handset_cal.acdb \
-    $(LOCAL_PATH)/audio/acdbdata/QRD/QRD_Hdmi_cal.acdb:vendor/etc/QRD/QRD_Hdmi_cal.acdb \
-    $(LOCAL_PATH)/audio/acdbdata/QRD/QRD_Headset_cal.acdb:vendor/etc/QRD/QRD_Headset_cal.acdb \
-    $(LOCAL_PATH)/audio/acdbdata/QRD/QRD_Speaker_cal.acdb:vendor/etc/QRD/QRD_Speaker_cal.acdb \
-    $(LOCAL_PATH)/audio/audio_effects.conf:vendor/etc/audio_effects.conf \
-    $(LOCAL_PATH)/audio/audio_policy_configuration.xml:vendor/etc/audio_policy_configuration.xml \
-    $(LOCAL_PATH)/audio/mixer_paths.xml:vendor/etc/mixer_paths.xml
-
-PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration.xml:/vendor/etc/a2dp_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/audio_policy_volumes.xml:/vendor/etc/audio_policy_volumes.xml \
     frameworks/av/services/audiopolicy/config/default_volume_tables.xml:/vendor/etc/default_volume_tables.xml \
@@ -107,16 +88,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     gps.msm8909
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/gps/flp.conf:vendor/etc/flp.conf \
-    $(LOCAL_PATH)/gps/gps.conf:vendor/etc/gps.conf \
-    $(LOCAL_PATH)/gps/izat.conf:vendor/etc/izat.conf \
-    $(LOCAL_PATH)/gps/sap.conf:vendor/etc/sap.conf
-
-# IRSC
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/sec_config:vendor/etc/sec_config
-
 # Keylayout
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
@@ -134,10 +105,6 @@ PRODUCT_PACKAGES += \
     lights.msm8909
 
 # Media
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/media_codecs_8909.xml:vendor/etc/media_codecs.xml \
-    $(LOCAL_PATH)/configs/media_codecs_performance_8909.xml:vendor/etc/media_codecs_performance.xml \
-    $(LOCAL_PATH)/configs/media_profiles_8909.xml:vendor/etc/media_profiles.xml
 
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:vendor/etc/media_codecs_google_audio.xml \
@@ -202,9 +169,6 @@ PRODUCT_PACKAGES += \
     calmodule.cfg \
     sensors.msm8909 \
     sensors.native
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/sensors/hals.conf:system/etc/sensors/hals.conf
 
 # Shims
 PRODUCT_PACKAGES += \
