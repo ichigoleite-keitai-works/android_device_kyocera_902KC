@@ -1,4 +1,4 @@
-/* Copyright (c) 2013-2015, The Linux Foundation. All rights reserved.
+/* Copyright (c) 2013-2014, The Linux Foundation. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -882,14 +882,12 @@ int32_t mm_jpegdec_destroy_session(mm_jpeg_obj *my_obj,
 {
   int32_t rc = 0;
   mm_jpeg_job_q_node_t *node = NULL;
-  uint32_t session_id = 0;
 
   if (NULL == p_session) {
     CDBG_ERROR("%s:%d] invalid session", __func__, __LINE__);
     return rc;
   }
-
-  session_id = p_session->sessionId;
+  uint32_t session_id = p_session->sessionId;
   pthread_mutex_lock(&my_obj->job_lock);
 
   /* abort job if in todo queue */
@@ -936,11 +934,14 @@ int32_t mm_jpegdec_destroy_session(mm_jpeg_obj *my_obj,
  **/
 int32_t mm_jpegdec_destroy_session_by_id(mm_jpeg_obj *my_obj, uint32_t session_id)
 {
+  int32_t rc = 0;
   mm_jpeg_job_session_t *p_session = mm_jpeg_get_session(my_obj, session_id);
-  if (p_session == NULL) {
-      CDBG_ERROR("%s: error: mm_jpeg_get_session returned NULL",__func__);
-      return -1;
+
+  if (NULL == p_session) {
+    CDBG_ERROR("%s:%d] session is not valid", __func__, __LINE__);
+    return rc;
   }
+
   return mm_jpegdec_destroy_session(my_obj, p_session);
 }
 
@@ -981,7 +982,7 @@ OMX_ERRORTYPE mm_jpegdec_fbd(OMX_HANDLETYPE hComponent,
     p_session->job_status = JPEG_JOB_STATUS_DONE;
     output_buf.buf_filled_len = (uint32_t)pBuffer->nFilledLen;
     output_buf.buf_vaddr = pBuffer->pBuffer;
-    output_buf.fd = 0;
+    output_buf.fd = -1;
     CDBG("%s:%d] send jpeg callback %d", __func__, __LINE__,
       p_session->job_status);
     p_session->dec_params.jpeg_cb(p_session->job_status,

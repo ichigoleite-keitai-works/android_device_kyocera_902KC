@@ -1,4 +1,4 @@
-/* Copyright (c) 2012, The Linux Foundation. All rights reserved.
+/* Copyright (c) 2015, The Linux Foundataion. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -27,42 +27,42 @@
  *
  */
 
-#ifndef __QCAMERA2FACTORY_H__
-#define __QCAMERA2FACTORY_H__
+#ifndef __QCAMERA_FLASH_H__
+#define __QCAMERA_FLASH_H__
 
-#include <hardware/camera.h>
-#include <system/camera.h>
-#include <media/msmb_camera.h>
+#include <hardware/camera_common.h>
 
-#include "QCamera2HWI.h"
+extern "C" {
+#include <mm_camera_interface.h>
+}
 
 namespace qcamera {
 
-class QCamera2Factory
-{
-public:
-    QCamera2Factory();
-    virtual ~QCamera2Factory();
+#define QCAMERA_TORCH_CURRENT_VALUE 200
 
-    static int get_number_of_cameras();
-    static int get_camera_info(int camera_id, struct camera_info *info);
+class QCameraFlash {
+public:
+    static QCameraFlash& getInstance();
+
+    int32_t registerCallbacks(const camera_module_callbacks_t* callbacks);
+    int32_t initFlash(const int camera_id);
+    int32_t setFlashMode(const int camera_id, const bool on);
+    int32_t deinitFlash(const int camera_id);
+    int32_t reserveFlashForCamera(const int camera_id);
+    int32_t releaseFlashFromCamera(const int camera_id);
 
 private:
-    int getNumberOfCameras();
-    int getCameraInfo(int camera_id, struct camera_info *info);
-    int cameraDeviceOpen(int camera_id, struct hw_device_t **hw_device);
-    static int camera_device_open(const struct hw_module_t *module, const char *id,
-                struct hw_device_t **hw_device);
+    QCameraFlash();
+    virtual ~QCameraFlash();
+    QCameraFlash(const QCameraFlash&);
+    QCameraFlash& operator=(const QCameraFlash&);
 
-public:
-    static struct hw_module_methods_t mModuleMethods;
-
-private:
-    int mNumOfCameras;
+    const camera_module_callbacks_t *m_callbacks;
+    int32_t m_flashFds[MM_CAMERA_MAX_NUM_SENSORS];
+    bool m_flashOn[MM_CAMERA_MAX_NUM_SENSORS];
+    bool m_cameraOpen[MM_CAMERA_MAX_NUM_SENSORS];
 };
 
-}; /*namespace qcamera*/
+}; // namespace qcamera
 
-extern camera_module_t HAL_MODULE_INFO_SYM;
-
-#endif /* ANDROID_HARDWARE_QUALCOMM_CAMERA_H */
+#endif /* __QCAMERA_FLASH_H__ */

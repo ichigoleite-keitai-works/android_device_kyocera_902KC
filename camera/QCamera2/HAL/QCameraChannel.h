@@ -51,15 +51,11 @@ public:
                          void *userData);
     // Owner of memory is transferred from the caller to the caller with this call.
     virtual int32_t addStream(QCameraAllocator& allocator,
-                              QCameraHeapMemory *streamInfoBuf,
-                              uint8_t minStreamBufnum,
-                              cam_padding_info_t *paddingInfo,
-                              stream_cb_routine stream_cb,
-                              void *userdata,
-                              bool bDynAllocBuf,
-                              bool bDeffAlloc = false);
+            QCameraHeapMemory *streamInfoBuf, QCameraHeapMemory *miscBuf,
+            uint8_t minStreamBufnum, cam_padding_info_t *paddingInfo,
+            stream_cb_routine stream_cb, void *userdata, bool bDynAllocBuf,
+            bool bDeffAlloc = false, cam_rotation_t online_rotation = ROTATE_0);
     virtual int32_t linkStream(QCameraChannel *ch, QCameraStream *stream);
-
     virtual int32_t start();
     virtual int32_t stop();
     virtual int32_t bufDone(mm_camera_super_buf_t *recvd_frame);
@@ -68,9 +64,7 @@ public:
     int32_t config();
     QCameraStream *getStreamByHandle(uint32_t streamHandle);
     uint32_t getMyHandle() const {return m_handle;};
-    uint32_t getNumOfStreams() const {
-        return (uint32_t) mStreams.size();
-    }
+    uint32_t getNumOfStreams() const {return (uint32_t) mStreams.size();};
     QCameraStream *getStreamByIndex(uint32_t index);
     QCameraStream *getStreamByServerID(uint32_t serverID);
     int32_t UpdateStreamBasedParameters(QCameraParameters &param);
@@ -96,10 +90,11 @@ public:
                       mm_camera_ops_t *cam_ops);
     QCameraPicChannel();
     virtual ~QCameraPicChannel();
-    int32_t takePicture(uint8_t num_of_snapshot);
+    int32_t takePicture(uint8_t num_of_snapshot, uint8_t num_of_retro_snapshot);
     int32_t cancelPicture();
     int32_t stopAdvancedCapture(mm_camera_advanced_capture_t type);
-    int32_t startAdvancedCapture(mm_camera_advanced_capture_t type);
+    int32_t startAdvancedCapture(mm_camera_advanced_capture_t type,
+            cam_capture_frame_config_t *config = NULL);
     int32_t flushSuperbuffer(uint32_t frame_idx);
 };
 
@@ -111,8 +106,6 @@ public:
                         mm_camera_ops_t *cam_ops);
     QCameraVideoChannel();
     virtual ~QCameraVideoChannel();
-    int32_t takePicture(uint8_t num_of_snapshot);
-    int32_t cancelPicture();
     int32_t releaseFrame(const void *opaque, bool isMetaData);
 };
 
@@ -134,12 +127,18 @@ public:
                                        bool contStream,
                                        bool offline);
     // online reprocess
-    int32_t doReprocess(mm_camera_super_buf_t *frame);
+    int32_t doReprocess(mm_camera_super_buf_t *frame,
+            QCameraParameters &param, QCameraStream *pMetaStream,
+            uint8_t meta_buf_index);
+
     // offline reprocess
     int32_t doReprocess(int buf_fd, size_t buf_length, int32_t &ret_val);
-    int32_t doReprocessOffline(mm_camera_super_buf_t *frame);
+
+    int32_t doReprocessOffline(mm_camera_super_buf_t *frame, 
+             mm_camera_buf_def_t *meta_buf);
+
     int32_t stop();
-    QCameraChannel *getSourceChannel() { return m_pSrcChannel; }
+    QCameraChannel *getSrcChannel(){return m_pSrcChannel;};
 
 private:
     QCameraStream *getStreamBySrouceHandle(uint32_t srcHandle);

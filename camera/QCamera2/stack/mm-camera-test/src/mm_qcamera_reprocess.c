@@ -33,22 +33,18 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 static void mm_app_reprocess_notify_cb(mm_camera_super_buf_t *bufs,
                                    void *user_data)
 {
-    mm_camera_buf_def_t *frame = NULL;
+    mm_camera_buf_def_t *frame = bufs->bufs[0];
     mm_camera_test_obj_t *pme = (mm_camera_test_obj_t *)user_data;
     mm_camera_channel_t *channel = NULL;
     mm_camera_stream_t *m_stream = NULL;
     mm_camera_buf_def_t *m_frame = NULL;
     mm_camera_super_buf_t *src_frame;
-    uint32_t i = 0;
+    int i = 0;
     int rc = 0;
 
-    if (!bufs) {
-        CDBG_ERROR("%s: invalid superbuf\n", __func__);
-        return;
-    }
-    frame = bufs->bufs[0];
     CDBG_ERROR("%s: BEGIN - length=%zu, frame idx = %d\n",
          __func__, frame->frame_len, frame->frame_idx);
+
     /* find channel */
     for (i = 0; i < MM_CHANNEL_TYPE_MAX; i++) {
         if (pme->channels[i].ch_id == bufs->ch_id) {
@@ -65,19 +61,6 @@ static void mm_app_reprocess_notify_cb(mm_camera_super_buf_t *bufs,
     // in the reprocess channel.
     m_stream = &channel->streams[0];
     m_frame = bufs->bufs[0];
-
-    /* find meta data frame from reprocess superbuff */
-    mm_camera_buf_def_t *meta_frame = NULL;
-    for (i = 0; bufs && (i < bufs->num_bufs); i++) {
-        if (bufs->bufs[i]->stream_type == CAM_STREAM_TYPE_METADATA) {
-            meta_frame = bufs->bufs[i];
-            break;
-        }
-    }
-    /* fill in meta data frame ptr */
-    if (meta_frame != NULL) {
-      pme->metadata = (cam_metadata_info_t *)meta_frame->buffer;
-    }
 
     if ( pme->encodeJpeg ) {
         pme->jpeg_buf.buf.buffer = (uint8_t *)malloc(m_frame->frame_len);
@@ -139,7 +122,9 @@ mm_camera_stream_t * mm_app_add_reprocess_stream_from_source(mm_camera_test_obj_
         CDBG_ERROR("%s: Invalid input\n", __func__);
         return NULL;
     }
+
     cam_cap = (cam_capability_t *)(test_obj->cap_buf.buf.buffer);
+
     stream = mm_app_add_stream(test_obj, channel);
     if (NULL == stream) {
         CDBG_ERROR("%s: add stream failed\n", __func__);
@@ -206,7 +191,7 @@ mm_camera_channel_t * mm_app_add_reprocess_channel(mm_camera_test_obj_t *test_ob
     memset(&pp_config, 0, sizeof(cam_pp_feature_config_t));
 
     cam_capability_t *caps = ( cam_capability_t * ) ( test_obj->cap_buf.buf.buffer );
-    if (caps->qcom_supported_feature_mask & CAM_QCOM_FEATURE_SHARPNESS) {
+    if (caps->min_required_pp_mask & CAM_QCOM_FEATURE_SHARPNESS) {
         pp_config.feature_mask |= CAM_QCOM_FEATURE_SHARPNESS;
         pp_config.sharpness = test_obj->reproc_sharpness;
     }

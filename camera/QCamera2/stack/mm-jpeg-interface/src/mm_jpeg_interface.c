@@ -1,4 +1,4 @@
-/* Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
+/* Copyright (c) 2012-2014, The Linux Foundation. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -46,7 +46,7 @@ static mm_jpeg_obj* g_jpeg_obj = NULL;
 
 static pthread_mutex_t g_handler_lock = PTHREAD_MUTEX_INITIALIZER;
 static uint16_t g_handler_history_count = 0; /* history count for handler */
-volatile uint32_t gMmCameraJpegLogLevel = 0;
+volatile uint32_t gMmJpegIntfLogLevel = 1;
 
 /** mm_jpeg_util_generate_handler:
  *
@@ -295,26 +295,25 @@ uint32_t jpeg_open(mm_jpeg_ops_t *ops, mm_dimension picture_size)
   uint32_t clnt_hdl = 0;
   mm_jpeg_obj* jpeg_obj = NULL;
   char prop[PROPERTY_VALUE_MAX];
-  uint32_t temp;
-  uint32_t log_level;
-  uint32_t debug_mask;
-  memset(prop, 0, sizeof(prop));
+  uint32_t globalLogLevel = 0;
 
-  /*  Higher 4 bits : Value of Debug log level (Default level is 1 to print all CDBG_HIGH)
-      Lower 28 bits : Control mode for sub module logging(Only 3 sub modules in HAL)
-                      0x1 for HAL
-                      0x10 for mm-camera-interface
-                      0x100 for mm-jpeg-interface  */
-  property_get("persist.camera.hal.debug.mask", prop, "268435463"); // 0x10000007=268435463
-  temp = (uint32_t)atoi(prop);
-  log_level = ((temp >> 28) & 0xF);
-  debug_mask = (temp & HAL_DEBUG_MASK_MM_JPEG_INTERFACE);
-  if (debug_mask > 0)
-      gMmCameraJpegLogLevel = log_level;
-  else
-      gMmCameraJpegLogLevel = 0; // Debug logs are not required if debug_mask is zero
+  memset(prop, 0x0, sizeof(prop));
+  property_get("persist.camera.hal.debug", prop, "0");
+  int val = atoi(prop);
+  if (0 <= val) {
+      gMmJpegIntfLogLevel = (uint32_t)val;
+  }
+  property_get("persist.camera.global.debug", prop, "0");
+  val = atoi(prop);
+  if (0 <= val) {
+      globalLogLevel = (uint32_t)val;
+  }
 
-  CDBG_HIGH("%s gMmCameraJpegLogLevel=%d",__func__, gMmCameraJpegLogLevel);
+  /* Highest log level among hal.logs and global.logs is selected */
+  if (gMmJpegIntfLogLevel < globalLogLevel)
+      gMmJpegIntfLogLevel = globalLogLevel;
+  if (gMmJpegIntfLogLevel < MINIMUM_JPEG_LOG_LEVEL)
+      gMmJpegIntfLogLevel = MINIMUM_JPEG_LOG_LEVEL;
 
   pthread_mutex_lock(&g_intf_lock);
   /* first time open */

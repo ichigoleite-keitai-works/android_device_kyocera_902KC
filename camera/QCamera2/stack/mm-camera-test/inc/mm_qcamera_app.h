@@ -1,4 +1,4 @@
-/* Copyright (c) 2012, 2014-2015, The Linux Foundation. All rights reserved.
+/* Copyright (c) 2012-2015, The Linux Foundation. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -111,9 +111,7 @@ typedef enum {
     TUNE_PREVCMD_DEINIT,
 } mm_camera_tune_prevcmd_t;
 
-typedef void (*cam_stream_user_cb) (mm_camera_buf_def_t *frame);
 typedef void (*prev_callback) (mm_camera_buf_def_t *preview_frame);
-
 
 typedef struct {
   char *send_buf;
@@ -164,7 +162,7 @@ typedef struct {
     int                     main_ion_fd;
     ion_user_handle_t       handle;
     size_t                  size;
-    void *                  data;
+    parm_buffer_t          *data;
 } mm_camera_app_meminfo_t;
 
 typedef struct {
@@ -234,9 +232,8 @@ typedef struct {
     int encodeJpeg;
     int zsl_enabled;
     int8_t focus_supported;
-    cam_stream_user_cb user_preview_cb;
-    cam_stream_user_cb user_metadata_cb;
-    parm_buffer_new_t *params_buffer;
+    prev_callback user_preview_cb;
+    parm_buffer_t *params_buffer;
     USER_INPUT_DISPLAY_T preview_resolution;
 
     //Reprocess params&stream
@@ -246,7 +243,7 @@ typedef struct {
     int8_t enable_CAC;
     mm_camera_queue_t pp_frames;
     mm_camera_stream_t *reproc_stream;
-    cam_metadata_info_t *metadata;
+    metadata_buffer_t *metadata;
     int8_t is_chromatix_reload;
     tune_chromatix_t tune_data;
 } mm_camera_test_obj_t;
@@ -256,7 +253,7 @@ typedef struct {
   void* ptr_jpeg;
 
   uint8_t (*get_num_of_cameras) ();
-  mm_camera_vtbl_t *(*mm_camera_open) (uint8_t camera_idx);
+  int32_t (*mm_camera_open) (uint8_t camera_idx, mm_camera_vtbl_t **camera_vtbl);
   uint32_t (*jpeg_open) (mm_jpeg_ops_t *ops, mm_dimension picture_size);
 
 } hal_interface_lib_t;
@@ -463,15 +460,6 @@ extern int mm_app_set_params(mm_camera_test_obj_t *test_obj,
                       int32_t value);
 extern int mm_app_set_preview_fps_range(mm_camera_test_obj_t *test_obj,
                         cam_fps_range_t *fpsRange);
-extern int mm_app_set_face_detection(mm_camera_test_obj_t *test_obj,
-                        cam_fd_set_parm_t *fd_set_parm);
-extern int mm_app_set_metadata_usercb(mm_camera_test_obj_t *test_obj,
-                      cam_stream_user_cb usercb);
-extern int mm_app_set_params_impl(mm_camera_test_obj_t *test_obj,
-                   cam_intf_parm_type_t param_type,
-                   uint32_t param_len,
-                   void* param_val);
-
 /* JIG camera lib interface */
 
 int mm_camera_lib_open(mm_camera_lib_handle *handle, int cam_id);
@@ -487,7 +475,7 @@ int mm_camera_lib_close(mm_camera_lib_handle *handle);
 int32_t mm_camera_load_tuninglibrary(
   mm_camera_tuning_lib_params_t *tuning_param);
 int mm_camera_lib_set_preview_usercb(
-  mm_camera_lib_handle *handle, cam_stream_user_cb cb);
+  mm_camera_lib_handle *handle, prev_callback cb);
 //
 
 int mm_app_start_regression_test(int run_tc);

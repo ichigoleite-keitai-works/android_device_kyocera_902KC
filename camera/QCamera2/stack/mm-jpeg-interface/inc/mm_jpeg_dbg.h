@@ -1,4 +1,4 @@
-/* Copyright (c) 2012-2015, The Linux Foundation. All rights reserved.
+/* Copyright (c) 2012-2014, The Linux Foundation. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -30,14 +30,14 @@
 #ifndef __MM_JPEG_DBG_H__
 #define __MM_JPEG_DBG_H__
 
-#include "cam_types.h"
 #define LOG_DEBUG 1
+#define MINIMUM_JPEG_LOG_LEVEL 1
 
 /* Choose debug log level. This will not affect the error logs
    0: turns off CDBG and CDBG_HIGH logs
    1: turns-on CDBG_HIGH logs
    2: turns-on CDBG_HIGH and CDBG logs */
-extern volatile uint32_t gMmCameraJpegLogLevel;
+extern volatile uint32_t gMmJpegIntfLogLevel;
 
 #ifndef LOG_DEBUG
   #ifdef _ANDROID_
@@ -59,7 +59,7 @@ extern volatile uint32_t gMmCameraJpegLogLevel;
     #define LOG_NIDEBUG 0
     #define LOG_TAG "mm-jpeg-intf"
     #include <utils/Log.h>
-    #define CDBG(fmt, args...) ALOGD_IF(gMmCameraJpegLogLevel >= 2, fmt, ##args)
+    #define CDBG(fmt, args...) ALOGD_IF(gMmJpegIntfLogLevel >= 2, fmt, ##args)
   #else
     #include <stdio.h>
     #define CDBG(fmt, args...) fprintf(stderr, fmt, ##args)
@@ -68,7 +68,7 @@ extern volatile uint32_t gMmCameraJpegLogLevel;
 #endif
 
 #ifdef _ANDROID_
-  #define CDBG_HIGH(fmt, args...)   ALOGD_IF(gMmCameraJpegLogLevel >= 1, fmt, ##args)
+  #define CDBG_HIGH(fmt, args...)   ALOGD_IF(gMmJpegIntfLogLevel >= 1, fmt, ##args)
   #define CDBG_ERROR(fmt, args...)  ALOGE(fmt, ##args)
 #else
   #define CDBG_HIGH(fmt, args...) fprintf(stderr, fmt, ##args)

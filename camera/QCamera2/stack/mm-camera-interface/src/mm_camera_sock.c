@@ -1,4 +1,4 @@
-/* Copyright (c) 2012-2014, The Linux Foundation. All rights reserved.
+/* Copyright (c) 2012-2015, The Linux Foundation. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -35,6 +35,7 @@
 
 #include "mm_camera_dbg.h"
 #include "mm_camera_sock.h"
+#include "cam_types.h"
 
 /*===========================================================================
  * FUNCTION   : mm_camera_socket_create
@@ -72,8 +73,8 @@ int mm_camera_socket_create(int cam_id, mm_camera_sock_type_t sock_type)
 
     memset(&sock_addr, 0, sizeof(sock_addr));
     sock_addr.addr_un.sun_family = AF_UNIX;
-    snprintf(sock_addr.addr_un.sun_path, UNIX_PATH_MAX, "/data/misc/camera/cam_socket%d",
-        cam_id);
+    snprintf(sock_addr.addr_un.sun_path,
+             UNIX_PATH_MAX, QCAMERA_DUMP_FRM_LOCATION"cam_socket%d", cam_id);
     rc = connect(socket_fd, &sock_addr.addr, sizeof(sock_addr.addr_un));
     if (0 != rc) {
       close(socket_fd);
@@ -96,7 +97,7 @@ int mm_camera_socket_create(int cam_id, mm_camera_sock_type_t sock_type)
  *==========================================================================*/
 void mm_camera_socket_close(int fd)
 {
-    if (fd > 0) {
+    if (fd >= 0) {
       close(fd);
     }
 }
@@ -141,7 +142,7 @@ int mm_camera_socket_sendmsg(
     msgh.msg_controllen = 0;
 
     /* if sendfd is valid, we need to pass it through control msg */
-    if( sendfd > 0) {
+    if( sendfd >= 0) {
       msgh.msg_control = control;
       msgh.msg_controllen = sizeof(control);
       cmsghp = CMSG_FIRSTHDR(&msgh);
@@ -207,7 +208,7 @@ int mm_camera_socket_recvmsg(
       return rcvd_len;
     }
 
-    CDBG("%s:  msg_ctrl %p len %zu", __func__, msgh.msg_control,
+    CDBG("%s:  msg_ctrl %p len %zd", __func__, msgh.msg_control,
         msgh.msg_controllen);
 
     if( ((cmsghp = CMSG_FIRSTHDR(&msgh)) != NULL) &&

@@ -1,4 +1,4 @@
-/* Copyright (c) 2012-2014, The Linux Foundation. All rights reserved.
+/* Copyright (c) 2012-2015, The Linux Foundation. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -117,7 +117,9 @@ int encodeData(mm_camera_test_obj_t *test_obj, mm_camera_super_buf_t* recvd_fram
     job.encode_job.dst_index = 0;
 
     if (test_obj->metadata != NULL) {
-      job.encode_job.p_metadata = test_obj->metadata;
+        job.encode_job.p_metadata = test_obj->metadata;
+    } else {
+        CDBG_ERROR("%s: Metadata null, not set for jpeg encoding", __func__);
     }
 
     rc = test_obj->jpeg_ops.start_job(&job, &test_obj->current_job_id);
@@ -169,7 +171,6 @@ int createEncodingSession(mm_camera_test_obj_t *test_obj,
                                              &test_obj->current_jpeg_sess_id);
 }
 
-#if 0 // Removing metadata stream for snapshot in qcamera app.
 /** mm_app_snapshot_metadata_notify_cb
  *  @bufs: Pointer to super buffer
  *  @user_data: Pointer to user data
@@ -183,9 +184,14 @@ static void mm_app_snapshot_metadata_notify_cb(mm_camera_super_buf_t *bufs,
   mm_camera_channel_t *channel = NULL;
   mm_camera_stream_t *p_stream = NULL;
   mm_camera_test_obj_t *pme = (mm_camera_test_obj_t *)user_data;
-  mm_camera_buf_def_t *frame = bufs->bufs[0];
-  cam_metadata_info_t *pMetadata;
-  cam_auto_focus_data_t *focus_data;
+  mm_camera_buf_def_t *frame;
+  metadata_buffer_t *pMetadata;
+
+  if (NULL == bufs || NULL == user_data) {
+    CDBG_ERROR("%s: bufs or user_data are not valid ", __func__);
+    return;
+  }
+  frame = bufs->bufs[0];
 
   /* find channel */
   for (i = 0; i < MM_CHANNEL_TYPE_MAX; i++) {
@@ -194,26 +200,16 @@ static void mm_app_snapshot_metadata_notify_cb(mm_camera_super_buf_t *bufs,
       break;
     }
   }
+
   if (NULL == channel) {
-      CDBG_ERROR("%s: Wrong channel id", __func__);
-      return;
+    CDBG_ERROR("%s: Channel object is null", __func__);
+    return;
   }
-  /* find preview stream */
+
+  /* find meta stream */
   for (i = 0; i < channel->num_streams; i++) {
     if (channel->streams[i].s_config.stream_info->stream_type == CAM_STREAM_TYPE_METADATA) {
       p_stream = &channel->streams[i];
-      break;
-    }
-  }
-  if (NULL == p_stream) {
-      CDBG_ERROR("%s: Wrong preview stream", __func__);
-      return;
-  }
-
-  /* find preview frame */
-  for (i = 0; i < bufs->num_bufs; i++) {
-    if (bufs->bufs[i]->stream_id == p_stream->s_id) {
-      frame = bufs->bufs[i];
       break;
     }
   }
@@ -222,31 +218,35 @@ static void mm_app_snapshot_metadata_notify_cb(mm_camera_super_buf_t *bufs,
     CDBG_ERROR("%s: cannot find metadata stream", __func__);
     return;
   }
-  if (!pme->metadata) {
-    /* The app will free the metadata, we don't need to bother here */
-    pme->metadata = malloc(sizeof(cam_metadata_info_t));
-  }
 
-  /* find meta data frame */
-  mm_camera_buf_def_t *meta_frame = NULL;
+  /* find meta frame */
   for (i = 0; i < bufs->num_bufs; i++) {
-    if (bufs->bufs[i]->stream_type == CAM_STREAM_TYPE_METADATA) {
-      meta_frame = bufs->bufs[i];
+    if (bufs->bufs[i]->stream_id == p_stream->s_id) {
+      frame = bufs->bufs[i];
       break;
     }
   }
-  /* fill in meta data frame ptr */
-  if (meta_frame != NULL) {
-    pme->metadata = (cam_metadata_info_t *)meta_frame->buffer;
+
+  if (!pme->metadata) {
+    /* The app will free the metadata, we don't need to bother here */
+    pme->metadata = malloc(sizeof(metadata_buffer_t));
+    if (NULL == pme->metadata) {
+        CDBG_ERROR("%s: malloc failed", __func__);
+        return;
+    }
   }
 
-  pMetadata = (cam_metadata_info_t *)frame->buffer;
+  memcpy(pme->metadata , frame->buffer, sizeof(metadata_buffer_t));
 
-  if (pMetadata->is_focus_valid) {
-    focus_data = (cam_auto_focus_data_t *)&(pMetadata->focus_data);
+  pMetadata = (metadata_buffer_t *)frame->buffer;
 
+  IF_META_AVAILABLE(cam_auto_focus_data_t, focus_data,
+        CAM_INTF_META_AUTOFOCUS_DATA, pMetadata) {
     if (focus_data->focus_state == CAM_AF_FOCUSED) {
       CDBG_ERROR("%s: AutoFocus Done Call Back Received\n",__func__);
+      mm_camera_app_done();
+    } else if (focus_data->focus_state == CAM_AF_NOT_FOCUSED) {
+      CDBG_ERROR("%s: AutoFocus failed\n",__func__);
       mm_camera_app_done();
     }
   }
@@ -259,7 +259,7 @@ static void mm_app_snapshot_metadata_notify_cb(mm_camera_super_buf_t *bufs,
   mm_app_cache_ops((mm_camera_app_meminfo_t *)frame->mem_info,
                    ION_IOC_INV_CACHES);
 }
-#endif
+
 static void mm_app_snapshot_notify_cb_raw(mm_camera_super_buf_t *bufs,
                                           void *user_data)
 {
@@ -614,7 +614,6 @@ int mm_app_start_capture(mm_camera_test_obj_t *test_obj,
         CDBG_ERROR("%s: add channel failed", __func__);
         return -MM_CAMERA_E_GENERAL;
     }
-#if 0 // Removing metadata stream for snapshot in qcamera app.
     s_metadata = mm_app_add_metadata_stream(test_obj,
                                             channel,
                                             mm_app_snapshot_metadata_notify_cb,
@@ -625,7 +624,7 @@ int mm_app_start_capture(mm_camera_test_obj_t *test_obj,
         mm_app_del_channel(test_obj, channel);
         return -MM_CAMERA_E_GENERAL;
     }
-#endif
+
     s_main = mm_app_add_snapshot_stream(test_obj,
                                         channel,
                                         NULL,
