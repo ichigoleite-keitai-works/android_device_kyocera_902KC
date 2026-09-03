@@ -124,9 +124,6 @@ WIFI_DRIVER_FW_PATH_AP := "ap"
 WIFI_DRIVER_FW_PATH_STA := "sta"
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
-# Use build_number tag for ota file
-BUILD_NUMBER := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(shell date -u +%Y%m%d)-$(CM_BUILDTYPE)
-
 # Display
 # Main panel: kc tovis2 fwvga = 480x854, density 240 (the 240x320 panel is the external sub-display).
 TARGET_SCREEN_WIDTH := 480
