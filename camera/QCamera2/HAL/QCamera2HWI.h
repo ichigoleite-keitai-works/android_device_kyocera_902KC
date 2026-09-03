@@ -526,6 +526,8 @@ private:
     uint32_t          mCameraId;
     mm_camera_vtbl_t *mCameraHandle;
     bool mCameraOpened;
+    // This flag will indicate whether camera is opened or not
+    static unsigned int mCameraSessionActive;
 
     preview_stream_ops_t *mPreviewWindow;
     QCameraParameters mParameters;
@@ -651,6 +653,8 @@ private:
     bool mPreviewFrameSkipValid;
     cam_frame_idx_range_t mPreviewFrameSkipIdxRange;
     int32_t mNumPreviewFaces;
+    nsecs_t mLastAFScanTime;
+    nsecs_t mLastCaptureTime;
     bool mAdvancedCaptureConfigured;
     bool mFPSReconfigure;
    //ts add for makeup

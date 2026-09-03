@@ -39,9 +39,11 @@ LOCAL_C_INCLUDES += \
     frameworks/base/include/media \
     external/skia/include/core \
     external/skia/include/images \
-    hardware/qcom/display/libgralloc \
+    $(call project-path-for,qcom-display)/libgralloc \
     frameworks/av/include/media/stagefright \
     frameworks/native/include/media/openmax \
+
+LOCAL_ADDITIONAL_DEPENDENCIES := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
 
 LOCAL_MODULE:= camera_test
 LOCAL_32_BIT_ONLY := true

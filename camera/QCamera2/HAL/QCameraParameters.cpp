@@ -795,9 +795,11 @@ QCameraParameters::QCameraParameters()
       m_bLowPowerMode(false)
 {
     char value[PROPERTY_VALUE_MAX];
+#ifndef DISABLE_DEBUG_LOG
     // TODO: may move to parameter instead of sysprop
     property_get("persist.debug.sf.showfps", value, "0");
     m_bDebugFps = atoi(value) > 0 ? true : false;
+#endif
     m_bReleaseTorchCamera = false;
     m_pTorch = NULL;
 
@@ -1491,22 +1493,6 @@ int32_t QCameraParameters::setLiveSnapshotSize(const QCameraParameters& params)
             }
         }
     }
-
-    // QCamera is guaranteed to support liveshot at video resolution, even
-    // though it may not appear in the livesnapshot_sizes_tbl.  In L, if the
-    // user sets a picture size larger than the supported liveshot resolution,
-    // the resulting liveshot MUST be at least as large as the video
-    // resolution (android.hardware.cts.CameraTest#testVideoSnapshot).
-    int videoWidth = 0, videoHeight = 0;
-    int pictureWidth = 0, pictureHeight = 0;
-    params.getVideoSize(&videoWidth, &videoHeight);
-    params.getPictureSize(&pictureWidth, &pictureHeight);
-    if ((pictureWidth > m_LiveSnapshotSize.width && m_LiveSnapshotSize.width < videoWidth) ||
-        (pictureHeight > m_LiveSnapshotSize.height && m_LiveSnapshotSize.height < videoHeight)) {
-        m_LiveSnapshotSize.width = videoWidth;
-        m_LiveSnapshotSize.height = videoHeight;
-    }
-
     CDBG("%s: live snapshot size %d x %d", __func__,
           m_LiveSnapshotSize.width, m_LiveSnapshotSize.height);
 
@@ -2913,6 +2899,7 @@ int32_t QCameraParameters::setMCEValue(const QCameraParameters& params)
  *==========================================================================*/
 int32_t QCameraParameters::setDISValue(const QCameraParameters& params)
 {
+/*
     const char *str = params.get(KEY_QC_DIS);
     const char *prev_str = get(KEY_QC_DIS);
     if (str != NULL) {
@@ -2921,6 +2908,7 @@ int32_t QCameraParameters::setDISValue(const QCameraParameters& params)
             return setDISValue(str);
         }
     }
+*/
     return NO_ERROR;
 }
 
@@ -4479,7 +4467,7 @@ int32_t QCameraParameters::initDefaultParameters()
     set(KEY_QC_RAW_PICUTRE_SIZE, raw_size_str);
 
     //set default jpeg quality and thumbnail quality
-    set(KEY_JPEG_QUALITY, 85);
+    set(KEY_JPEG_QUALITY, 95);
     set(KEY_JPEG_THUMBNAIL_QUALITY, 85);
 
     // Set FPS ranges
@@ -4918,9 +4906,9 @@ int32_t QCameraParameters::initDefaultParameters()
     set(KEY_QC_SUPPORTED_MEM_COLOR_ENHANCE_MODES, enableDisableValues);
     setMCEValue(VALUE_ENABLE);
 
-    // Set DIS
+    /* Set DIS
     set(KEY_QC_SUPPORTED_DIS_MODES, enableDisableValues);
-    setDISValue(VALUE_DISABLE);
+    setDISValue(VALUE_DISABLE); */
 
     // Set Histogram
     set(KEY_QC_SUPPORTED_HISTOGRAM_MODES,
@@ -5043,7 +5031,9 @@ int32_t QCameraParameters::initDefaultParameters()
     CDBG_HIGH("%s: totalram = %ld, freeram = %ld ", __func__, info.totalram,
         info.freeram);
     if (info.totalram > TOTAL_RAM_SIZE_512MB) {
-        set(KEY_QC_ZSL_HDR_SUPPORTED, VALUE_TRUE);
+        /* Report as unsupported on Rendang. It's buggy and provides almost no
+           benefit. */
+        set(KEY_QC_ZSL_HDR_SUPPORTED, VALUE_FALSE);
     } else {
         m_bIsLowMemoryDevice = true;
         set(KEY_QC_ZSL_HDR_SUPPORTED, VALUE_FALSE);
@@ -5088,6 +5078,9 @@ int32_t QCameraParameters::init(cam_capability_t *capabilities,
                                 QCameraTorchInterface *torch)
 {
     int32_t rc = NO_ERROR;
+
+    // Set default sharpness to 1
+    capabilities->sharpness_ctrl.def_value = 6;
 
     m_pCapability = capabilities;
     m_pCamOpsTbl = mmOps;
@@ -8658,7 +8651,7 @@ uint32_t QCameraParameters::getJpegQuality()
 {
     int quality = getInt(KEY_JPEG_QUALITY);
     if (quality < 0) {
-        quality = 85; // set to default quality value
+        quality = 95; // set to default quality value
     }
     return (uint32_t)quality;
 }
