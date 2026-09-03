@@ -17,7 +17,7 @@ $(call inherit-product, $(LOCAL_PATH)/modules/android_go.mk)
 -include $(LOCAL_PATH)/system_prop.mk
 
 PRODUCT_AAPT_CONFIG := normal
-PRODUCT_AAPT_PREF_CONFIG := 240dpi
+PRODUCT_AAPT_PREF_CONFIG := hdpi
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp
