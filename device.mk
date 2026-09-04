@@ -164,10 +164,6 @@ PRODUCT_PACKAGES += \
     init.recovery.qcom.rc \
     ueventd.rc \
 
-# Soong namespaces
-PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH)
-
 # Sensors
 PRODUCT_PACKAGES += \
     calmodule.cfg \
