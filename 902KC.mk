@@ -132,19 +132,18 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     power.msm8909
 
-# Ramdisk
+# Rootdir
 PRODUCT_PACKAGES += \
-    fstab.qcom \
+    init.class_late.sh \
+    init.class_main.sh \
     init.kc.sensor.sh \
     init.kc.usb.sh \
-    init.qcom.bt.sh \
+    init.mdm.sh \
     init.qcom.class_core.sh \
     init.qcom.coex.sh \
     init.qcom.crashdata.sh \
     init.qcom.early_boot.sh \
     init.qcom.efs.sync.sh \
-    init.qcom.mem.sh \
-    init.qcom.modem_links.sh \
     init.qcom.post_boot.sh \
     init.qcom.sdio.sh \
     init.qcom.sensors.sh \
@@ -153,16 +152,19 @@ PRODUCT_PACKAGES += \
     init.qti.fm.sh \
     init.qti.ims.sh \
     init.qti.qseecomd.sh \
-    init.kc.display.rc \
-    init.kc.leds.rc \
-    init.kc.touch.rc \
+
+PRODUCT_PACKAGES += \
+    fstab.qcom \
     init.qcom.factory.rc \
-    init.qcom.power.rc \
     init.qcom.rc \
-    init.qcom.ssr.rc \
-    init.qcom.usb.rc \
+    init.target.rc \
+    init.rc \
     init.recovery.qcom.rc \
-    init.target.rc
+    ueventd.rc \
+
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += \
+    $(LOCAL_PATH)
 
 # Sensors
 PRODUCT_PACKAGES += \

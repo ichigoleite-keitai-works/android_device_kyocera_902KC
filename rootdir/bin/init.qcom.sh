@@ -37,59 +37,59 @@ fi
 
 start_battery_monitor()
 {
-        if ls /sys/bus/spmi/devices/qpnp-bms-*/fcc_data ; then
-                chown -h root.system /sys/module/pm8921_bms/parameters/*
-                chown -h root.system /sys/module/qpnp_bms/parameters/*
-                chown -h root.system /sys/bus/spmi/devices/qpnp-bms-*/fcc_data
-                chown -h root.system /sys/bus/spmi/devices/qpnp-bms-*/fcc_temp
-                chown -h root.system /sys/bus/spmi/devices/qpnp-bms-*/fcc_chgcyl
-                chmod 0660 /sys/module/qpnp_bms/parameters/*
-                chmod 0660 /sys/module/pm8921_bms/parameters/*
-                mkdir -p /data/bms
-                chown -h root.system /data/bms
-                chmod 0770 /data/bms
-                start battery_monitor
-        fi
+	if ls /sys/bus/spmi/devices/qpnp-bms-*/fcc_data ; then
+		chown -h root.system /sys/module/pm8921_bms/parameters/*
+		chown -h root.system /sys/module/qpnp_bms/parameters/*
+		chown -h root.system /sys/bus/spmi/devices/qpnp-bms-*/fcc_data
+		chown -h root.system /sys/bus/spmi/devices/qpnp-bms-*/fcc_temp
+		chown -h root.system /sys/bus/spmi/devices/qpnp-bms-*/fcc_chgcyl
+		chmod 0660 /sys/module/qpnp_bms/parameters/*
+		chmod 0660 /sys/module/pm8921_bms/parameters/*
+		mkdir -p /data/bms
+		chown -h root.system /data/bms
+		chmod 0770 /data/bms
+		start battery_monitor
+	fi
 }
 
 start_charger_monitor()
 {
-        if ls /sys/module/qpnp_charger/parameters/charger_monitor; then
-                chown -h root.system /sys/module/qpnp_charger/parameters/*
-                chown -h root.system /sys/class/power_supply/battery/input_current_max
-                chown -h root.system /sys/class/power_supply/battery/input_current_trim
-                chown -h root.system /sys/class/power_supply/battery/input_current_settled
-                chown -h root.system /sys/class/power_supply/battery/voltage_min
-                chmod 0664 /sys/class/power_supply/battery/input_current_max
-                chmod 0664 /sys/class/power_supply/battery/input_current_trim
-                chmod 0664 /sys/class/power_supply/battery/input_current_settled
-                chmod 0664 /sys/class/power_supply/battery/voltage_min
-                chmod 0664 /sys/module/qpnp_charger/parameters/charger_monitor
-                start charger_monitor
-        fi
+	if ls /sys/module/qpnp_charger/parameters/charger_monitor; then
+		chown -h root.system /sys/module/qpnp_charger/parameters/*
+		chown -h root.system /sys/class/power_supply/battery/input_current_max
+		chown -h root.system /sys/class/power_supply/battery/input_current_trim
+		chown -h root.system /sys/class/power_supply/battery/input_current_settled
+		chown -h root.system /sys/class/power_supply/battery/voltage_min
+		chmod 0664 /sys/class/power_supply/battery/input_current_max
+		chmod 0664 /sys/class/power_supply/battery/input_current_trim
+		chmod 0664 /sys/class/power_supply/battery/input_current_settled
+		chmod 0664 /sys/class/power_supply/battery/voltage_min
+		chmod 0664 /sys/module/qpnp_charger/parameters/charger_monitor
+		start charger_monitor
+	fi
 }
 
 start_vm_bms()
 {
-        if [ -e /dev/vm_bms ]; then
-                chown -h root.system /sys/class/power_supply/bms/current_now
-                chown -h root.system /sys/class/power_supply/bms/voltage_ocv
-                chmod 0664 /sys/class/power_supply/bms/current_now
-                chmod 0664 /sys/class/power_supply/bms/voltage_ocv
-                start vm_bms
-        fi
+	if [ -e /dev/vm_bms ]; then
+		chown -h root.system /sys/class/power_supply/bms/current_now
+		chown -h root.system /sys/class/power_supply/bms/voltage_ocv
+		chmod 0664 /sys/class/power_supply/bms/current_now
+		chmod 0664 /sys/class/power_supply/bms/voltage_ocv
+		start vm_bms
+	fi
 }
 
 start_msm_irqbalance_8939()
 {
-        if [ -f /system/vendor/bin/msm_irqbalance ]; then
-                case "$platformid" in
-                    "239" | "293" | "294" | "295" | "304" | "313" | "338" | "351" | "353" | "354" | "363" | "364")
-                        start vendor.msm_irqbalance;;
-                    "349" | "350" )
-                        start vendor.msm_irqbal_lb;;
-                esac
-        fi
+	if [ -f /system/vendor/bin/msm_irqbalance ]; then
+		case "$platformid" in
+		    "239" | "293" | "294" | "295" | "304" | "313" | "338" | "351" | "353" | "354" | "363" | "364")
+			start vendor.msm_irqbalance;;
+		    "349" | "350" )
+			start vendor.msm_irqbal_lb;;
+		esac
+	fi
 }
 
 start_msm_irqbalance_8952()
@@ -103,26 +103,26 @@ start_msm_irqbalance_8952()
                      "266" | "274" | "277" | "278")
                         start vendor.msm_irqbal_lb;;
                 esac
-        fi
+	fi
 }
 
 start_msm_irqbalance660()
 {
-        if [ -f /vendor/bin/msm_irqbalance ]; then
-                case "$platformid" in
-                    "317" | "324" | "325" | "326" | "345" | "346")
-                        start vendor.msm_irqbalance;;
-                    "318" | "327")
-                        start vendor.msm_irqbl_sdm630;;
-                esac
-        fi
+	if [ -f /vendor/bin/msm_irqbalance ]; then
+		case "$platformid" in
+		    "317" | "324" | "325" | "326" | "345" | "346")
+			start vendor.msm_irqbalance;;
+		    "318" | "327")
+			start vendor.msm_irqbl_sdm630;;
+		esac
+	fi
 }
 
 start_msm_irqbalance()
 {
-        if [ -f /vendor/bin/msm_irqbalance ]; then
-                start vendor.msm_irqbalance
-        fi
+	if [ -f /vendor/bin/msm_irqbalance ]; then
+		start vendor.msm_irqbalance
+	fi
 }
 
 baseband=`getprop ro.baseband`
@@ -321,58 +321,58 @@ case "$target" in
         ;;
     "msm8952")
         start_msm_irqbalance_8952
-         if [ -f /sys/devices/soc0/soc_id ]; then
+	 if [ -f /sys/devices/soc0/soc_id ]; then
              soc_id=`cat /sys/devices/soc0/soc_id`
          else
              soc_id=`cat /sys/devices/system/soc/soc0/id`
          fi
 
-         if [ -f /sys/devices/soc0/platform_subtype_id ]; then
-              platform_subtype_id=`cat /sys/devices/soc0/platform_subtype_id`
-         fi
-         if [ -f /sys/devices/soc0/hw_platform ]; then
-               hw_platform=`cat /sys/devices/soc0/hw_platform`
-         fi
-         case "$soc_id" in
-              "264")
-                   case "$hw_platform" in
-                            "Surf")
-                                 case "$platform_subtype_id" in
-                                      "1" | "2")
-                                          setprop qemu.hw.mainkeys 0
-                                          ;;
-                                  esac
-                                  ;;
-                            "MTP")
-                                 case "$platform_subtype_id" in
-                                      "3")
-                                          setprop qemu.hw.mainkeys 0
-                                          ;;
-                                  esac
-                                  ;;
-                            "QRD")
-                                 case "$platform_subtype_id" in
-                                      "0")
-                                          setprop qemu.hw.mainkeys 0
-                                          ;;
-                                  esac
-                                  ;;
-                     esac
-                     ;;
-                 "266" | "274" | "277" | "278")
-                      case "$hw_platform" in
-                               "Surf" | "RCM")
+	 if [ -f /sys/devices/soc0/platform_subtype_id ]; then
+	      platform_subtype_id=`cat /sys/devices/soc0/platform_subtype_id`
+	 fi
+	 if [ -f /sys/devices/soc0/hw_platform ]; then
+	       hw_platform=`cat /sys/devices/soc0/hw_platform`
+	 fi
+	 case "$soc_id" in
+	      "264")
+	           case "$hw_platform" in
+			    "Surf")
+			         case "$platform_subtype_id" in
+			              "1" | "2")
+			                  setprop qemu.hw.mainkeys 0
+			                  ;;
+				  esac
+			          ;;
+			    "MTP")
+			         case "$platform_subtype_id" in
+			              "3")
+			                  setprop qemu.hw.mainkeys 0
+			                  ;;
+				  esac
+			          ;;
+			    "QRD")
+			         case "$platform_subtype_id" in
+			              "0")
+			                  setprop qemu.hw.mainkeys 0
+			                  ;;
+				  esac
+				  ;;
+		     esac
+		     ;;
+		 "266" | "274" | "277" | "278")
+	              case "$hw_platform" in
+			       "Surf" | "RCM")
                                     if [ $panel_xres -eq 1440 ]; then
-                                       setprop qemu.hw.mainkeys 0
-                                    fi
-                                    ;;
-                                "MTP" | "QRD")
-                                       setprop qemu.hw.mainkeys 0
-                                       ;;
-                      esac
-                      ;;
-        esac
-        ;;
+				       setprop qemu.hw.mainkeys 0
+				    fi
+				    ;;
+				"MTP" | "QRD")
+				       setprop qemu.hw.mainkeys 0
+				       ;;
+		      esac
+		      ;;
+	esac
+	;;
     "msm8937")
         start_msm_irqbalance_8939
         if [ -f /sys/devices/soc0/soc_id ]; then
@@ -386,7 +386,7 @@ case "$target" in
         else
              hw_platform=`cat /sys/devices/system/soc/soc0/hw_platform`
         fi
-        if [ "$low_ram" != "true" ]; then
+	if [ "$low_ram" != "true" ]; then
              case "$soc_id" in
                   "294" | "295" | "303" | "307" | "308" | "309" | "313" | "320" | "353" | "354" | "363" | "364")
                        case "$hw_platform" in
@@ -408,7 +408,7 @@ case "$target" in
         fi
         ;;
     "msm8953")
-        start_msm_irqbalance_8939
+	start_msm_irqbalance_8939
         if [ -f /sys/devices/soc0/soc_id ]; then
             soc_id=`cat /sys/devices/soc0/soc_id`
         else
