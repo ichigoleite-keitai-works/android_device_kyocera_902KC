@@ -1,0 +1,3 @@
+add_lunch_combo lineage_902KC-userdebug
+add_lunch_combo lineage_902KC-user
+add_lunch_combo lineage_902KC-eng
