@@ -4,13 +4,13 @@
 #
 
 # Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/embedded.mk)
 
 # Inherit from 902KC device
 $(call inherit-product, device/kyocera/902KC/device.mk)
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common OmniROM stuff.
+$(call inherit-product, vendor/omni/config/common.mk)
 
 PRODUCT_DEVICE := 902KC
 PRODUCT_NAME := lineage_902KC
