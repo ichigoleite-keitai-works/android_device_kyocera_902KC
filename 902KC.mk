@@ -22,6 +22,18 @@ PRODUCT_AAPT_PREF_CONFIG := hdpi
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp
 
+# API levels
+PRODUCT_SHIPPING_API_LEVEL := 27
+
+# Health
+PRODUCT_PACKAGES += \
+    android.hardware.health@2.1-impl \
+    android.hardware.health@2.1-impl.recovery \
+    android.hardware.health@2.1-service
+
+# Product characteristics
+PRODUCT_CHARACTERISTICS := default
+
 # ANT+
 PRODUCT_PACKAGES += \
     AntHalService \
@@ -204,3 +216,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
     frameworks/native/data/etc/android.software.midi.xml:system/etc/permissions/android.software.midi.xml \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
+
+# Inherit the proprietary files
+$(call inherit-product, vendor/kyocera/902KC/902KC-vendor.mk)
