@@ -6,3 +6,4 @@ include $(call all-subdir-makefiles,$(LOCAL_PATH))
 ifneq ($(RECOVERY_VARIANT),twrp)
 -include $(LOCAL_PATH)/recovery/Android.mk
 endif
+endif
