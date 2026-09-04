@@ -13,7 +13,7 @@ $(call inherit-product, device/kyocera/902KC/device.mk)
 $(call inherit-product, vendor/omni/config/common.mk)
 
 PRODUCT_DEVICE := 902KC
-PRODUCT_NAME := lineage_902KC
+PRODUCT_NAME := omni_902KC
 PRODUCT_BRAND := KYOCERA
 PRODUCT_MODEL := NP902KC
 PRODUCT_MANUFACTURER := kyocera
