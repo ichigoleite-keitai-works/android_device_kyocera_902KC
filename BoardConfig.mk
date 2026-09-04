@@ -119,12 +119,6 @@ TARGET_USERIMAGES_USE_F2FS := true
 # Security patch level
 VENDOR_SECURITY_PATCH := 2020-09-01
 
-# SELinux
-include device/qcom/sepolicy/sepolicy.mk
-ifeq ($(TARGET_BOARD_PLATFORM),902KC)
-	BOARD_SEPOLICY_DIRS += device/kyocera/902KC/sepolicy
-endif
-
 # Wifi
 BOARD_HAS_QCOM_WLAN := true
 BOARD_HOSTAPD_DRIVER := NL80211

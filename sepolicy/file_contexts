@@ -1,3 +1,0 @@
-# adbd
-/dev/socket/adbd                                                                                    u:object_r:adbd_socket:s0
-/system/bin/adbd                                                                                    u:object_r:adbd_exec:s0
