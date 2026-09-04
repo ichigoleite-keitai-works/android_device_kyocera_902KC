@@ -15,9 +15,6 @@ PRODUCT_AAPT_PREF_CONFIG := hdpi
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp
 
-# API levels
-PRODUCT_SHIPPING_API_LEVEL := 27
-
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl \
