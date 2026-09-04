@@ -105,7 +105,14 @@ BOARD_VENDORIMAGE_PARTITION_SIZE := 314572800
 # Recovery
 TARGET_OTA_ASSERT_DEVICE := 902KC
 TARGET_RECOVERY_QCOM_RTC_FIX := true
+ifeq ($(RECOVERY_VARIANT),twrp)
+ifneq ($(TARGET_BUILD_VARIANT),eng)
+$(error RECOVERY_VARIANT=twrp can only be used with eng build)
+endif
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/twrp.fstab
+else
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/recovery.fstab
+endif
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
