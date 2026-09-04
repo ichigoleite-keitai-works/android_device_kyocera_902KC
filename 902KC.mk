@@ -7,9 +7,6 @@ DEVICE_PACKAGE_OVERLAYS += device/kyocera/902KC/overlay
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 
-# Add proprietary blobs.
-$(call inherit-product, vendor/kyocera/902KC/902KC-vendor.mk)
-
 # Go time.
 $(call inherit-product, $(LOCAL_PATH)/modules/android_go.mk)
 
