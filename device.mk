@@ -10,9 +10,6 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 # Go time.
 $(call inherit-product, $(LOCAL_PATH)/modules/android_go.mk)
 
-# Properties
--include $(LOCAL_PATH)/system_prop.mk
-
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := hdpi
 
