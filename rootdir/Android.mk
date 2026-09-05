@@ -5,6 +5,9 @@
 
 LOCAL_PATH := $(call my-dir)
 
+# This is to define TARGET_VENDOR_OUT.
+TARGET_VENDOR_OUT := $(PRODUCT_OUT)/$(TARGET_COPY_OUT_VENDOR)
+
 # Init configuration files
 
 include $(CLEAR_VARS)
